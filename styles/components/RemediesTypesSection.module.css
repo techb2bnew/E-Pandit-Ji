@@ -1,0 +1,186 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 56px 0 70px;
+  background: url("/assets/remedies-types-bg.png") center center / cover
+    no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  /* background: rgba(0, 0, 0, 0.72); */
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 0 70px;
+}
+
+.heading {
+  color: #fff;
+  text-align: center;
+  font-size: 46px;
+  line-height: 1.08;
+  font-weight: 800;
+  margin: 0 0 22px;
+}
+
+.tabRow {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 28px;
+}
+
+.tabBtn {
+  min-width: 168px;
+  height: 54px;
+  padding: 0 18px;
+  border: 1px solid #f5c518;
+  border-radius: 12px;
+  background: transparent;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.active {
+  background: #f5c518;
+  color: #000;
+}
+
+.content {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.subHeading {
+  color: #f5c518;
+  font-size: 44px;
+  line-height: 1.08;
+  font-weight: 800;
+  margin: 0 0 10px;
+}
+
+.highlightText {
+  color: #f5c518;
+  font-size: 18px;
+  /* line-height: 1.45; */
+  margin: 0 0 18px;
+  /* text-decoration: underline; */
+  text-decoration-color: #3aa7ff;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 1px 1fr;
+  gap: 28px;
+  align-items: start;
+}
+
+.grid::before {
+  content: "";
+  grid-column: 2;
+  grid-row: 1 / span 10;
+  width: 1px;
+  background: rgba(255, 255, 255, 0.35);
+}
+
+.leftCol,
+.rightCol {
+  position: relative;
+}
+
+.leftCol h4,
+.rightCol h4 {
+  color: #f5c518;
+  font-size: 24px;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.group {
+  margin-bottom: 16px;
+}
+
+.group h5 {
+  color: #fff;
+  font-size: 18px;
+  font-weight: 800;
+  margin: 0 0 6px;
+}
+
+.group ul,
+.infoBlock ul {
+  margin: 0 0 8px 18px;
+  padding: 0;
+}
+
+.group li,
+.infoBlock li {
+  color: #fff;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+.group p {
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0;
+}
+
+.infoBlock {
+  margin-bottom: 22px;
+}
+
+.ctaBtn {
+  min-width: 290px;
+  height: 60px;
+  border: none;
+  border-radius: 12px;
+  background: #f5c518;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+  margin-top: 8px;
+}
+
+@media (max-width: 991px) {
+  .container {
+    padding: 0 20px;
+  }
+
+  .heading {
+    font-size: 34px;
+  }
+
+  .subHeading {
+    font-size: 32px;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .grid::before {
+    display: none;
+  }
+
+  .group li,
+  .infoBlock li,
+  .group p,
+  .highlightText {
+    font-size: 15px;
+  }
+}

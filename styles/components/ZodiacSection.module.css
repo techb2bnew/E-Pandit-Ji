@@ -1,0 +1,402 @@
+.section {
+  position: relative;
+  width: 100%;
+  min-height: 1000px;
+  overflow: hidden;
+  background: #000000;
+  padding: 90px 24px 70px;
+}
+
+.bgVideoWrap {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bgVideo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 70%;
+  opacity: 0.72;
+  transform: scale(1.04);
+  filter: brightness(0.78) contrast(1.08) saturate(1.05);
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.82) 0%,
+      rgba(0, 0, 0, 0.52) 32%,
+      rgba(0, 0, 0, 0.28) 58%,
+      rgba(0, 0, 0, 0.5) 82%,
+      rgba(0, 0, 0, 0.86) 100%
+    );
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 1480px;
+  margin: 0 auto;
+}
+
+.topRow {
+  display: grid;
+  grid-template-columns: 1.15fr 0.85fr;
+  gap: 40px;
+  align-items: start;
+}
+
+.leftContent {
+  max-width: 760px;
+}
+
+.smallLabel {
+  margin: 0 0 12px;
+  color: #f5c518;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.heading {
+  margin: 0;
+  color: #ffffff;
+  font-size: 64px;
+  line-height: 1.04;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.subHeading {
+  margin: 8px 0 0;
+  color: #f5c518;
+  font-size: 33px;
+  line-height: 1.2;
+  font-weight: 700;
+}
+
+.description {
+  margin: 18px 0 0;
+  color: rgba(255, 255, 255, 0.92);
+  font-size: 22px;
+  line-height: 1.7;
+  max-width: 820px;
+}
+
+.rightButtons {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(220px, 1fr));
+  gap: 16px;
+  justify-self: end;
+  margin-top: 22px;
+  width: 100%;
+  max-width: 520px;
+}
+
+.filterButton {
+  height: 68px;
+  border: none;
+  border-radius: 12px;
+  background: #f5c518;
+  color: #111111;
+  font-size: 24px;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 10px 22px rgba(245, 197, 24, 0.12);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.filterButton:hover {
+  transform: translateY(-2px);
+}
+
+.outlineButton {
+  background: rgba(18, 18, 18, 0.76);
+  border: 1.5px solid #f5c518;
+  color: #f5c518;
+}
+
+.cardsRow {
+  margin-top: 46px;
+  display: grid;
+  grid-template-columns: 64px 1fr 64px;
+  gap: 26px;
+  align-items: center;
+}
+
+.navButton {
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
+  border: 1.5px solid #f5c518;
+  background: rgba(10, 10, 10, 0.78);
+  color: #f5c518;
+  font-size: 28px;
+  cursor: pointer;
+  box-shadow: 0 0 22px rgba(245, 197, 24, 0.18);
+}
+
+.cardsGrid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 26px;
+  align-items: center;
+}
+
+.zodiacCard {
+  min-height: 320px;
+  border: 1.5px solid rgba(245, 197, 24, 0.88);
+  border-radius: 34px;
+  background: rgba(10, 10, 10, 0.42);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  transform: rotate(-7deg);
+  padding: 28px 18px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 18px rgba(245, 197, 24, 0.08);
+}
+
+.zodiacCard:nth-child(2) {
+  transform: rotate(0deg);
+}
+
+.zodiacCard:nth-child(3) {
+  transform: rotate(-4deg);
+}
+
+.zodiacCard:nth-child(4) {
+  transform: rotate(7deg);
+}
+
+.activeCard {
+  box-shadow:
+    0 0 18px rgba(245, 197, 24, 0.35),
+    0 0 36px rgba(245, 197, 24, 0.16);
+}
+
+.cardImageWrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 190px;
+}
+
+.cardImage {
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  object-fit: contain;
+}
+
+.cardTitle {
+  margin: 10px 0 0;
+  color: #f5c518;
+  font-size: 28px;
+  line-height: 1.2;
+  font-weight: 500;
+  text-align: center;
+}
+
+.statsRow {
+  margin-top: 80px;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statItem {
+  min-height: 190px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 32px 18px 12px;
+  border-right: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.statItem:last-child {
+  border-right: none;
+}
+
+.statPlanet {
+  position: relative;
+  width: 110px;
+  height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.statPlanetImg {
+  width: 110px;
+  height: 110px;
+  object-fit: contain;
+  opacity: 0.85;
+}
+
+.statValue {
+  position: absolute;
+  color: #ffffff;
+  font-size: 22px;
+  font-weight: 800;
+  line-height: 1;
+}
+
+.statLabel {
+  margin: 14px 0 0;
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.35;
+  font-weight: 400;
+  text-align: center;
+  max-width: 180px;
+}
+
+@media (max-width: 1280px) {
+  .heading {
+    font-size: 54px;
+  }
+
+  .subHeading {
+    font-size: 28px;
+  }
+
+  .description {
+    font-size: 19px;
+  }
+
+  .filterButton {
+    font-size: 20px;
+    height: 60px;
+  }
+
+  .cardsGrid {
+    gap: 18px;
+  }
+
+  .zodiacCard {
+    min-height: 280px;
+  }
+
+  .cardTitle {
+    font-size: 24px;
+  }
+}
+
+@media (max-width: 992px) {
+  .section {
+    padding: 70px 20px 60px;
+  }
+
+  .topRow {
+    grid-template-columns: 1fr;
+    gap: 28px;
+  }
+
+  .rightButtons {
+    justify-self: start;
+    max-width: 100%;
+  }
+
+  .cardsRow {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .navButton {
+    display: none;
+  }
+
+  .cardsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .statsRow {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+
+  .statItem:nth-child(2n) {
+    border-right: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .section {
+    min-height: auto;
+    padding: 60px 16px 50px;
+  }
+
+  .smallLabel {
+    font-size: 16px;
+  }
+
+  .heading {
+    font-size: 40px;
+  }
+
+  .subHeading {
+    font-size: 22px;
+  }
+
+  .description {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .rightButtons {
+    grid-template-columns: 1fr;
+  }
+
+  .filterButton {
+    height: 54px;
+    font-size: 17px;
+  }
+
+  .cardsGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .zodiacCard,
+  .zodiacCard:nth-child(2),
+  .zodiacCard:nth-child(3),
+  .zodiacCard:nth-child(4) {
+    transform: rotate(0deg);
+  }
+
+  .zodiacCard {
+    min-height: 250px;
+    border-radius: 24px;
+  }
+
+  .cardImage {
+    max-width: 140px;
+  }
+
+  .cardTitle {
+    font-size: 22px;
+  }
+
+  .statsRow {
+    margin-top: 50px;
+    grid-template-columns: 1fr;
+  }
+
+  .statItem {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+  }
+
+  .statItem:last-child {
+    border-bottom: none;
+  }
+}

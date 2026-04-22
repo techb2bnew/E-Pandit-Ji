@@ -1,0 +1,245 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 68px 0 46px;
+  background: url("/assets/images/hero-bg.jpg") center center / cover no-repeat;
+}
+
+.bgOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.46);
+  z-index: 1;
+}
+
+.symbol {
+  position: absolute;
+  right: 28px;
+  top: 72px;
+  width: 210px;
+  height: 210px;
+  background: url("/assets/images/astro-symbol.png") center center / contain
+    no-repeat;
+  opacity: 0.12;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.container {
+  position: relative;
+  z-index: 3;
+  max-width: 1540px;
+  margin: 0 auto;
+  padding: 0 56px;
+}
+
+.formWrap {
+  max-width: 742px;
+  margin: 0 auto;
+}
+
+.heading {
+  text-align: center;
+  color: #ffffff;
+  font-size: 28px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.form {
+  width: 100%;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px 11px;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+}
+
+.field label,
+.messageField label {
+  color: #ffffff;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 500;
+  margin-bottom: 6px;
+}
+
+.field input,
+.field select,
+.messageField textarea {
+  width: 100%;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: #f1f1f1;
+  color: #1a1a1a;
+  border-radius: 4px;
+  outline: none;
+  box-shadow: none;
+  font-size: 11px;
+}
+
+.field input,
+.field select {
+  height: 30px;
+  padding: 0 11px;
+}
+
+.field input::placeholder,
+.field select,
+.messageField textarea::placeholder {
+  color: #9b9b9b;
+}
+
+.messageField {
+  width: 100%;
+  max-width: 318px;
+  margin: 13px auto 0;
+}
+
+.messageField textarea {
+  height: 79px;
+  resize: none;
+  padding: 10px 11px;
+}
+
+.checkboxRow {
+  max-width: 318px;
+  margin: 8px auto 0;
+  display: flex;
+  align-items: flex-start;
+  gap: 7px;
+  cursor: pointer;
+}
+
+.checkboxRow input {
+  width: 10px;
+  height: 10px;
+  margin-top: 3px;
+  accent-color: #f5c518;
+  flex-shrink: 0;
+}
+
+.checkboxRow span {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 8.8px;
+  line-height: 1.6;
+}
+
+.submitBtn {
+  display: block;
+  width: 100%;
+  max-width: 318px;
+  height: 28px;
+  margin: 14px auto 0;
+  border: none;
+  border-radius: 8px;
+  background: #f5c518;
+  color: #000000;
+  font-size: 12px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.topContent {
+  max-width: 860px;
+  margin-top: 86px;
+}
+
+.mainHeading {
+  color: #ffffff;
+  font-size: 34px;
+  line-height: 1.05;
+  font-weight: 800;
+  margin: 0 0 16px;
+}
+
+.mainHeading span {
+  color: #f5c518;
+}
+
+.paragraph {
+  color: rgba(255, 255, 255, 0.93);
+  font-size: 16px;
+  line-height: 1.45;
+  margin: 0 0 10px;
+  max-width: 930px;
+}
+
+@media (max-width: 991px) {
+  .section {
+    padding: 58px 0 50px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .messageField,
+  .checkboxRow,
+  .submitBtn {
+    max-width: 100%;
+  }
+
+  .topContent {
+    margin-top: 55px;
+  }
+
+  .mainHeading {
+    font-size: 28px;
+  }
+
+  .paragraph {
+    font-size: 15px;
+  }
+
+  .symbol {
+    width: 150px;
+    height: 150px;
+    right: 10px;
+    top: 70px;
+  }
+}
+
+@media (max-width: 576px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .heading {
+    font-size: 24px;
+  }
+
+  .mainHeading {
+    font-size: 24px;
+  }
+
+  .paragraph {
+    font-size: 14px;
+  }
+
+  .field input,
+  .field select {
+    height: 40px;
+    font-size: 13px;
+  }
+
+  .messageField textarea {
+    height: 110px;
+    font-size: 13px;
+  }
+
+  .submitBtn {
+    height: 42px;
+    font-size: 15px;
+  }
+}

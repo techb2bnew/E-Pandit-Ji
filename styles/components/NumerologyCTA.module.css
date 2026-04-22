@@ -1,0 +1,67 @@
+.section {
+  position: relative;
+  overflow: hidden;
+  padding: 72px 0 90px;
+  background: url("/assets/images/hero-bg.jpg") center center / cover no-repeat;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.66);
+  z-index: 1;
+}
+
+.container {
+  position: relative;
+  z-index: 2;
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+}
+
+.heading {
+  color: #fff;
+  font-size: 34px;
+  line-height: 1.1;
+  font-weight: 800;
+  margin: 0 0 12px;
+}
+
+.heading span {
+  color: #f5c518;
+}
+
+.text {
+  color: rgba(255, 255, 255, 0.94);
+  font-size: 16px;
+  line-height: 1.55;
+  max-width: 760px;
+  margin: 0 auto 10px;
+}
+
+.subText {
+  color: #fff;
+  font-size: 20px;
+  line-height: 1.4;
+  margin: 0 0 24px;
+}
+
+.button {
+  min-width: 205px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  background: #f5c518;
+  color: #000;
+  font-size: 18px;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.meta {
+  color: #fff;
+  font-size: 15px;
+  margin-top: 10px;
+}
