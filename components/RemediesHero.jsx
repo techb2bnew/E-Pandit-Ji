@@ -1,40 +1,44 @@
 import Image from "next/image";
-import styles from "@/styles/components/RemediesHero.module.css";
 
 export default function RemediesHero() {
   return (
-    <section className={styles.hero}>
-      <div className={styles.overlay}></div>
+    <section className="relative min-h-[760px] overflow-hidden bg-[url('/assets/remedy-hero-bg.png')] bg-cover bg-center bg-no-repeat pb-20 pt-[180px] max-[991px]:min-h-0 max-[991px]:pb-[70px] max-[991px]:pt-[140px]">
+      <div className="absolute inset-0 z-1" />
 
-      <div className={styles.container}>
-        <div className={styles.left}>
-          <p className={styles.kicker}>Powerful Astrological Solutions</p>
+      <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-1 items-center gap-[30px] px-14 text-center md:grid-cols-[1.05fr_1fr] md:text-left max-[991px]:px-5">
+        <div className="max-w-[640px] max-[991px]:mx-auto">
+          <p className="mb-[10px] text-[20px] font-medium text-primary">
+            Powerful Astrological Solutions
+          </p>
 
-          <h1 className={styles.heading}>
+          <h1 className="mb-[14px] text-[62px] font-extrabold leading-[1.05] text-white max-[991px]:text-[42px]">
             Effective Remedies to
             <br />
             Improve Your Life
           </h1>
 
-          <p className={styles.description}>
+          <p className="mb-6 max-w-[620px] text-[24px] leading-[1.45] text-white/95 max-[991px]:text-[18px]">
             Overcome life challenges with simple and powerful Vedic remedies.
             Balance your energies, reduce doshas, and attract positivity.
           </p>
 
-          <button className={styles.button}>Get Personalized Remedies</button>
+          <button className="h-[62px] min-w-[300px] cursor-pointer rounded-[12px] bg-primary px-[26px] text-[19px] font-extrabold text-black max-[991px]:h-[54px] max-[991px]:min-w-[240px] max-[991px]:text-[17px]">
+            Get Personalized Remedies
+          </button>
 
-          <p className={styles.meta}>100% private | Fast delivery</p>
+          <p className="mt-3 text-[18px] text-white max-[991px]:text-[15px]">
+            100% private | Fast delivery
+          </p>
         </div>
 
-        <div className={styles.right}>
-          {/* <div className={styles.circle}></div> */}
-            <div className={styles.bgImage}></div>
-          <div className={styles.imageWrap}>
+        <div className="relative flex min-h-[520px] items-center justify-center max-[991px]:min-h-[380px]">
+          <div className="absolute inset-0 z-1 bg-[url('/assets/zodiac-bg.png')] bg-contain bg-center bg-no-repeat opacity-40" />
+          <div className="relative z-2 aspect-square w-full max-w-[620px]">
             <Image
               src="/assets/remedies-hero.png"
               alt="Astrological remedies"
               fill
-              className={styles.image}
+              className="object-contain"
               priority
             />
           </div>

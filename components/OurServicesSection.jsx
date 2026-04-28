@@ -1,6 +1,7 @@
 import Image from "next/image";
-import styles from "@/styles/components/OurServicesSection.module.css";
 import Link from "next/link";
+import Title from "./Uiux/Title";
+import Description from "./Uiux/Description";
 
 
 const services = [
@@ -29,36 +30,43 @@ const services = [
 
 export default function OurServicesSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <p className={styles.smallLabel}>Click To Choose</p>
-
-        <h2 className={styles.heading}>Our Services</h2>
-
-        <p className={styles.description}>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-          lacus vel facilisis.
+    <section className="w-full bg-black px-6 md:pb-14 md:pt-14">
+      <div className="inn_container text-center">
+        <p className="mb-2 text-xl md:text-[22px] xl:text-2xl 2xl:text-[26px] text-primary font-secondary">
+          Click To Choose
         </p>
 
-        <div className={styles.cardsGrid}>
+        <Title
+          title={'Our Services'}
+        />
+
+       <Description
+        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
+          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
+          lacus vel facilisis.`}
+        Class={'text-white max-w-7xl mx-auto'}
+        />
+
+        <div className="mt-14  grid grid-cols-2 md:grid-cols-4 gap-8 max-w-7xl mx-auto">
           {services.map((service) => (
             <Link
               key={service.title}
               href={service.href}
-              className={styles.card}
+              className="group flex flex-col items-center"
             >
-              <div className={styles.imageWrap}>
+              <div className="flex aspect-square w-full max-w-[270px] items-center justify-center rounded-[18px] bg-[#efe0b3] p-[18px] transition-[transform,box-shadow] duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_12px_28px_rgba(245,197,24,0.12)] max-md:max-w-[220px] max-md:rounded-[16px]">
                 <Image
                   src={service.image}
                   alt={service.title}
                   width={240}
                   height={240}
-                  className={styles.cardImage}
+                  className="h-full w-full object-contain"
                 />
               </div>
-              <p className={styles.cardTitle}>{service.title}</p>
+              <p className="mt-4 text-xl xl:text-2xl 2xl:text-3xl font-primary">
+                {service.title}
+              </p>
             </Link>
           ))}
         </div>

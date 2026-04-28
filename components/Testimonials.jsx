@@ -2,7 +2,8 @@
 
 import { useState } from "react";
 import Image from "next/image";
-import styles from "@/styles/components/Testimonials.module.css";
+import Description from "./Uiux/Description";
+import Title from "./Uiux/Title";
 
 const testimonials = [
   {
@@ -37,38 +38,58 @@ export default function Testimonials() {
   const activeTestimonial = testimonials[activeIndex];
 
   return (
-    <section className={styles.section}>
-      <div className={styles.container}>
-        <div className={styles.leftContent}>
-          <div className={styles.imageFrame}>
+    <section className="relative w-full overflow-hidden bg-black px-6 ">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-7 inn_container items-center">
+        <div className="flex items-center justify-center">
+          <div className="flex aspect-square w-full items-center justify-center overflow-hidden rounded-[34px] border-[1.5px] border-primary bg-black/95 max-md:rounded-[24px] max-md:p-4">
             <Image
               src="/assets/palmistry-hand.png"
               alt="Palmistry hand"
               width={620}
               height={620}
-              className={styles.handImage}
+              className="h-full w-full object-contain rounded-[36px]"
             />
           </div>
         </div>
 
-        <div className={styles.rightContent}>
-          <p className={styles.smallLabel}>Testimonials</p>
-          <h2 className={styles.heading}>Our Client Say</h2>
-
-          <div className={styles.testimonialCard}>
-            <div className={styles.quoteMark}>❝❝</div>
-
-            <p className={styles.testimonialText}>
-              {activeTestimonial.text}
-            </p>
-
-            <p className={styles.clientName}>{activeTestimonial.name}</p>
+        <div className="flex flex-col items-center gap-y-5 md:gap-y-8 text-center md:items-start md:text-left">
+        
+          <div>
+            <p className="mb-[10px] text-[26px] font-medium leading-[1.2] text-primary max-md:text-[16px]">
+            Testimonials
+          </p>
+         
+           <Title
+            title={'Our Client Say'}
+            Class={'text-white'}
+          />
           </div>
 
-          <div className={styles.navButtons}>
+          <div className=" flex min-h-[290px] w-full flex-col justify-center rounded-[28px] border-[1.5px] border-primary px-12">
+            
+            <Image
+             src={'/icons/dublequte.svg'}
+             alt=""
+             width={80} 
+             height={80}
+             className=""
+            />
+
+            <Description
+             description={activeTestimonial.text}
+             variant={'secondary'}
+             Class={'text-white text-center'}
+            />
+
+            <p className="mx-auto mt-[26px] text-center text-[22px] font-bold leading-[1.3] text-white max-md:text-[20px]">
+              {activeTestimonial.name}
+            </p>
+          </div>
+
+          <div className="mt-[26px] flex items-center justify-center gap-[14px] md:justify-start">
             <button
               type="button"
-              className={styles.navButton}
+              className="h-[42px] w-[42px] cursor-pointer rounded-[12px] border-[1.5px] border-primary bg-transparent text-[20px] text-primary shadow-[0_0_16px_rgba(245,197,24,0.12)] transition-all duration-200 hover:-translate-y-px hover:bg-[rgba(245,197,24,0.08)]"
               onClick={handlePrev}
               aria-label="Previous testimonial"
             >
@@ -77,7 +98,7 @@ export default function Testimonials() {
 
             <button
               type="button"
-              className={styles.navButton}
+              className="h-[42px] w-[42px] cursor-pointer rounded-[12px] border-[1.5px] border-primary bg-transparent text-[20px] text-primary shadow-[0_0_16px_rgba(245,197,24,0.12)] transition-all duration-200 hover:-translate-y-px hover:bg-[rgba(245,197,24,0.08)]"
               onClick={handleNext}
               aria-label="Next testimonial"
             >

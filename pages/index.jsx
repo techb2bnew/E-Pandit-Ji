@@ -11,7 +11,6 @@ import Subscription from "@/components/Subscription";
 import Faq from "@/components/Faq";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
-
 export default function Home() {
   return (
     <>

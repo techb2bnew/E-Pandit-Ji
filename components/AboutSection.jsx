@@ -1,55 +1,68 @@
 import Image from "next/image";
-import styles from "@/styles/components/AboutSection.module.css";
+import Title from "./Uiux/Title";
+import Description from "./Uiux/Description";
+import Button from "./Uiux/Button";
 
 export default function AboutSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles.bgVideoWrap}>
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className={styles.bgVideo}
-        >
-          <source
-            src="/assets/videos/GettyImages-1071921688.mp4"
-            type="video/mp4"
-          />
-        </video>
-        <div className={styles.overlay}></div>
-      </div>
-
-      <div className={styles.container}>
-        <div className={styles.circleWrap}>
-            <video
-                autoPlay
-                muted
-                loop
-                playsInline
-                preload="auto"
-                className={styles.imageVideo}
-                >
-                <source
-                    src="/assets/videos/0_Cosmic_Sky_2160x3840.mp4"
-                    type="video/mp4"
-                />
-            </video>
+    <section className="relative  flex xl:min-h-[76vh] items-center overflow-hidden bg-black py-12 xl:py-16 2xl:py-20">
+      <div className="inn_container w-full">
+        <div className="absolute inset-0 z-0 overflow-hidden">
+          <video
+            autoPlay
+            muted
+            loop
+            playsInline
+            preload="auto"
+            className="absolute inset-0 h-full w-full object-cover scale-[3]"
+          >
+            <source
+              src="/assets/videos/GettyImages-1071921688.mp4"
+              type="video/mp4"
+            />
+          </video>
+          <div className="absolute inset-0 bg-black/55" />
         </div>
 
-        <div className={styles.contentCol}>
-          <p className={styles.label}>About us</p>
-          <h2 className={styles.heading}>What we do</h2>
+        <div className="relative z-2 mx-auto grid w-full  grid-cols-[2.5fr_3fr] items-center gap-10 max-[991px]:grid-cols-1  ">
+          <div className="relative hidden md:flex aspect-square w-full  items-center justify-center overflow-hidden rounded-full bg-black">
+            <video
+              autoPlay
+              muted
+              loop
+              playsInline
+              preload="auto"
+              className="h-[115%] w-[115%] object-cover"
+            >
+              <source
+                src="/assets/videos/0_Cosmic_Sky_2160x3840.mp4"
+                type="video/mp4"
+              />
+            </video>
+          </div>
 
-          <p className={styles.text}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis
-            ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas
-            accumsan lacus vel facilisis.
-          </p>
+          <div className="relative z-2 text-white md:max-w-[90%] mx-auto text-center md:text-start">
+            <p className="mb-[14px] text-xl xl:text-2xl 2xl:text-[26px] font-secondary font-semibold uppercase text-[#f4c400]">
+              About us
+            </p>
 
-          <button className={styles.button}>Read More</button>
+            <Title title={"What we do"} />
+
+            <Description
+              description={
+                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+              }
+              Class={"text-white"}
+            />
+
+            <div className="mt-8">
+              <Button
+                variant={"secondary"}
+                button_name={"Read More"}
+                Class={"text-primary"}
+              />
+            </div>
+          </div>
         </div>
       </div>
     </section>

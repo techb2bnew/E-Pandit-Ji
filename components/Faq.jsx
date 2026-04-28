@@ -1,9 +1,9 @@
 "use client";
 
 import { useState, useRef, useEffect } from "react";
+import Title from "./Uiux/Title";
+import Description from "./Uiux/Description";
 // import Image from "next/image";.
-
-import styles from "@/styles/components/Faq.module.css";
 
 const faqs = [
   {
@@ -44,9 +44,9 @@ export default function Faq() {
       const playVideo = async () => {
         try {
           await video.play();
-          console.log('Video started playing');
+          console.log("Video started playing");
         } catch (error) {
-          console.log('Video autoplay failed:', error);
+          console.log("Video autoplay failed:", error);
         }
       };
       playVideo();
@@ -54,36 +54,54 @@ export default function Faq() {
   }, []);
 
   return (
-    <section className={styles.section} >
-      <div className={styles.symbolBg} ></div>
+    <section className="relative w-full overflow-hidden bg-black  pb-12 xl:pb-16 2xl:pb-18 md:pt-12 xl:pt-16 2xl:pt-18">
+      <div className="pointer-events-none absolute bottom-[10px] left-[-20px] h-[240px] w-[240px] bg-[url('/assets/faq/sun-moon-symbol.png')] bg-center bg-contain bg-no-repeat opacity-[0.08] max-md:h-[180px] max-md:w-[180px]" />
 
-      <div className={styles.container}>
-        <div className={styles.leftContent}>
-          <p className={styles.smallLabel}>FAQ’s</p>
-          <h2 className={styles.heading}>Common Question About kundli</h2>
-          <p className={styles.description}>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-            eiusmod tempor incididunt ut labore et dolore magna aliqua.
+      <div className="inn_container grid  lg:grid-cols-[3fr_2fr] 2xl:grid-cols-2 items-center gap-10 ">
+        <div className="max-w-full lg:max-w-[780px] relative z-10">
+          <p className="mb-[10px] text-[26px] font-medium leading-[1.2] text-[#f5c518] max-md:text-[16px]">
+            FAQ’s
           </p>
 
-          <div className={styles.accordion}>
+          <Title
+            title={'Common Question About kundli'}
+            Class={'text-white'}
+          />
+
+          <Description
+            description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
+            Class={'text-white'}
+          />
+
+          <div className="mt-4 border-t border-transparent">
             {faqs.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
-                <div key={index} className={styles.faqItem}>
+                <div
+                  key={index}
+                  className="border-b border-white/20"
+                >
                   <button
-                    className={styles.faqButton}
+                    className="flex w-full cursor-pointer items-center justify-between gap-5 bg-transparent px-[4px] py-[22px] text-left max-md:px-1 max-md:py-[18px]"
                     onClick={() => setOpenIndex(isOpen ? -1 : index)}
                     type="button"
                   >
-                    <span className={styles.question}>{faq.question}</span>
-                    <span className={styles.icon}>{isOpen ? "⌃" : "⌄"}</span>
+                    <span className="text-[24px] 2xl:text-[26px] font-normal leading-[1.4] text-white max-[1200px]:text-[21px] max-md:text-[18px]">
+                      {faq.question}
+                    </span>
+                    <span className="mt-[2px] shrink-0 text-[22px] leading-none text-[#f5c518] max-md:text-[18px]">
+                      {isOpen ? "⌃" : "⌄"}
+                    </span>
                   </button>
 
                   {isOpen && (
-                    <div className={styles.answerWrap}>
-                      <p className={styles.answer}>{faq.answer}</p>
+                    <div className="px-[4px] pb-[18px]">
+                      <Description
+                       description={faq.answer}
+                       Class={'text-white'}
+                       variant={'secondary'}
+                      />
                     </div>
                   )}
                 </div>
@@ -92,15 +110,15 @@ export default function Faq() {
           </div>
         </div>
 
-        <div className={styles.rightContent}>
-          <div className={styles.videoWrapper}>
+        <div className="lg:relative lg:min-h-[620px] overflow-hidden">
+          <div className="absolute inset-0 top-0">
             <video
               ref={videoRef}
               muted
               loop
               playsInline
               preload="metadata"
-              className={styles.video}
+              className="absolute left-0 top-0 h-full w-full object-cover opacity-35 lg:opacity-100"
             >
               <source
                 src="/assets/videos/0_Earth_Planet_1080x1920.mp4"

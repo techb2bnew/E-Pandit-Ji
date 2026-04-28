@@ -1,144 +1,221 @@
-import { UserRound, FileText, Workflow, ShieldCheck, ChevronDown } from "lucide-react";
-import styles from "@/styles/components/KundliMatchingSection.module.css";
+import { ChevronDown } from "lucide-react";
 
 export default function KundliMatchingSection() {
   return (
-    <section className={styles.section}>
-      <div className={styles.overlay}></div>
-      <div className={styles.symbol}></div>
+    <section className="relative overflow-hidden bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat pb-[90px] pt-[70px] max-[991px]:pb-20 max-[991px]:pt-[60px]">
+      <div className="absolute inset-0 z-1 bg-black/40" />
+      <div className="pointer-events-none absolute right-[34px] top-[82px] z-2 h-[190px] w-[190px] bg-[url('/assets/images/astro-symbol.png')] bg-contain bg-center bg-no-repeat opacity-[0.12] max-[991px]:right-[10px] max-[991px]:top-[90px] max-[991px]:h-[150px] max-[991px]:w-[150px]" />
 
-      <div className={styles.container}>
-        <div className={styles.topHeader}>
-          <h3 className={styles.mainHeading}>Start Your Kundli Matching</h3>
-          <p className={styles.subHeading}>
-            Fill in the details below to check compatibility and marriage success.
+      <div className="relative z-3 mx-auto max-w-[1540px] px-[55px] max-[991px]:px-5">
+        <div className="mb-[26px] text-center max-[576px]:text-left">
+          <h3 className="mb-[6px] text-[26px] font-extrabold leading-[1.15] text-white max-[991px]:text-[22px]">
+            Start Your Kundli Matching
+          </h3>
+          <p className="m-0 text-[16px] leading-[1.4] text-white/90 max-[991px]:text-[14px]">
+            Fill in the details below to check compatibility and marriage
+            success.
           </p>
         </div>
 
-        <div className={styles.cardsGrid}>
+        <div className="mx-auto mb-16 grid max-w-[1030px] grid-cols-1 gap-3 max-[1100px]:max-w-[480px] md:grid-cols-3">
           {/* Boy Card */}
-          <div className={styles.formCard}>
-            <div className={styles.cardHeader}>Enter Boy Details</div>
-
-            <div className={styles.cardBody}>
-              <div className={styles.field}>
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter Your Full Name" />
+          <div className="overflow-hidden rounded-[14px] bg-[#f5f5f5] shadow-[0_12px_28px_rgba(0,0,0,0.22)]">
+            <div className="flex h-[42px] items-center justify-center bg-primary text-[13px] font-extrabold text-black">
+              Enter Boy Details
+            </div>
+            <div className="p-[14px_12px_12px]">
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter Your Full Name"
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
+                />
               </div>
 
-              <div className={styles.field}>
-                <label>Gender</label>
-                <select defaultValue="Male">
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Gender
+                </label>
+                <select
+                  defaultValue="Male"
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4]"
+                >
                   <option>Male</option>
                 </select>
               </div>
 
-              <div className={styles.twoCol}>
-                <div className={styles.field}>
-                  <label>Birth Date</label>
-                  <input type="text" placeholder="DD / MM / YYYY" />
+              <div className="grid grid-cols-2 gap-2">
+                <div className="mb-[10px] flex flex-col">
+                  <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                    Birth Date
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="DD / MM / YYYY"
+                    className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
+                  />
                 </div>
 
-                <div className={styles.field}>
-                  <label>Birth Time</label>
-                  <input type="text" placeholder="HH : MM" />
+                <div className="mb-[10px] flex flex-col">
+                  <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                    Birth Time
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="HH : MM"
+                    className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
+                  />
                 </div>
               </div>
 
-              <div className={styles.field}>
-                <label>Birth Place</label>
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Birth Place
+                </label>
                 <input
                   type="text"
                   placeholder="Start Typing, then choose nearest place from list"
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
                 />
               </div>
 
-              <div className={styles.field}>
-                <label>Marital Status</label>
-                <select defaultValue="">
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Marital Status
+                </label>
+                <select
+                  defaultValue=""
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#989898] outline-none ring-1 ring-[#e4e4e4]"
+                >
                   <option value="" disabled>
                     Select
                   </option>
-                  <option>Single</option>
-                  <option>Divorced</option>
-                  <option>Widowed</option>
+                  <option className="text-[#1f1f1f]">Single</option>
+                  <option className="text-[#1f1f1f]">Divorced</option>
+                  <option className="text-[#1f1f1f]">Widowed</option>
                 </select>
               </div>
 
-              <button className={styles.primaryBtn}>Next</button>
+              <button className="mt-1 h-9 w-full cursor-pointer rounded-[6px] bg-primary text-[13px] font-extrabold text-black">
+                Next
+              </button>
             </div>
           </div>
 
           {/* Girl Card */}
-          <div className={styles.formCard}>
-            <div className={styles.cardHeader}>Enter Girl Details</div>
-
-            <div className={styles.cardBody}>
-              <div className={styles.field}>
-                <label>Full Name</label>
-                <input type="text" placeholder="Enter Your Full Name" />
+          <div className="overflow-hidden rounded-[14px] bg-[#f5f5f5] shadow-[0_12px_28px_rgba(0,0,0,0.22)]">
+            <div className="flex h-[42px] items-center justify-center bg-primary text-[13px] font-extrabold text-black">
+              Enter Girl Details
+            </div>
+            <div className="p-[14px_12px_12px]">
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Full Name
+                </label>
+                <input
+                  type="text"
+                  placeholder="Enter Your Full Name"
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
+                />
               </div>
 
-              <div className={styles.field}>
-                <label>Gender</label>
-                <select defaultValue="Female">
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Gender
+                </label>
+                <select
+                  defaultValue="Female"
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4]"
+                >
                   <option>Female</option>
                 </select>
               </div>
 
-              <div className={styles.twoCol}>
-                <div className={styles.field}>
-                  <label>Birth Date</label>
-                  <input type="text" placeholder="DD / MM / YYYY" />
+              <div className="grid grid-cols-2 gap-2">
+                <div className="mb-[10px] flex flex-col">
+                  <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                    Birth Date
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="DD / MM / YYYY"
+                    className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
+                  />
                 </div>
 
-                <div className={styles.field}>
-                  <label>Birth Time</label>
-                  <input type="text" placeholder="HH : MM" />
+                <div className="mb-[10px] flex flex-col">
+                  <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                    Birth Time
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="HH : MM"
+                    className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
+                  />
                 </div>
               </div>
 
-              <div className={styles.field}>
-                <label>Birth Place</label>
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Birth Place
+                </label>
                 <input
                   type="text"
                   placeholder="Start Typing, then choose nearest place from list"
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#1f1f1f] outline-none ring-1 ring-[#e4e4e4] placeholder:text-[#989898]"
                 />
               </div>
 
-              <div className={styles.field}>
-                <label>Marital Status</label>
-                <select defaultValue="">
+              <div className="mb-[10px] flex flex-col">
+                <label className="mb-[5px] text-[11px] font-medium leading-[1.2] text-[#1f1f1f]">
+                  Marital Status
+                </label>
+                <select
+                  defaultValue=""
+                  className="h-[34px] w-full rounded bg-[#ececec] px-[10px] text-[11px] text-[#989898] outline-none ring-1 ring-[#e4e4e4]"
+                >
                   <option value="" disabled>
                     Select
                   </option>
-                  <option>Single</option>
-                  <option>Divorced</option>
-                  <option>Widowed</option>
+                  <option className="text-[#1f1f1f]">Single</option>
+                  <option className="text-[#1f1f1f]">Divorced</option>
+                  <option className="text-[#1f1f1f]">Widowed</option>
                 </select>
               </div>
 
-              <button className={styles.primaryBtn}>Continue</button>
+              <button className="mt-1 h-9 w-full cursor-pointer rounded-[6px] bg-primary text-[13px] font-extrabold text-black">
+                Continue
+              </button>
             </div>
           </div>
 
           {/* Result Card */}
-          <div className={styles.resultCard}>
-            <div className={styles.cardHeader}>Result</div>
+          <div className="overflow-hidden rounded-[14px] bg-[#f5f5f5] shadow-[0_12px_28px_rgba(0,0,0,0.22)]">
+            <div className="flex h-[42px] items-center justify-center bg-primary text-[13px] font-extrabold text-black">
+              Result
+            </div>
 
-            <div className={styles.resultBody}>
-              <div className={styles.scoreWrap}>
-                <div className={styles.scoreRing}>
-                  <div className={styles.scoreInner}>
-                    <div className={styles.scoreValue}>
-                      14<span>/32</span>
+            <div className="p-[14px_12px_12px]">
+              <div className="mb-[14px] flex justify-center">
+                <div className="grid h-[120px] w-[120px] place-items-center rounded-full bg-[conic-gradient(#f5c518_0deg_157deg,#000_157deg_360deg)]">
+                  <div className="flex h-[94px] w-[94px] flex-col items-center justify-center rounded-full bg-white">
+                    <div className="text-[20px] font-extrabold leading-none text-black">
+                      14
+                      <span className="text-[12px] font-extrabold text-primary">
+                        /32
+                      </span>
                     </div>
-                    <div className={styles.scoreLabel}>Similarity</div>
+                    <div className="mt-[5px] text-[11px] font-bold leading-[1.2] text-black">
+                      Similarity
+                    </div>
                   </div>
                 </div>
               </div>
 
-              <p className={styles.resultText}>
+              <p className="mb-[10px] text-[9.5px] leading-[1.55] text-[#2d2d2d]">
                 A below-average match. Some important aspects need attention.
                 This match shows moderate compatibility, while there are some
                 positive areas like emotional understanding and communication,
@@ -146,57 +223,79 @@ export default function KundliMatchingSection() {
                 understanding.
               </p>
 
-              <div className={styles.breakdown}>
-                <h4>Compatibility Breakdown</h4>
-                <ul>
-                  <li>
-                    <strong>Communication:</strong> 8/8
+              <div>
+                <h4 className="mb-[6px] text-[11px] font-extrabold leading-[1.2] text-black">
+                  Compatibility Breakdown
+                </h4>
+                <ul className="mb-2 list-none p-0">
+                  <li className="mb-[2px] text-[9px] leading-[1.45] text-[#222]">
+                    <strong className="font-extrabold">Communication:</strong>{" "}
+                    8/8
                   </li>
-                  <li>
-                    <strong>Emotional Bonding:</strong> 3/7
+                  <li className="mb-[2px] text-[9px] leading-[1.45] text-[#222]">
+                    <strong className="font-extrabold">
+                      Emotional Bonding:
+                    </strong>{" "}
+                    3/7
                   </li>
-                  <li>
-                    <strong>Values &amp; Lifestyle:</strong> 2/5
+                  <li className="mb-[2px] text-[9px] leading-[1.45] text-[#222]">
+                    <strong className="font-extrabold">
+                      Values &amp; Lifestyle:
+                    </strong>{" "}
+                    2/5
                   </li>
-                  <li>
-                    <strong>Mutual Respect:</strong> 1/6
+                  <li className="mb-[2px] text-[9px] leading-[1.45] text-[#222]">
+                    <strong className="font-extrabold">Mutual Respect:</strong>{" "}
+                    1/6
                   </li>
-                  <li>
-                    <strong>Intellect:</strong> 0/6
+                  <li className="mb-[2px] text-[9px] leading-[1.45] text-[#222]">
+                    <strong className="font-extrabold">Intellect:</strong> 0/6
                   </li>
                 </ul>
               </div>
 
-              <div className={styles.accordionList}>
-                <button type="button" className={styles.accordionItem}>
+              <div className="mt-2 border-t border-[#d9d9d9]">
+                <button
+                  type="button"
+                  className="flex w-full cursor-pointer items-center justify-between border-b border-[#d9d9d9] bg-transparent py-[10px] text-[10px] font-bold text-[#111]"
+                >
                   <span>Dosha Analysis</span>
                   <ChevronDown size={16} />
                 </button>
 
-                <button type="button" className={styles.accordionItem}>
+                <button
+                  type="button"
+                  className="flex w-full cursor-pointer items-center justify-between border-b border-[#d9d9d9] bg-transparent py-[10px] text-[10px] font-bold text-[#111]"
+                >
                   <span>Astrological Advice</span>
                   <ChevronDown size={16} />
                 </button>
 
-                <button type="button" className={styles.accordionItem}>
+                <button
+                  type="button"
+                  className="flex w-full cursor-pointer items-center justify-between border-b border-[#d9d9d9] bg-transparent py-[10px] text-[10px] font-bold text-[#111]"
+                >
                   <span>Final Verdict</span>
                   <ChevronDown size={16} />
                 </button>
               </div>
 
-              <button className={styles.primaryBtn}>Continue</button>
+              <button className="mt-1 h-9 w-full cursor-pointer rounded-[6px] bg-primary text-[13px] font-extrabold text-black">
+                Continue
+              </button>
             </div>
           </div>
         </div>
 
-        <div className={styles.bottomContent}>
-          <h3 className={styles.bottomHeading}>
-            <span>Kundli Matching</span> – Find Your Perfect
+        <div className="max-w-[900px]">
+          <h3 className="mb-4 text-[34px] font-extrabold leading-[1.08] text-white max-[991px]:text-[28px] max-[576px]:text-[24px]">
+            <span className="text-primary">Kundli Matching</span> – Find Your
+            Perfect
             <br />
             Life Partner with e-Pandit Ji
           </h3>
 
-          <p>
+          <p className="mb-[10px] max-w-[940px] text-[16px] leading-[1.55] text-white/95 max-[991px]:text-[15px] max-[576px]:text-[14px]">
             At E-Pandit Ji, we understand that marriage is not just a union of
             two individuals, but a sacred bond of two souls and families. Our
             Kundli Matching service is designed to help you find the most
@@ -204,7 +303,7 @@ export default function KundliMatchingSection() {
             astrology.
           </p>
 
-          <p>
+          <p className="mb-[10px] max-w-[940px] text-[16px] leading-[1.55] text-white/95 max-[991px]:text-[15px] max-[576px]:text-[14px]">
             Kundli Milan, also known as Gun Milan, is a traditional method used
             to analyze the compatibility between a bride and groom. It is based
             on the comparison of their birth charts, considering planetary

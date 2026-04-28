@@ -32,54 +32,21 @@ export default function Navbar() {
   const allMobileLinks = [...LEFT_LINKS, ...RIGHT_LINKS];
 
   return (
-    <header
-      style={{
-        position: "absolute",
-        top: 0,
-        left: 0,
-        width: "100%",
-        zIndex: 999,
-      }}
-    >
+    <header className="absolute left-0 top-0 z-999 w-full">
       {/* Top strip - desktop only */}
-      <div className="navbar-top-strip">
-        <div
-          style={{
-            maxWidth: "1600px",
-            margin: "0 auto",
-            display: "flex",
-            justifyContent: "center",
-            alignItems: "center",
-            gap: "14px",
-            flexWrap: "wrap",
-          }}
-        >
+      <div className="w-full border-b border-white/5 bg-[rgba(7,7,25,0.92)] px-6 py-[14px] max-[991px]:hidden">
+        <div className="mx-auto flex max-w-[1600px] flex-wrap items-center justify-center gap-[14px]">
           {TOP_LINKS.map((link, index) => (
-            <div
-              key={link.label}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                gap: "14px",
-              }}
-            >
+            <div key={link.label} className="flex items-center gap-[14px]">
               <Link
                 href={link.href}
-                style={{
-                  color: "rgba(255,255,255,0.82)",
-                  textDecoration: "none",
-                  fontSize: "13px",
-                  fontWeight: 500,
-                  letterSpacing: "0.04em",
-                  fontFamily: "Raleway, sans-serif",
-                  whiteSpace: "nowrap",
-                }}
+                className="whitespace-nowrap text-[13px] font-medium tracking-[0.04em] text-white/80 no-underline font-[Raleway,sans-serif]"
               >
                 {link.label}
               </Link>
 
               {index < TOP_LINKS.length - 1 && (
-                <span style={{ color: "rgba(255,255,255,0.22)" }}>|</span>
+                <span className="text-white/20">|</span>
               )}
             </div>
           ))}
@@ -87,35 +54,10 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Nav */}
-      <div className="navbar-desktop-wrap">
-        <nav
-          style={{
-            width: "100%",
-            maxWidth: "1540px",
-            minHeight: "92px",
-            borderRadius: "34px",
-            background:
-              "linear-gradient(180deg, rgba(10,10,10,0.96) 0%, rgba(12,12,12,0.92) 100%)",
-            border: "1px solid rgba(255,255,255,0.22)",
-            boxShadow:
-              "0 20px 50px rgba(0,0,0,0.45), inset 0 0 30px rgba(255,255,255,0.03)",
-            backdropFilter: "blur(12px)",
-            WebkitBackdropFilter: "blur(12px)",
-            display: "flex",
-            alignItems: "center",
-            justifyContent: "space-between",
-            padding: "0 34px",
-          }}
-        >
+      <div className="mt-9 flex w-full justify-center px-6 max-[991px]:hidden">
+        <nav className="flex min-h-[92px] w-full max-w-[1540px] items-center justify-between rounded-[34px] border border-white/20 bg-[linear-gradient(180deg,rgba(10,10,10,0.96)_0%,rgba(12,12,12,0.92)_100%)] px-[34px] shadow-[0_20px_50px_rgba(0,0,0,0.45),inset_0_0_30px_rgba(255,255,255,0.03)] backdrop-blur-md [-webkit-backdrop-filter:blur(12px)]">
           {/* Left */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              gap: "38px",
-              flex: 1,
-            }}
-          >
+          <div className="flex flex-1 items-center gap-[38px]">
             {LEFT_LINKS.map((link) => {
               const isActive = link.label === "Home";
 
@@ -123,30 +65,15 @@ export default function Navbar() {
                 <Link
                   key={link.label}
                   href={link.href}
-                  style={{
-                    position: "relative",
-                    color: isActive ? "#F5C518" : "#FFFFFF",
-                    textDecoration: "none",
-                    fontFamily: "Raleway, sans-serif",
-                    fontSize: "18px",
-                    fontWeight: 700,
-                    whiteSpace: "nowrap",
-                    paddingBottom: "8px",
-                  }}
+                  className={`relative whitespace-nowrap pb-2 text-[18px] font-bold no-underline font-[Raleway,sans-serif] ${
+                    isActive ? "text-PRIMARY" : "text-white"
+                  }`}
                 >
                   {link.label}
 
                   {isActive && (
                     <span
-                      style={{
-                        position: "absolute",
-                        left: 0,
-                        bottom: 0,
-                        width: "58px",
-                        height: "3px",
-                        borderRadius: "10px",
-                        background: "#F5C518",
-                      }}
+                      className="absolute bottom-0 left-0 h-[3px] w-[58px] rounded-[10px] bg-PRIMARY"
                     />
                   )}
                 </Link>
@@ -155,76 +82,28 @@ export default function Navbar() {
           </div>
 
           {/* Center logo */}
-          <div
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              alignItems: "center",
-              minWidth: "280px",
-              padding: "0 20px",
-            }}
-          >
-            <Link href="/" style={{ textDecoration: "none" }}>
-              <span
-                style={{
-                  color: "#F5C518",
-                  fontFamily: "Cinzel, serif",
-                  fontSize: "28px",
-                  fontWeight: 700,
-                  letterSpacing: "0.03em",
-                  whiteSpace: "nowrap",
-                }}
-              >
+          <div className="flex min-w-[280px] items-center justify-center px-5">
+            <Link href="/" className="no-underline">
+              <span className="whitespace-nowrap text-[28px] font-bold tracking-[0.03em] text-PRIMARY font-[Cinzel,serif]">
                 ई-Pandit ji
               </span>
             </Link>
           </div>
 
           {/* Right */}
-          <div
-            style={{
-              display: "flex",
-              alignItems: "center",
-              justifyContent: "flex-end",
-              gap: "34px",
-              flex: 1,
-            }}
-          >
+          <div className="flex flex-1 items-center justify-end gap-[34px]">
             {RIGHT_LINKS.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                style={{
-                  color: "#FFFFFF",
-                  textDecoration: "none",
-                  fontFamily: "Raleway, sans-serif",
-                  fontSize: "18px",
-                  fontWeight: 700,
-                  whiteSpace: "nowrap",
-                }}
+                className="whitespace-nowrap text-[18px] font-bold text-white no-underline font-[Raleway,sans-serif]"
               >
                 {link.label}
               </Link>
             ))}
 
             <button
-              style={{
-                display: "inline-flex",
-                alignItems: "center",
-                justifyContent: "center",
-                gap: "10px",
-                height: "46px",
-                padding: "0 22px",
-                borderRadius: "999px",
-                border: "1.5px solid #F5C518",
-                background: "transparent",
-                color: "#F5C518",
-                cursor: "pointer",
-                fontFamily: "Raleway, sans-serif",
-                fontSize: "16px",
-                fontWeight: 700,
-                whiteSpace: "nowrap",
-              }}
+              className="inline-flex h-[46px] items-center justify-center gap-[10px] whitespace-nowrap rounded-full border-[1.5px] border-PRIMARY bg-transparent px-[22px] text-[16px] font-bold text-PRIMARY font-[Raleway,sans-serif]"
             >
               <User size={16} />
               Login
@@ -234,23 +113,21 @@ export default function Navbar() {
       </div>
 
       {/* Mobile Header */}
-      <div className="navbar-mobile-wrap">
-        <div className="navbar-mobile-bar">
+      <div className="hidden p-4 max-[991px]:block">
+        <div className="flex min-h-[68px] items-center justify-between rounded-[20px] border border-white/20 bg-[linear-gradient(180deg,rgba(10,10,10,0.96)_0%,rgba(12,12,12,0.92)_100%)] px-[18px] shadow-[0_14px_35px_rgba(0,0,0,0.35)] backdrop-blur-md [-webkit-backdrop-filter:blur(12px)]">
           <Link
             href="/"
-            style={{
-              textDecoration: "none",
-              display: "flex",
-              alignItems: "center",
-            }}
+            className="flex items-center no-underline"
           >
-            <span className="navbar-mobile-logo">ई-Pandit ji</span>
+            <span className="whitespace-nowrap text-[22px] font-bold tracking-[0.02em] text-primary font-[Cinzel,serif]">
+              ई-Pandit ji
+            </span>
           </Link>
 
           <button
             type="button"
             onClick={() => setMobileMenuOpen((prev) => !prev)}
-            className="navbar-mobile-toggle"
+            className="inline-flex h-[44px] w-[44px] items-center justify-center rounded-[12px] border border-[rgba(245,197,24,0.5)] bg-transparent text-primary"
             aria-label="Toggle menu"
           >
             {mobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
@@ -258,143 +135,25 @@ export default function Navbar() {
         </div>
 
         {mobileMenuOpen && (
-          <div className="navbar-mobile-menu">
+          <div className="mt-3 flex flex-col gap-[6px] rounded-[20px] border border-white/10 bg-[rgba(8,8,18,0.96)] p-[14px] shadow-[0_14px_35px_rgba(0,0,0,0.35)] backdrop-blur-md [-webkit-backdrop-filter:blur(12px)]">
             {allMobileLinks.map((link) => (
               <Link
                 key={link.label}
                 href={link.href}
-                className="navbar-mobile-link"
+                className="rounded-[12px] px-[10px] py-3 text-[16px] font-bold text-white no-underline font-[Raleway,sans-serif] hover:bg-white/5"
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.label}
               </Link>
             ))}
 
-            <button className="navbar-mobile-login">
+            <button className="mt-2 inline-flex h-[44px] items-center justify-center gap-2 rounded-full border-[1.5px] border-primary bg-transparent text-[15px] font-bold text-primary font-[Raleway,sans-serif]">
               <User size={16} />
               Login
             </button>
           </div>
         )}
       </div>
-
-      <style jsx>{`
-        .navbar-top-strip {
-          width: 100%;
-          background: rgba(7, 7, 25, 0.92);
-          border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-          padding: 14px 24px;
-        }
-
-        .navbar-desktop-wrap {
-          width: 100%;
-          display: flex;
-          justify-content: center;
-          margin-top: 36px;
-          padding: 0 24px;
-        }
-
-        .navbar-mobile-wrap {
-          display: none;
-        }
-
-        @media (max-width: 991px) {
-          .navbar-top-strip,
-          .navbar-desktop-wrap {
-            display: none;
-          }
-
-          .navbar-mobile-wrap {
-            display: block;
-            padding: 16px;
-          }
-
-          .navbar-mobile-bar {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 68px;
-            padding: 0 18px;
-            border-radius: 20px;
-            background: linear-gradient(
-              180deg,
-              rgba(10, 10, 10, 0.96) 0%,
-              rgba(12, 12, 12, 0.92) 100%
-            );
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-          }
-
-          .navbar-mobile-logo {
-            color: #f5c518;
-            font-family: "Cinzel", serif;
-            font-size: 22px;
-            font-weight: 700;
-            letter-spacing: 0.02em;
-            white-space: nowrap;
-          }
-
-          .navbar-mobile-toggle {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            border: 1px solid rgba(245, 197, 24, 0.5);
-            background: transparent;
-            color: #f5c518;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            cursor: pointer;
-          }
-
-          .navbar-mobile-menu {
-            margin-top: 12px;
-            padding: 14px;
-            border-radius: 20px;
-            background: rgba(8, 8, 18, 0.96);
-            border: 1px solid rgba(255, 255, 255, 0.12);
-            box-shadow: 0 14px 35px rgba(0, 0, 0, 0.35);
-            backdrop-filter: blur(12px);
-            -webkit-backdrop-filter: blur(12px);
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-          }
-
-          .navbar-mobile-link {
-            color: #ffffff;
-            text-decoration: none;
-            font-family: "Raleway", sans-serif;
-            font-size: 16px;
-            font-weight: 700;
-            padding: 12px 10px;
-            border-radius: 12px;
-          }
-
-          .navbar-mobile-link:hover {
-            background: rgba(255, 255, 255, 0.05);
-          }
-
-          .navbar-mobile-login {
-            margin-top: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 8px;
-            height: 44px;
-            border-radius: 999px;
-            border: 1.5px solid #f5c518;
-            background: transparent;
-            color: #f5c518;
-            cursor: pointer;
-            font-family: "Raleway", sans-serif;
-            font-size: 15px;
-            font-weight: 700;
-          }
-        }
-      `}</style>
     </header>
   );
 }
