@@ -37,28 +37,7 @@ export default function KundliWhyChoose() {
           </ul>
         </div>
 
-        <div className="mx-auto max-w-[820px] text-center">
-          <h2 className="mb-[14px] text-[36px] font-extrabold leading-[1.1] text-white max-[991px]:text-[30px] max-[576px]:text-[26px]">
-            Make Your <span className="text-primary">Kundli</span> Today
-          </h2>
-
-          <p className="mx-auto mb-[10px] max-w-[700px] text-[17px] leading-normal text-white/95 max-[991px]:text-[15px]">
-            Take the first step toward understanding your future. Enter your
-            birth details and get your personalized Kundli report instantly.
-          </p>
-
-          <p className="mb-6 text-[20px] leading-[1.4] text-white max-[991px]:text-[18px] max-[576px]:text-[17px]">
-            Find compatibility. Build trust. Begin your journey together.
-          </p>
-
-          <button className="h-12 min-w-[265px] cursor-pointer rounded-[10px] bg-primary px-[26px] text-[17px] font-extrabold text-black max-[576px]:w-full max-[576px]:min-w-0">
-            Get Started Now
-          </button>
-
-          <p className="mt-[10px] text-[14px] leading-[1.4] text-white">
-            100% private | Fast delivery
-          </p>
-        </div>
+      
       </div>
     </section>
   );

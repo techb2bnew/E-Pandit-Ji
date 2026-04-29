@@ -1,4 +1,6 @@
 import Image from "next/image";
+import Title from "./Uiux/Title";
+import Button from "./Uiux/Button";
 
 export default function KundliHero() {
 
@@ -11,17 +13,17 @@ export default function KundliHero() {
       <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-[1.1fr_1fr] items-center px-6 max-[991px]:grid-cols-1 max-[991px]:gap-[30px] max-[991px]:text-center">
         {/* LEFT CONTENT */}
         <div className="max-w-[680px] max-[991px]:mx-auto">
-          <p className="mb-[14px] text-[22px] font-bold text-primary">
+          <p className="text-primary text-xl md:text-2xl 2xl:text-[26px] font-semibold mb-4">
             Trusted By 10k+ Users...
           </p>
 
-          <h1 className="mb-5 text-[72px] font-extrabold leading-[1.05] text-white underline decoration-[#5fa8ff] decoration-[4px] underline-offset-[6px] max-[1280px]:text-[60px] max-[991px]:text-[40px]">
-            Create Your Accurate
-            <br />
-            Kundli Instantly
-          </h1>
+            <Title
+             title={'Create Your Accurate Kundli Instantly'}
+             Class={'text-white'}
+             isH1
+            />
 
-          <p className="mb-8 text-[26px] leading-normal text-white/90 max-[1280px]:text-[22px] max-[991px]:text-[18px]">
+          <p className="mt-4 xl:mt-6 text-white text-xl md:text-[22px] xl:text-3xl  font-secondary">
             Get your detailed birth chart (Janam Kundli) with precise Vedic
             calculations. Understand your future, career, marriage, and life
             path.
@@ -30,7 +32,7 @@ export default function KundliHero() {
           {/* <button className={styles.cta} href="#kundliFormSection">
             Get Started Now
           </button> */}
-          <button
+          {/* <button
             className="mb-[14px] h-16 cursor-pointer rounded-[14px] bg-primary px-8 text-[26px] font-extrabold text-black max-[1280px]:h-[58px] max-[1280px]:text-[22px] max-[991px]:w-full max-[991px]:text-[18px]"
             onClick={() => {
               document.getElementById("kundliFormSection")?.scrollIntoView({
@@ -39,8 +41,21 @@ export default function KundliHero() {
             }}
           >
             Get Started Now
-          </button>
-          <p className="text-[20px] text-white max-[991px]:text-[16px]">
+          </button> */}
+
+          <div className="pt-8">
+            <Button
+             onClick={() => {
+              document.getElementById("kundliFormSection")?.scrollIntoView({
+                behavior: "smooth",
+              });
+            }}
+             button_name={'Get Started Now'}  
+             variant={'primary'}
+             Class={'text-black'}
+             />
+          </div>
+          <p className="text-[20px] text-white max-[991px]:text-[16px] pt-3">
             100% private | Fast delivery
           </p>
         </div>

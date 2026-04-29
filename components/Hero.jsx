@@ -163,16 +163,16 @@ export default function Hero() {
               href={service.href}
               className="group flex flex-col items-center"
             >
-              <div className="flex aspect-square w-full max-w-[270px] items-center justify-center rounded-[18px] bg-[#efe0b3] p-2 md:p-[18px] transition-[transform,box-shadow] duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_12px_28px_rgba(245,197,24,0.12)] max-md:max-w-[220px] max-md:rounded-[16px]">
+              <div className="flex aspect-square w-full  max-w-[85%]  items-center justify-center rounded-[18px] bg-[#efe0b3] p-2 md:p-[18px] transition-[transform,box-shadow] duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_12px_28px_rgba(245,197,24,0.12)]  max-md:rounded-[16px]">
                 <Image
                   src={service.image}
                   alt={service.title}
                   width={240}
                   height={240}
-                  className="h-full w-full object-contain"
+                  className="h-full w-full max-w-[80%] mx-auto object-contain"
                 />
               </div>
-              <p className="mt-2 text-xs">
+              <p className="mt-2 text-[10px]">
                 {service.title}
               </p>
             </Link>

@@ -44,16 +44,20 @@ export default function KundliNavbar() {
   useEffect(() => {
     if (openNavbar) {
       document.body.style.overflow = "hidden";
+      document.documentElement.style.overflow = "hidden";
     } else {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     }
+
     return () => {
-      document.body.style.overflow = "auto";
+      document.body.style.overflow = "";
+      document.documentElement.style.overflow = "";
     };
   }, [openNavbar]);
   return (
     <header className="absolute left-0 top-0 z-50 w-full pt-2">
-      <div className="w-full pt-[16px] ">
+      <div className="w-full min-h-7 pt-[16px] ">
         <div className="mx-auto hidden md:flex max-w-[1540px] flex-wrap items-center justify-start gap-[10px] px-[22px]">
           {TOP_LINKS.map((link, index) => (
             <div key={link.label} className="flex items-center gap-[10px]">
@@ -89,8 +93,8 @@ export default function KundliNavbar() {
 
       </div>
 
-      <div className="mt-3 md:mt-6 flex w-full justify-center md:px-[22px]">
-        <nav className=" py-4 md:py-0 md:min-h-[84px] w-full max-w-[1540px]  items-center md:rounded-[28px] border border-white/20 bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] px-[34px] shadow-[0_18px_40px_rgba(0,0,0,0.32),inset_0_0_24px_rgba(255,255,255,0.02)] backdrop-blur-[10px] [-webkit-backdrop-filter:blur(10px)] flex items-center justify-center">
+      <div className="mt-3 md:mt-6 flex w-full justify-center px-2 md:px-[22px]">
+        <nav className=" py-3 md:py-0 md:min-h-[84px] w-full max-w-[1540px]  items-center rounded-[40px] md:rounded-[28px] border border-white/20 bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] px-[34px] shadow-[0_18px_40px_rgba(0,0,0,0.32),inset_0_0_24px_rgba(255,255,255,0.02)] backdrop-blur-[10px] [-webkit-backdrop-filter:blur(10px)] flex items-center justify-center">
           <div className="flex items-center justify-between md:grid grid-cols-[1fr_auto_1fr] md:max-w-[75%] md:mx-auto w-full">
             <div className="block md:hidden">
               {
@@ -152,14 +156,14 @@ export default function KundliNavbar() {
             </div>
           </div>
 
-          <div className={`absolute w-full transition-all duration-700 top-15.5 h-screen bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] ${openNavbar ? 'max-h-[2000px]' : 'max-h-0 overflow-hidden'}`}>
+          <div className={`fixed w-full transition-all duration-700 top-15.5 h-screen bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] ${openNavbar ? 'left-0' : '-left-full'}`}>
             <div className="flex flex-col gap-y-6 pt-8 px-8 ">
               {MOBILE_LINKS.map((link) => {
                 const isActive = link.href === currentroute;
                 return (
                   <Link
                     key={link.label}
-                    onClick={()=> setopenNavbar(false)}
+                    onClick={() => setopenNavbar(false)}
                     href={link.href}
                     className={`relative whitespace-nowrap transition-all ${openNavbar ? 'opacity-100' : 'opacity-0'} duration-2000 text-[17px] font-bold leading-none  no-underline max-[1280px]:text-[15px] ${isActive ? "text-primary !underline !underline-offset-8" : "text-white"
                       }`}

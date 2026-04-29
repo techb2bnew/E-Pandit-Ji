@@ -15,7 +15,7 @@ export default function KundliPage() {
         <KundliHero />
         <KundliFormSection />
         <KundliAboutAnalysis />
-        <KundliWhyChoose />
+        {/* <KundliWhyChoose /> */}
         <OurServicesSection />
         <Faq />
         <Testimonials />

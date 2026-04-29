@@ -25,7 +25,7 @@ const footerbardata = [
 ]
 const FooterMobileBar = () => {
     return (
-        <div className='pb-6 pt-5 bg-[#1A1A1A] border-t-2 border-white/50'>
+        <div className='pb-3 pt-3 bg-[#1A1A1A] border-t-2 border-white/50'>
          <div className='flex items-center justify-center gap-2'>
              <div className='min-w-14 flex flex-col justify-center items-center gap-1.5'>
                 <Image
@@ -54,7 +54,7 @@ const FooterMobileBar = () => {
                 </p>
              </div>
               <div className='w-[95px] relative'>
-                <div className=' absolute left-0 bottom-[-15px] w-full flex justify-center'>
+                <div className=' absolute left-0 bottom-[-10px] w-full flex justify-center'>
                   <Image
                  src={'/icons/todayrashi.svg'}
                  alt=''
