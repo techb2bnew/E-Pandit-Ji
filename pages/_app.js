@@ -22,7 +22,7 @@ export default function App({ Component, pageProps }) {
         <
         Component {...pageProps }
         />  <
-        div className = "w-full bottom-0 z-10 fixed" >
+        div className = "w-full bottom-0 z-10 fixed block md:hidden" >
         <
         FooterMobileBar / >
         <
