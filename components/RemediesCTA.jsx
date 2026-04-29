@@ -1,30 +1,40 @@
+import Button from "./Uiux/Button";
+import Description from "./Uiux/Description";
+import Title from "./Uiux/Title";
+
 export default function RemediesCTA() {
   return (
-    <section className="relative overflow-hidden bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat pb-[54px] pt-[34px]">
-      <div className="absolute inset-0 z-1 bg-black/80" />
+    <section className="relative overflow-hidden bg-black/80 bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat pb-[54px] pt-[34px]">
+      {/* <div className="absolute inset-0 z-1 bg-black/80" /> */}
 
-      <div className="relative z-2 mx-auto max-w-[900px] px-6 text-center">
-        <h2 className="mb-2 text-[48px] font-extrabold leading-[1.08] text-white">
-          Start Your <span className="text-primary">Journey</span> Today
-        </h2>
+      <div className="mx-auto max-w-[820px] text-center pt-15">
 
-        <p className="mb-1 text-[17px] leading-[1.45] text-white/95">
-          Discover your true path. Understand your destiny. Start your journey
-          with e-Pandit Ji today.
-        </p>
+          <Title
+            title={'Start Your <span class="text-primary">Journey</span> Today'}
+            Class={'text-white'}
+          />
 
-        <p className="mb-[18px] text-[18px] leading-[1.45] text-white">
-          Find compatibility. Build trust. Begin your journey together.
-        </p>
+          <Description
+            description={'Discover your true path. Understand your destiny. Start your journey with e-Pandit Ji today.'}
+            variant={'secondary'}
+            Class={'text-white'}
+          />
 
-        <button className="h-[54px] min-w-[220px] cursor-pointer rounded-lg bg-primary px-6 text-[18px] font-extrabold text-black">
-          Get Started Now
-        </button>
+          <Description
+            description={'Find compatibility. Build trust. Begin your journey together.'}
+            Class={'text-white pt-2'}
+          />
 
-        <p className="mt-[10px] text-[15px] text-white">
-          100% private | Fast delivery
-        </p>
-      </div>
+          <Button
+            button_name={'Get Started Now'}
+            variant={'primary'}
+            Class={'text-black mt-8'}
+          />
+
+          <p className="mt-4 text-[18px] leading-[1.4] text-white">
+            100% private | Fast delivery
+          </p>
+        </div>
     </section>
   );
 }

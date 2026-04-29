@@ -156,7 +156,7 @@ export default function KundliNavbar() {
             </div>
           </div>
 
-          <div className={`fixed w-full transition-all duration-700 top-15.5 h-screen bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] ${openNavbar ? 'left-0' : '-left-full'}`}>
+          <div className={`block 2xl:hidden fixed w-full transition-all duration-700 top-15.5 h-screen bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] ${openNavbar ? 'left-0' : '-left-[300%]'}`}>
             <div className="flex flex-col gap-y-6 pt-8 px-8 ">
               {MOBILE_LINKS.map((link) => {
                 const isActive = link.href === currentroute;

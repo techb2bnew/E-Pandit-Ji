@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import Title from "./Uiux/Title";
 
 const TABS = [
   "Puja & Rituals",
@@ -18,11 +19,15 @@ export default function RemediesTypesSection() {
       <div className="absolute inset-0 z-1" />
 
       <div className="relative z-2 mx-auto max-w-[1540px] px-[70px] max-[991px]:px-5">
-        <h2 className="mb-[22px] text-center text-[46px] font-extrabold leading-[1.08] text-white max-[991px]:text-[34px]">
-          Types of Remedies We Offer
-        </h2>
 
-        <div className="mb-7 flex flex-wrap justify-center gap-[10px]">
+        <div className="text-center">
+        <Title
+         title={'Types of Remedies We Offer'}
+         Class={'text-white'}
+        />
+        </div>
+
+        <div className="mb-7 pt-8 flex flex-wrap justify-center gap-[10px]">
           {TABS.map((tab) => (
             <button
               key={tab}

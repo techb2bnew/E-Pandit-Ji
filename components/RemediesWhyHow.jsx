@@ -1,3 +1,6 @@
+import Description from "./Uiux/Description";
+import Title from "./Uiux/Title";
+
 export default function RemediesWhyHow() {
   return (
     <section className="relative overflow-hidden bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat pb-6 pt-[34px]">
@@ -5,13 +8,12 @@ export default function RemediesWhyHow() {
 
       <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-1 items-start gap-[34px] px-[84px] md:grid-cols-[1fr_1px_1fr] max-[991px]:px-5">
         <div>
-          <h2 className="mb-[10px] text-[38px] font-extrabold leading-[1.05] text-white max-[991px]:text-[30px]">
-            Why Choose e-Pandit Ji
-            <br />
-            Remedies
-          </h2>
+          <Title
+            title={'Why Choose e-Pandit Ji Remedies'}
+            Class={'text-white'}
+          />
 
-          <ul className="m-0 list-disc pl-[18px]">
+          <ul className="mt-5 list-disc pl-[18px]">
             {[
               "Based on accurate Kundli analysis",
               "Simple and easy to follow",
@@ -19,9 +21,13 @@ export default function RemediesWhyHow() {
               "No harmful or complicated rituals",
               "Trusted Vedic practices",
             ].map((t) => (
-              <li key={t} className="text-[16px] leading-[1.65] text-white">
-                {t}
-              </li>
+
+              <Description
+                key={t}
+                description={t}
+                variant={'secondary'}
+                Class={'text-white'}
+              />
             ))}
           </ul>
         </div>
@@ -29,10 +35,10 @@ export default function RemediesWhyHow() {
         <div className="hidden min-h-[160px] w-px bg-white/30 md:block max-[991px]:hidden" />
 
         <div>
-          <h2 className="mb-[10px] text-[38px] font-extrabold leading-[1.05] text-white max-[991px]:text-[30px]">
-            How It Works
-          </h2>
-
+           <Title
+            title={'How It Works'}
+            Class={'text-white'}
+          />
           <ul className="m-0 list-disc pl-[18px]">
             {[
               "Enter your birth details",
@@ -40,9 +46,12 @@ export default function RemediesWhyHow() {
               "Identify doshas and issues",
               "Get personalized remedies instantly",
             ].map((t) => (
-              <li key={t} className="text-[16px] leading-[1.65] text-white">
-                {t}
-              </li>
+             <Description
+                key={t}
+                description={t}
+                variant={'secondary'}
+                Class={'text-white'}
+              />
             ))}
           </ul>
         </div>
