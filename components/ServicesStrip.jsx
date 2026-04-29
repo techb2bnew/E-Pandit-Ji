@@ -27,7 +27,7 @@ export default function ServicesStrip() {
         {services.map((service) => (
           <button
             key={service.title}
-            className="flex min-h-[80px] 2xl:min-h-[92px] cursor-pointer items-center justify-between gap-4 rounded-[22px] border-[1.5px] border-[#cfcfcf] bg-[#e9e9e9] px-[26px] transition-[transform,box-shadow] duration-200 hover:translate-y-[-2px] hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)] max-md:min-h-[76px] max-md:rounded-[18px] max-md:px-[18px]"
+            className="flex py-3 md:py-4 cursor-pointer items-center justify-between gap-4 rounded-[22px] border-[1.5px] border-[#cfcfcf] bg-[#e9e9e9] px-[26px] transition-[transform,box-shadow] duration-200 hover:translate-y-[-2px] hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)] max-md:rounded-[18px] max-md:px-[18px]"
           >
             <div className="flex min-w-0 items-center gap-[18px]">
               <span className="inline-flex p-2 shrink-0 items-center justify-center rounded-full bg-primary text-[#111111] h-[38px] w-[38px]">

@@ -126,15 +126,15 @@ export default function ConsultBlogSection() {
       <div className="inn_container relative">
 
         {/* Title */}
-        <div className="text-center absolute w-full">
+        <div className="text-center md:absolute w-full pt-10">
           <Title
             title={"Consult The <br /> Right Astrologer For You"}
-            Class={"text-primary w-fit mx-auto relative right-[3%]"}
+            Class={"text-primary w-fit mx-auto relative md:right-[3%]"}
           />
         </div>
 
         {/* Curved Layout */}
-        <div className="relative grid grid-cols-2 md:block mx-auto pt-5 mt-10 md:h-[450px]  top-[80px] md:max-w-[90%] 2xl:max-w-full gap-y-8">
+        <div className="relative grid grid-cols-2 md:block mx-auto pt-5 md:mt-10 md:h-[450px]  md:top-[80px] md:max-w-[90%] 2xl:max-w-full gap-y-8">
           {consultItems.map((item, index) => {
 
             const positions = [
@@ -163,7 +163,7 @@ export default function ConsultBlogSection() {
                 </div>
 
                 {/* Text */}
-                <p className="mt-2 max-w-[110px] text-center text-base md:text-[22px]  text-white">
+                <p className="mt-2 max-w-[110px] text-center text-xs md:text-base xl:text-[22px]  text-white">
                   {item.title}
                 </p>
               </div>

@@ -91,13 +91,13 @@ export default function Hero() {
   return (
     <section className="relative w-full min-h-screen overflow-hidden bg-[#050816] pt-[160px] pb-12 md:pb-[80px]  flex items-center">
       {/* Background */}
-      <div className="absolute inset-0 z-0">
+      <div className="absolute  z-0">
         <video
           autoPlay
           muted
           loop
           playsInline
-          className="w-full h-full object-cover opacity-70"
+          className="w-full h-full object-cover "
         >
           <source
             src="/assets/videos/6575338_Spacecraft_Nature_3840x2160.mp4"
@@ -106,7 +106,7 @@ export default function Hero() {
         </video>
 
         {/* Dark overlay (strong like screenshot) */}
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,#050816_10%,rgba(5,8,22,0.85)_40%,rgba(5,8,22,0.3)_70%,transparent_100%)]" />
+        <div className="absolute inset-0 " />
       </div>
 
       {/* Content */}
@@ -156,7 +156,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute top-22 block md:hidden">
-        <div className="mt-14 grid grid-cols-4 gap-3 max-w-7xl mx-auto max-w-[90%]">
+        <div className="mt-14 grid grid-cols-4 gap-1 md:gap-3 max-w-7xl mx-auto max-w-[90%]">
           {services.map((service) => (
             <Link
               key={service.title}

@@ -5,7 +5,7 @@ import Button from "./Uiux/Button";
 
 export default function AboutSection() {
   return (
-    <section className="relative  flex xl:min-h-[76vh] items-center overflow-hidden bg-black py-12 xl:py-16 2xl:py-20">
+    <section className="relative  flex xl:min-h-[76vh] items-center overflow-hidden bg-black py-12 !pb-0 md:pb-auto xl:py-16 2xl:py-20">
       <div className="inn_container w-full">
         <div className="absolute inset-0 z-0 overflow-hidden">
           <video
