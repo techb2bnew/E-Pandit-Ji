@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { User } from "lucide-react";
-import { usePathname } from "next/navigation";
+import { useRouter } from "next/router";
 import Marquee from "react-fast-marquee";
 import { SlMenu } from "react-icons/sl";
 import { RiCloseLargeLine } from "react-icons/ri";
@@ -32,14 +32,22 @@ const RIGHT_LINKS = [
 
 const MOBILE_LINKS = LEFT_LINKS.concat(RIGHT_LINKS)
 
-console.log('MOBILE_LINKS', MOBILE_LINKS);
 
 
 
 
 export default function KundliNavbar() {
-  const currentroute = usePathname();
+  const router = useRouter();
+  const [currentroute, setCurrentroute] = useState("");
   const [openNavbar, setopenNavbar] = useState(false);
+
+  useEffect(() => {
+    if (router?.asPath) {
+      setCurrentroute(router.asPath);
+    } else if (typeof window !== "undefined") {
+      setCurrentroute(window.location.pathname);
+    }
+  }, [router?.asPath]);
 
   useEffect(() => {
     if (openNavbar) {

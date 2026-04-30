@@ -12,10 +12,16 @@ export default function matchMaking() {
   return (
     <>
         <KundliNavbar />
-        <KundliHero />
+        <KundliHero
+         top_bar={'Trusted By 10k+ Users...'}
+         title={'Kundli Matchmaking for a Perfect Union'}
+         description={'Discover compatibility, harmony, and a successful married life through accurate horoscope matching.'} 
+         button_name={'Get Started Now'}
+         lower_bar={'100% private | Fast delivery'}
+         banner_image={'/assets/kundlimatching.webp'}
+        />
         <KundliMatching />   
-        <KundliAboutAnalysis />     
-        <KundliWhyChoose />
+        <KundliAboutAnalysis />    
         <OurServicesSection />
         <Faq />
         <Testimonials />

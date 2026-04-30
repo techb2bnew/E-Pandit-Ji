@@ -12,7 +12,14 @@ export default function KundliPage() {
   return (
     <>
         <KundliNavbar />
-        <KundliHero />
+        <KundliHero
+         top_bar={'Trusted By 10k+ Users...'}
+         title={'Create Your Accurate Kundli Instantly'}
+         description={'Get your detailed birth chart (Janam Kundli) with precise Vedic calculations. Understand your future, career, marriage, and life path.'} 
+         button_name={'Get Started Now'}
+         lower_bar={'100% private | Fast delivery'}
+         banner_image={'/assets/kundli-2.png'}
+        />
         <KundliFormSection />
         <KundliAboutAnalysis />
         {/* <KundliWhyChoose /> */}

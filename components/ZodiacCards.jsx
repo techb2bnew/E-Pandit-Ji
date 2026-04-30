@@ -41,24 +41,28 @@ export default function ZodiacSlider() {
     setActiveIdx((i) => mod(i + 1, TOTAL));
   }, []);
 
-const [slots, setSlots] = useState([-2, -1, 0, 1, 2, 3]);
+const [slots, setSlots] = useState([]);
+const [mounted, setMounted] = useState(false);
 
 useEffect(() => {
+  setMounted(true);
+
   const updateSlots = () => {
     if (window.innerWidth < 768) {
-      setSlots([   0]); // ✅ mobile = 2 cards
+      setSlots([0]);
     } else if (window.innerWidth < 1200) {
-      setSlots([-1, 0, 1]); // ✅ tablet = 3 cards
+      setSlots([-1, 0, 1]);
     } else {
-      setSlots([-2, -1, 0, 1, 2]); // ✅ desktop = 5 cards
+      setSlots([-2, -1, 0, 1, 2]);
     }
   };
 
   updateSlots();
   window.addEventListener("resize", updateSlots);
+
   return () => window.removeEventListener("resize", updateSlots);
 }, []);
-
+if (!mounted) return null;
   return (
     <section className="zroot">
       <div className="slider-shell">
@@ -72,13 +76,13 @@ useEffect(() => {
               const cardIdx = mod(activeIdx + offset, TOTAL);
               const card = ALL_ZODIAC[cardIdx];
               const isActive = offset === 0;
-              const { rotZ, ty, op } = ARC[String(offset)];
+              const { rotZ = 0, ty = 0, op = 1 } = ARC[String(offset)] || {};
 
               const tx = `calc(var(--unit) * ${offset + 1})`;
 
               return (
                 <div
-                  key={cardIdx}
+                  key={`${cardIdx}-${offset}`}
                   className="cslot"
                   style={{
                     transform: `translateX(${tx}) translateY(${ty}px) rotate(${rotZ}deg)`,
