@@ -15,7 +15,7 @@ export default function RemediesTypesSection() {
   const [activeTab, setActiveTab] = useState("Puja & Rituals");
 
   return (
-    <section className="relative overflow-hidden bg-[url('/assets/remedies-types-bg.png')] bg-cover bg-center bg-no-repeat pb-[70px] pt-14">
+    <section className="relative overflow-hidden bg-[url('/assets/remedies-types-bg.png')] bg-cover bg-center bg-no-repeat pb-2 lg:pb-14 xl:pb-18 2xl:pt-14">
       <div className="absolute inset-0 z-1" />
 
       <div className="relative z-2 mx-auto max-w-[1540px] px-[70px] max-[991px]:px-5">
@@ -33,7 +33,7 @@ export default function RemediesTypesSection() {
               key={tab}
               type="button"
               onClick={() => setActiveTab(tab)}
-              className={`h-[54px] min-w-[168px] cursor-pointer rounded-[12px] border border-primary px-[18px] text-[16px] font-bold ${
+              className={`py-3 w-[45%] md:w-[30%] md:min-w-[168px] cursor-pointer rounded-[12px] border border-primary px-2 md:px-[18px] text-xs md:text-[16px] font-bold ${
                 activeTab === tab
                   ? "bg-primary text-black"
                   : "bg-transparent text-white"

@@ -3,10 +3,10 @@ import Title from "./Uiux/Title";
 
 export default function RemediesWhyHow() {
   return (
-    <section className="relative overflow-hidden bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat pb-6 pt-[34px]">
-      <div className="absolute inset-0 z-1 bg-black/70" />
+    <section className="relative overflow-hidden pb-6 pt-[34px]">
+      {/* <div className="absolute inset-0 z-1 bg-black/70" /> */}
 
-      <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-1 items-start gap-[34px] px-[84px] md:grid-cols-[1fr_1px_1fr] max-[991px]:px-5">
+      <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-1 items-start gap-3 md:gap-[34px] px-[84px] md:grid-cols-[1fr_1px_1fr] max-[991px]:px-5 text-center md:text-start">
         <div>
           <Title
             title={'Why Choose e-Pandit Ji Remedies'}

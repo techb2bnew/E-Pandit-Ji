@@ -4,10 +4,10 @@ import Title from "./Uiux/Title";
 
 export default function RemediesCTA() {
   return (
-    <section className="relative overflow-hidden bg-black/80 bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat pb-[54px] pt-[34px]">
+    <section className="relative overflow-hidden  pb-8 md:pb-[54px] pt-[34px]">
       {/* <div className="absolute inset-0 z-1 bg-black/80" /> */}
 
-      <div className="mx-auto max-w-[820px] text-center pt-15">
+      <div className="mx-auto max-w-[820px] text-center 2xl:pt-15">
 
           <Title
             title={'Start Your <span class="text-primary">Journey</span> Today'}

@@ -146,7 +146,9 @@ export default function NumerologyPage() {
       />
 
       <NumerologyCTA />
-      <OurServicesSection />
+      <div className="bg-black/65">
+        <OurServicesSection />
+      </div>
       <Faq />
       <Testimonials />
       <Footer />

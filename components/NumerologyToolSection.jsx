@@ -10,22 +10,23 @@ export default function NumerologyToolSection({
 }) {
   return (
     <section
-      className={`relative overflow-hidden bg-center bg-cover bg-no-repeat py-[54px] ${
-        compact ? "py-[34px]" : ""
+      className={`relative overflow-hidden bg-center bg-cover bg-no-repeat  pt-10 md:pt-[54px] ${
+        compact ? "pt-[34px]" : ""
       }`}
       style={{ backgroundImage: bgImage ? `url(${bgImage})` : undefined }}
     >
       <div className="absolute inset-0 z-1 bg-black/50" />
 
       <div className="relative z-2 mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-7 px-6 md:grid-cols-[minmax(0,1fr)_330px] md:gap-12">
-        <div className="max-w-full md:max-w-[690px]">
-          <h2 className="text-5xl font-primary text-white pb-10">
+        <div className="max-w-full md:max-w-[690px] text-center md:text-start">
+          <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-primary text-white pb-4 md:pb-10">
             {title}
           </h2>
+          
 
           <form className="w-full" onSubmit={(e) => e.preventDefault()}>
             <div
-              className={`grid gap-3 ${
+              className={`grid gap-3 text-start ${
                 fields.length <= 2
                   ? "grid-cols-2"
                   : fields.length <= 4
@@ -81,7 +82,7 @@ export default function NumerologyToolSection({
           </form>
         </div>
 
-        <div className="flex justify-start md:justify-end">
+        <div className="flex justify-center md:justify-end">
           <NumerologyResultCard items={resultItems} />
         </div>
       </div>

@@ -13,7 +13,9 @@ const page = () => {
        <KundliNavbar />
        <ContactUsBanner />
        <ContactFrom />
+       <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
        <OurServicesSection />
+       </div>
        <Faq />
        <Testimonials />
        <Footer /> 

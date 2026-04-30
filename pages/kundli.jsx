@@ -21,9 +21,11 @@ export default function KundliPage() {
          banner_image={'/assets/kundli-2.png'}
         />
         <KundliFormSection />
-        <KundliAboutAnalysis />
-        {/* <KundliWhyChoose /> */}
-        <OurServicesSection />
+        <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
+          <KundliAboutAnalysis />
+          {/* <KundliWhyChoose /> */}
+          <OurServicesSection />
+        </div>
         <Faq />
         <Testimonials />
         <Footer />

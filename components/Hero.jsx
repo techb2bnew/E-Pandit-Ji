@@ -156,7 +156,7 @@ export default function Hero() {
       </div>
 
       <div className="absolute top-22 block md:hidden">
-        <div className="mt-14 grid grid-cols-4 gap-1 md:gap-3 max-w-7xl mx-auto max-w-[90%]">
+        <div className="mt-10 grid grid-cols-4 gap-1 md:gap-3 max-w-7xl mx-auto max-w-[90%]">
           {services.map((service) => (
             <Link
               key={service.title}

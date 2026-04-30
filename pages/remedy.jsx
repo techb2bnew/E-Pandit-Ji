@@ -16,9 +16,12 @@ export default function RemediesPage() {
       <RemediesHero />
       <RemediesIntro />
       <RemediesTypesSection />
-      <RemediesWhyHow />
-      <RemediesCTA />
-      <OurServicesSection />
+      <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
+        <RemediesWhyHow />
+        <RemediesCTA />
+        <OurServicesSection />
+      </div>
+
       <Faq />
       <Testimonials />
       <Footer />

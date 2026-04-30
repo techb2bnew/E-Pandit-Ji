@@ -30,7 +30,7 @@ const services = [
 
 export default function OurServicesSection() {
   return (
-    <section className="w-full bg-black md:px-6 md:pb-14 xl:pt-14">
+    <section className="w-full  md:px-6 md:pb-14  2xl:pt-14">
       <div className="inn_container text-center">
         <p className="mb-2 text-xl md:text-[22px] xl:text-2xl 2xl:text-[26px] text-primary font-secondary">
           Click To Choose

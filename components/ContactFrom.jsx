@@ -21,8 +21,8 @@ const contactbar = [
 
 const ContactFrom = () => {
     return (
-        <div className='bg-[url(/assets/glaxybg.webp)] bg-cover pb-14 border-t-2 border-white md:border-transparent'>
-            <div className='inn_container pt-18'>
+        <div className='bg-[url(/assets/glaxybg.webp)] bg-cover pb-14 md:border-transparent'>
+            <div className='inn_container pt-10 md:pt-18'>
                 <div className="grid xl:grid-cols-[3fr_2fr] gap-6 md:max-w-[90%] mx-auto">
                     <div>
                         <div className='text-center md:text-center'>
@@ -36,7 +36,7 @@ const ContactFrom = () => {
                             />
                         </div>
 
-                        <form className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 2xl:gap-y-6 pt-8">
+                        <form className="grid grid-cols-1 md:grid-cols-2 gap-x-4 gap-y-3 2xl:gap-y-6 pt-4 md:pt-8">
 
                             <div className="flex flex-col">
                                 <label className="text-[18px] font-normal text-white mb-2">
@@ -45,7 +45,7 @@ const ContactFrom = () => {
                                 <input
                                     type="text"
                                     placeholder="Enter Your Full Name"
-                                    className="text-[16px] py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black"
+                                    className="text-[16px] py-3 md:py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black"
                                 />
                             </div>
 
@@ -56,7 +56,7 @@ const ContactFrom = () => {
                                 <input
                                     type="text"
                                     placeholder="Enter Your Mob. Number"
-                                    className="text-[16px] py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black"
+                                    className="text-[16px] py-3 md:py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black"
                                 />
                             </div>
 
@@ -67,7 +67,7 @@ const ContactFrom = () => {
                                 <input
                                     type="email"
                                     placeholder="Enter Your Email Address"
-                                    className="text-[16px] py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black"
+                                    className="text-[16px] py-3 md:py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black"
                                 />
                             </div>
 
@@ -75,7 +75,7 @@ const ContactFrom = () => {
                                 <label className="text-[18px] font-normal text-white mb-2">
                                     Select Service
                                 </label>
-                                <select className="text-[16px] py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black">
+                                <select className="text-[16px] py-3 md:py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black">
                                     <option>Select Your Service</option>
                                     <option>Web Development</option>
                                     <option>App Development</option>
@@ -90,7 +90,7 @@ const ContactFrom = () => {
                                 <textarea
                                     rows="4"
                                     placeholder="Enter Your Message"
-                                    className="text-[16px] py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black resize-none"
+                                    className="text-[16px] py-3 md:py-4 px-5 rounded-md bg-gray-200 outline-none text-black placeholder:text-black resize-none"
                                 ></textarea>
                             </div>
 
@@ -130,10 +130,10 @@ const ContactFrom = () => {
                                         alt=''
                                         width={48}
                                         height={48}
-                                        className=''
+                                        className='max-w-8 md:max-w-12'
                                     />
                                 </div>
-                                <h3 className='text-2xl 2xl:text-3xl font-primary text-black'>
+                                <h3 className='text-xl md:text-2xl 2xl:text-3xl font-primary text-black'>
                                     {item.lable}
                                 </h3>
                             </div>
@@ -142,7 +142,7 @@ const ContactFrom = () => {
                 </div>
             </div>
             <div className="inn_container">
-                <section className="relative overflow-hidden bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat xl:pb-16 2xl:pb-22.5 pt-14 md:pt-18">
+                <section className="relative overflow-hidden bg-[url('/assets/images/hero-bg.jpg')] bg-cover bg-center bg-no-repeat  pt-14 md:pt-18">
                     <div className="absolute inset-0 z-1 bg-black/65" />
 
                     <div className="relative z-2 mx-auto max-w-[980px] px-6 text-center">

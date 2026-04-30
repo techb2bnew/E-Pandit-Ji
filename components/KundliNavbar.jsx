@@ -105,7 +105,7 @@ export default function KundliNavbar() {
 
       <div className="mt-3 md:mt-6 flex w-full justify-center px-2 md:px-[22px]">
         <nav className=" py-3 md:py-0 md:min-h-[84px] w-full max-w-[1540px]  items-center rounded-[40px] md:rounded-[28px] border border-white/20 bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] px-[34px] shadow-[0_18px_40px_rgba(0,0,0,0.32),inset_0_0_24px_rgba(255,255,255,0.02)] backdrop-blur-[10px] [-webkit-backdrop-filter:blur(10px)] flex items-center justify-center">
-          <div className="flex items-center justify-between md:grid grid-cols-[1fr_auto_1fr] max-w-[85%] xl:max-w-[75%] md:mx-auto w-full">
+          <div className="flex items-center justify-between md:grid grid-cols-[1fr_auto_1fr] md:max-w-[85%] xl:max-w-[75%] md:mx-auto w-full">
             <div className="block lg:hidden">
               {
                 openNavbar ?
@@ -122,7 +122,7 @@ export default function KundliNavbar() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={`relative whitespace-nowrap  text-[17px] font-bold leading-none  no-underline max-[1280px]:text-[15px] ${isActive ? "text-primary !underline !underline-offset-8" : "text-white"
+                    className={`relative hover:text-primary transition-all duration-500 hover:!underline !underline-offset-8 whitespace-nowrap  text-[17px] font-bold leading-none  no-underline max-[1280px]:text-[15px] ${isActive ? "text-primary !underline !underline-offset-8" : "text-white"
                       }`}
                   >
                     {link.label}
@@ -144,7 +144,7 @@ export default function KundliNavbar() {
                   <Link
                     key={link.label}
                     href={link.href}
-                    className={`relative whitespace-nowrap  text-[17px] font-bold leading-none  no-underline max-[1280px]:text-[15px] ${isActiver ? "text-primary !underline !underline-offset-8" : "text-white"
+                    className={`relative hover:text-primary transition-all duration-500 hover:!underline !underline-offset-8 whitespace-nowrap  text-[17px] font-bold leading-none  no-underline max-[1280px]:text-[15px] ${isActiver ? "text-primary !underline !underline-offset-8" : "text-white"
                       }`}
                   >
                     {link.label}
