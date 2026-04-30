@@ -115,14 +115,13 @@ export default function Hero() {
           {/* LEFT */}
           <div className="text-center lg:text-start order-2 md:order-1">
             <p className="text-primary text-xl md:text-2xl 2xl:text-[26px] font-semibold mb-4">
-              Welcome to Pandit Ji
+              Welcome to ई-Pandit ji
             </p>
 
-            <Title title="Accurate Kundli & Instant Astrology Guidance" isH1 />
+            <Title title="Get Clear Answers To Your Endless Thoughts" isH1 />
 
             <p className="mt-4 xl:mt-6 text-white text-xl md:text-[22px] xl:text-3xl 2xl:text-4xl font-secondary">
-              From Kundli to Numerology-discover what the stars say about your
-              life today.
+              From Kundali making and matching to daily horoscope insights, discover what Grah-Nakshatra reveal about your life, relationships, and future path. 
             </p>
 
             <div className="mt-6 lg:mt-12">

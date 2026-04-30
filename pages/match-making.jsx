@@ -11,7 +11,6 @@ import KundliAboutAnalysis from "@/components/KundliAboutAnalysis";
 export default function matchMaking() {
   return (
     <>
-      <KundliNavbar />
       <KundliHero
         top_bar={'Trusted By 10k+ Users...'}
         title={'Kundli Matchmaking for a Perfect Union'}
@@ -27,7 +26,6 @@ export default function matchMaking() {
       </div>
       <Faq />
       <Testimonials />
-      <Footer />
     </>
   );
 }

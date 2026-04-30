@@ -10,22 +10,22 @@ import Link from "next/link";
 
 const services = [
   {
-    title: "Kundli",
+    title: "Janam Kundli",
     icon: "/icons/houses12.svg",
     href: "/kundli"
   },
   {
-    title: "Numerology",
+    title: "Numerology Calculation",
     icon: "/icons/numerology.svg",
     href: "/numerology"
   },
   {
-    title: "Match Making",
+    title: "Couple Match Making ",
     icon: "/icons/wedding.svg",
     href: "/match-making"
   },
   {
-    title: "Remedy",
+    title: "Vedic Remedies",
     icon: "icons/medicine.svg",
     href: "/remedy"
   }
@@ -41,7 +41,7 @@ export default function ServicesStrip() {
               key={service.title}
               className="flex py-3 md:py-4 cursor-pointer items-center w-full justify-between gap-4 rounded-[22px] border-[1.5px] border-[#cfcfcf] bg-[#e9e9e9] px-[26px] transition-[transform,box-shadow] duration-200 hover:translate-y-[-2px] hover:shadow-[0_10px_24px_rgba(0,0,0,0.12)] max-md:rounded-[18px] max-md:px-[18px]"
             >
-              <div className="flex min-w-0 items-center gap-[18px]">
+              <div className="flex min-w-0 items-center gap-3">
                 <span className="inline-flex p-2 shrink-0 items-center justify-center rounded-full bg-primary text-[#111111] h-[38px] w-[38px]">
                   <Image
                     src={service.icon}
@@ -51,7 +51,7 @@ export default function ServicesStrip() {
                     className=""
                   />
                 </span>
-                <span className="whitespace-nowrap font-primary text-[22px]  leading-[1.1] text-[#111111] max-md:text-[18px]">
+                <span className="whitespace-nowrap font-primary text-xl  leading-[1.1] text-[#111111] max-md:text-[18px]">
                   {service.title}
                 </span>
               </div>

@@ -28,32 +28,32 @@ const stats = [
   {
     image: "/assets/moonwithring.png",
     alt: "Trusted by Million Clients",
-    label: "Trusted by\nMillion Clients",
-    stats : '1M+'
+    label: "Kundali Matches Successfully Made",
+    stats : '20K'
   },
   {
     image: "/assets/moonwithring.png",
     alt: "Years of Experience",
-    label: "Years of \n Experience",
-    stats : '20+'
+    label: "Years of Trusted Astrology Experience",
+    stats : '15+'
   },
   {
     image: "/assets/moonwithring.png",
     alt: "Types of Horoscopes",
-    label: "Types of  \nHoroscopes",
+    label: "Expert Astrologers & Numerologist ",
     stats : '50+'
   },
   {
     image: "/assets/moonwithring.png",
     alt: "Qualified Astrologers",
-    label: "Qualified  \nAstrologers",
-    stats : '99+'
+    label: "Accurate Horoscope Predictions",
+    stats : '99%'
   },
   {
     image: "/assets/moonwithring.png",
     alt: "Success Horoscope",
-    label: "Success \n Horoscope",
-    stats : '99+'
+    label: "Happy Clients Guided Worldwide",
+    stats : '1M'
   }
 ];
 
@@ -83,17 +83,15 @@ export default function ZodiacSection() {
         <div className="grid 2xl:grid-cols-2 items-start gap-7 ">
           <div className="text-center md:text-start">
             <p className="mb-3 text-2xl 2xl:text-[26px] font-medium leading-[1.2] text-primary max-md:text-[16px]">
-              Click To Choose
+              Horoscope Predictions
             </p>
-            <Title title={"Choose Your Zodiac Sign"} />
+            <Title title={"Select Your Zodiac Sign"} />
 
             <h3 className="mt-2 text-2xl md:text-3xl 2xl:text-[33px] font-primary leading-[1.2] text-primary max-[1280px]:text-[28px] max-md:text-[22px]">
               Know What Your Horoscope Sign Says About You
             </h3>
             <Description
-              description={`Click on your Rashi to know about your Personality, Traits, Life
-              Predictions, and Remedies — including Daily, Weekly, Monthly, and
-              Yearly Horoscope 2026 insights!`}
+              description={`Get Accurate, Detailed Horoscope Insights Tailored Just For You. Click on your Rashi to get daily, weekly, monthly, and yearly predictions, plus guidance on personality, career growth, health, marriage, and life decisions.`}
               Class={"text-white pt-4"}
               variant={"secondary"}
             />
@@ -149,7 +147,7 @@ export default function ZodiacSection() {
                 {item.stats}
               </span>
             </div>
-            <p className="mt-[14px] max-w-[180px] whitespace-pre-line text-base  md:text-lg lg:text-xl xl:text-[22px] 2xl:text-[26px] 2xl:leading-9 text-white">
+            <p className="mt-[14px] max-w-[80%] whitespace-pre-line text-base  md:text-lg lg:text-xl xl:text-[22px] 2xl:text-[26px] 2xl:leading-9 text-white">
               {item.label}
             </p>
           </div>

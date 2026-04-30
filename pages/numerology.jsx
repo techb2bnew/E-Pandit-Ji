@@ -10,7 +10,6 @@ import OurServicesSection from "@/components/OurServicesSection";
 export default function NumerologyPage() {
   return (
     <>
-      <KundliNavbar />
       <NumerologyHero />
 
       <NumerologyToolSection
@@ -152,7 +151,6 @@ export default function NumerologyPage() {
       </div>
       <Faq />
       <Testimonials />
-      <Footer />
     </>
   );
 }

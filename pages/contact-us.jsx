@@ -10,7 +10,6 @@ import React from 'react'
 const page = () => {
   return (
     <div>
-       <KundliNavbar />
        <ContactUsBanner />
        <ContactFrom />
        <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
@@ -18,7 +17,6 @@ const page = () => {
        </div>
        <Faq />
        <Testimonials />
-       <Footer /> 
     </div>
   )
 }

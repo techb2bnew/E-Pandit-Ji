@@ -46,11 +46,11 @@ export default function AboutSection() {
               About us
             </p>
 
-            <Title title={"What we do"} />
+            <Title title={"Your life is guided by the movement of Grah and Nakshatra "} />
 
             <Description
               description={
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan lacus vel facilisis."
+                "The movement of Grah and Nakshatra shapes your destiny, influencing your decisions, relationships, and future path. Get accurate predictions and meaningful guidance with the help of professional astrologers and Pandit Ji, helping you make confident life choices with clarity and trust. "
               }
               Class={"text-white"}
             />
@@ -58,7 +58,7 @@ export default function AboutSection() {
             <div className="mt-8">
               <Button
                 variant={"secondary"}
-                button_name={"Read More"}
+                button_name={"Get Accurate Predictions Today"}
                 Class={"text-primary"}
               />
             </div>

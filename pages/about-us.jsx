@@ -11,7 +11,6 @@ import React from "react";
 export default function AboutUs() {
   return (
     <div>
-     <KundliNavbar />
      <AboutUsBanner />
      <AboutUsContent />
      <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
@@ -20,7 +19,6 @@ export default function AboutUs() {
       </div>
      <Faq />
      <Testimonials />
-     <Footer /> 
     </div>
   );
 }

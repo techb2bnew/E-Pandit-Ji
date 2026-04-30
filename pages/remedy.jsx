@@ -12,7 +12,6 @@ import Footer from "@/components/Footer";
 export default function RemediesPage() {
   return (
     <>
-      <KundliNavbar />
       <RemediesHero />
       <RemediesIntro />
       <RemediesTypesSection />
@@ -24,7 +23,6 @@ export default function RemediesPage() {
 
       <Faq />
       <Testimonials />
-      <Footer />
     </>
   );
 }

@@ -3,6 +3,8 @@ import localFont from "next/font/local";
 import { ABeeZee } from "next/font/google";
 import './../styles/globals.css'
 import FooterMobileBar from "@/components/Uiux/FooterMobileBar";
+import Footer from "@/components/Footer";
+import KundliNavbar from "@/components/KundliNavbar";
 const myFont = localFont({
     src: [{
         path: "../public/fonts/BalooBhai-Regular.ttf",
@@ -20,13 +22,19 @@ export default function App({ Component, pageProps }) {
     return ( <
         div className = { `${myFont.variable} ${abeezee.variable}` } >
         <
+        KundliNavbar / >
+        <
         Component {...pageProps }
         />  <
+        Footer / >
+        <
         div className = "w-full -bottom-2 z-10 fixed block md:hidden" >
         <
         FooterMobileBar / >
         <
-        /div> < /
-        div >
+        /div> 
+
+        <
+        /div >
     );
 }

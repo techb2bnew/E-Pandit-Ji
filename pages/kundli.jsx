@@ -11,7 +11,6 @@ import Footer from "@/components/Footer";
 export default function KundliPage() {
   return (
     <>
-        <KundliNavbar />
         <KundliHero
          top_bar={'Trusted By 10k+ Users...'}
          title={'Create Your Accurate Kundli Instantly'}
@@ -28,7 +27,6 @@ export default function KundliPage() {
         </div>
         <Faq />
         <Testimonials />
-        <Footer />
     </>
   );
 }

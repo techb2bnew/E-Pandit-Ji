@@ -65,7 +65,8 @@ export default function Footer() {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-    <footer className="relative mb-[70px] md:mb-0 w-full overflow-hidden bg-black bg-[url('/assets/footer-bg-stars.png')] bg-center bg-cover bg-no-repeat px-6  pt-[70px] md:px-6 md:pb-9 md:pt-[70px] max-md:px-4 max-md:pb-7 max-md:pt-14">
+     <div className="pt-12 bg-black">
+       <footer className="relative mb-[70px] md:mb-0 w-full overflow-hidden bg-black bg-[url('/assets/footer-bg-stars.png')] bg-center bg-cover bg-no-repeat px-6  pt-[70px] md:px-6 md:pb-9 md:pt-[70px] max-md:px-4 max-md:pb-7 max-md:pt-14">
       <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.52)_35%,rgba(0,0,0,0.7)_100%)]" />
       <div className="pointer-events-none absolute right-[-120px] top-[40px] h-[620px] w-[620px] bg-[url('/assets/footer/footer-planet.png')] bg-center bg-contain bg-no-repeat opacity-[0.42] max-[1100px]:right-[-110px] max-[1100px]:top-[90px] max-[1100px]:h-[460px] max-[1100px]:w-[460px] max-md:right-[-90px] max-md:top-[180px] max-md:h-[320px] max-md:w-[320px] max-md:opacity-[0.28]" />
 
@@ -124,7 +125,7 @@ export default function Footer() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[18px] font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
+                  className="text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
                 >
                   {item.label}
                 </Link>
@@ -141,7 +142,7 @@ export default function Footer() {
                 <Link
                   key={item.label}
                   href={item.href}
-                  className="text-[18px] font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
+                  className="text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
                 >
                   {item.label}
                 </Link>
@@ -300,6 +301,7 @@ export default function Footer() {
           </p>
         </div>
       </div>
-    </footer>
+       </footer>
+     </div>
   );
 }

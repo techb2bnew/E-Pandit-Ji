@@ -6,23 +6,23 @@ import Description from "./Uiux/Description";
 
 const services = [
   {
-    title: "Kundli",
+    title: "Janam Kundli",
     image: "/assets/kundli.png",
     href: "/kundli",
   },
   {
-    title: "Numerology",
+    title: "Numerology Calculation",
     image: "/assets/numerology.png",
     href: "/numerology",
   },
   {
-    title: "Match Making",
+    title: "Couple Match Making ",
     image: "/assets/match-making.png",
     href: "/match-making",
 
   },
   {
-    title: "Remedy",
+    title: "Vedic Remedies",
     image: "/assets/remedy.png",
     href: "/remedy",
   },
@@ -37,14 +37,11 @@ export default function OurServicesSection() {
         </p>
 
         <Title
-          title={'Our Services'}
+          title={'Our Vedic Astrology Services'}
         />
 
        <Description
-        description={`Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-          eiusmod tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
-          suspendisse ultrices gravida. Risus commodo viverra maecenas accumsan
-          lacus vel facilisis.`}
+        description={`Understand your life better with our Vedic astrology services, offering deep insights into your personality, relationships, career, and future, helping you make confident decisions with clarity and trusted guidance.`}
         Class={'text-white max-w-7xl mx-auto'}
         />
 
@@ -64,7 +61,7 @@ export default function OurServicesSection() {
                   className="h-full w-full object-contain"
                 />
               </div>
-              <p className="mt-4 text-xl xl:text-2xl 2xl:text-3xl font-primary">
+              <p className="mt-4 text-xl xl:text-2xl font-primary">
                 {service.title}
               </p>
             </Link>
