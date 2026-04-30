@@ -12,9 +12,9 @@ const serviceLinks = [
   { label: "kundli", href: "/kundli" },
   { label: "Numerology", href: "/numerology" },
   { label: "Match making", href: "/match-making" },
-  { label: "Panchang", href: "/panchang" },
+  { label: "Panchang", href: "#" },
   { label: "Remedy", href: "/remedy" },
-  { label: "Vastu", href: "/vastu" }
+  { label: "Vastu", href: "#" }
 ];
 
 export const AccordionItem = ({
@@ -296,7 +296,7 @@ export default function Footer() {
         </div>
         <div className="mt-2 border-t border-white/10 pt-5 md:mt-[34px] md:pt-6">
           <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
-            ©2026 All Rights Reserved | pandit ji | Privacy Policy
+            ©2026 All Rights Reserved | E-pandit ji | Privacy Policy
           </p>
         </div>
       </div>

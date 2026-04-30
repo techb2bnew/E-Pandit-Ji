@@ -145,8 +145,9 @@ export default function NumerologyPage() {
         ]}
       />
 
-      <NumerologyCTA />
-      <div className="bg-black/65">
+     
+      <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
+        <NumerologyCTA black_bg={false}/>
         <OurServicesSection />
       </div>
       <Faq />

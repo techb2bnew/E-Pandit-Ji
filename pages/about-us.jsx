@@ -14,8 +14,10 @@ export default function AboutUs() {
      <KundliNavbar />
      <AboutUsBanner />
      <AboutUsContent />
-     <RemediesCTA />
-     <OurServicesSection />
+     <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
+      <RemediesCTA />
+      <OurServicesSection />
+      </div>
      <Faq />
      <Testimonials />
      <Footer /> 

@@ -26,7 +26,9 @@ export default function Home() {
       <ServicesStrip />
       <AboutSection />
       <ZodiacSection />
-      <OurServicesSection />
+       <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
+         <OurServicesSection />
+       </div>
       <Consultation />
       <Subscription />
       <Faq />
