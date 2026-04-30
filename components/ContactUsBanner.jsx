@@ -1,0 +1,48 @@
+import React from "react";
+import Title from "./Uiux/Title";
+import Description from "./Uiux/Description";
+import Button from "./Uiux/Button";
+
+const ContactUsBanner = () => {
+  return (
+    <div>
+      <section className="relative md:min-h-[500px] 2xl:min-h-[620px] overflow-hidden bg-[url('/assets/contactus.png')] bg-cover bg-center bg-no-repeat pb-[120px] pt-[190px] max-[991px]:min-h-0 max-[991px]:pb-20 max-[991px]:pt-[140px]">
+        {/* <div className="absolute inset-0 z-1 bg-black/70" /> */}
+
+        <div className="relative z-2 mx-auto max-w-[1400px] px-6 text-center pt-16 2xl:pt-28 md:pb-12 2xl:pb-16">
+          <p className="text-primary text-xl md:text-2xl 2xl:text-[26px] font-semibold mb-4">
+            Trusted By 10k+ Users...
+          </p>
+
+          <Title
+            title={
+              "Contact with Us"
+            }
+            Class={"text-white"}
+          />
+
+          <Description
+            description={
+              "Whether you’re looking to generate your Kundli, understand your life path, or need personalized astrology advice, feel free to reach out. We’re committed to providing quick and helpful responses to all your queries."
+            }
+            Class={"text-white max-w-6xl mx-auto"}
+          />
+
+          {/* <div className="pt-8">
+            <Button
+              button_name={"Calculate My Number"}
+              variant={"primary"}
+              Class={"text-black"}
+            />
+
+            <p className="text-[20px] text-white max-[991px]:text-[16px] pt-3">
+              100% private | Fast delivery
+            </p>
+          </div> */}
+        </div>
+      </section>
+    </div>
+  );
+};
+
+export default ContactUsBanner;

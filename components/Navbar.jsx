@@ -16,7 +16,8 @@ const TOP_LINKS = [
 const LEFT_LINKS = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "/services" },
+  // { label: "Services", href: "/services" },
+  { label: "Remedy", href: "/remedy" },
   { label: "Forum", href: "/forum" },
 ];
 
