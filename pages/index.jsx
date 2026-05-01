@@ -85,8 +85,8 @@ export default function Home() {
       <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
         <OurServicesSection  />
       </div>
-      <Consultation />
-      <Subscription />
+      {/* <Consultation />
+      <Subscription />  */}
       <Faq
         faqs={faqs}
       />

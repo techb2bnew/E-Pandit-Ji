@@ -97,14 +97,14 @@ export default function ZodiacSection() {
             />
           </div>
 
-          <div className="flex items-center justify-center 2xl:justify-start h-full">
-            <div className="grid md:grid-cols-2 gap-3 2xl:pt-10">
+          <div className="flex items-center justify-center h-full">
+            {/* <div className=" flex justify-center gap-3 2xl:pt-10"> */}
               <Button
                 variant={"primary"}
                 button_name={"Daily Horoscope"}
                 Class={"text-black"}
               />
-              <Button
+              {/* <Button
                 variant={"primary"}
                 button_name={"Weekly Horoscope"}
                 Class={"text-black"}
@@ -118,8 +118,8 @@ export default function ZodiacSection() {
                 variant={"secondary"}
                 button_name={"Yearly Horoscope"}
                 Class={"text-primary"}
-              />
-            </div>
+              /> */}
+            {/* </div> */}
           </div>
         </div>
 

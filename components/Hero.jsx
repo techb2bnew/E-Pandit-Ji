@@ -121,7 +121,7 @@ export default function Hero() {
             <Title title="Get Clear Answers To Your Endless Thoughts" isH1 />
 
             <p className="mt-4 xl:mt-6 text-white text-xl md:text-[22px] xl:text-3xl 2xl:text-4xl font-secondary">
-              From Kundali making and matching to daily horoscope insights, discover what Grah-Nakshatra reveal about your life, relationships, and future path. 
+              Personalized Kundli, accurate matchmaking, and daily horoscope insights.
             </p>
 
             <div className="mt-6 lg:mt-12">
@@ -130,10 +130,15 @@ export default function Hero() {
                >
                <Button
                  variant={'primary'}
-                 button_name={"Get Customized Kundli"}
+                 button_name={"Get Your Kundli"}
                  Class={"text-black"}
                />
               </Link>
+            </div>
+            <div>
+              <p className="pt-4 italic">
+                <span className="font-semibold">Note :</span>  Kundli Creation , Printing and shipment will be done <br className="hidden md:block" /> with 3-5 days to your location.
+              </p>
             </div>
           </div>
 
