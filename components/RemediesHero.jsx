@@ -11,23 +11,19 @@ export default function RemediesHero() {
       <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-1 items-center gap-[30px] px-14 text-center md:grid-cols-[1.05fr_1fr] md:text-left max-[991px]:px-5">
         <div className="max-w-[640px] max-[991px]:mx-auto order-2 md:order-1">
           <p className="text-primary text-xl md:text-2xl 2xl:text-[26px] font-semibold mb-4">
-            Powerful Astrological Solutions
+            Effective Vedic Remedies
           </p>
-
-
-
           <Title
-            title={'Effective Remedies to Improve Your Life'}
+            title={'Vedic Remedies for Peace & Prosperity in Life '}
             Class={'text-white'}
           />
 
           <p className="mb-6 max-w-[620px] text-[24px] leading-[1.45] text-white/95 max-[991px]:text-[18px]">
-            Overcome life challenges with simple and powerful Vedic remedies.
-            Balance your energies, reduce doshas, and attract positivity.
+            Vedic remedies by our astrologers help bring peace, prosperity, and solutions to life problems by balancing energies, removing obstacles, and improving overall well-being naturally. 
           </p>
 
           <Button
-            button_name={'Get Personalized Remedies'}
+            button_name={'Vedic Remedies we Offer'}
             Class={'text-black'}
             variant={'primary'}
           />
@@ -37,9 +33,9 @@ export default function RemediesHero() {
           </p>
         </div>
 
-        <div>
+        <div className="order-1 md:order-2">
           <MobileBannerBar />
-          <div className="relative flex items-center justify-center order-1 md:order-2">
+          <div className="relative flex items-center justify-center">
             <div className="absolute inset-0 z-1 bg-[url('/assets/zodiac-bg.png')] bg-contain bg-center bg-no-repeat opacity-40" />
             <div className="relative z-2 aspect-square w-full max-w-[620px]">
               <Image

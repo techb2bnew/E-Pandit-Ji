@@ -7,13 +7,72 @@ import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
 import OurServicesSection from "@/components/OurServicesSection";
 
+
+const faqs = [
+  {
+    question: "What is numerology?",
+    answer:
+      "Numerology is the study of numbers and their influence on human life and destiny.",
+  },
+  {
+    question: "How does numerology work?",
+    answer:
+      "It analyzes your name and birth date to reveal personality traits and life patterns.",
+  },
+  {
+    question: "Can numerology predict the future?",
+    answer:
+      "It provides guidance on future possibilities and helps make better life decisions.",
+  },
+  {
+    question: "Is numerology accurate?",
+    answer:
+      "Numerology offers insightful patterns based on numbers, which many find meaningful and helpful.",
+  },
+  {
+    question: "Do I need my birth date for numerology?",
+    answer:
+      "Yes, your birth date and name are essential for accurate numerology analysis.",
+  },
+  {
+    question: "Can numerology help in career decisions?",
+    answer:
+      "Yes, it can guide you toward suitable career paths and better opportunities.",
+  },
+];
+const testimonials = [
+  {
+    name: "Rahul Sharma",
+    text: "Very accurate numerology report that helped me understand my strengths and life direction clearly. The insights were simple, practical, and truly helpful for making better personal decisions.",
+  },
+  {
+    name: "Anjali Verma",
+    text: "Excellent numerology service with detailed explanations. It gave me clarity about my career path and personal growth. I really liked how easy the report was to understand.",
+  },
+  {
+    name: "Neha Kapoor",
+    text: "The numerology analysis was insightful and meaningful. It helped me discover hidden aspects of my personality and guided me in making better life choices with confidence.",
+  },
+  {
+    name: "Amit Yadav",
+    text: "Very helpful numerology reading. It explained my life path number clearly and gave useful suggestions for success and stability. I felt more focused after reading the report.",
+  },
+  {
+    name: "Priya Singh",
+    text: "Great experience with numerology service. The report was detailed yet simple. It helped me understand my challenges and strengths in a very practical way.",
+  },
+  {
+    name: "Rohit Mehta",
+    text: "Highly accurate numerology insights that matched my life situations. The guidance was clear and easy to follow, helping me plan my future more effectively and confidently.",
+  },
+];
 export default function NumerologyPage() {
   return (
     <>
       <NumerologyHero />
 
       <NumerologyToolSection
-        title="Find Your Life Path Number Instantly"
+        title="Find Your Life Path Number"
         bgImage="/assets/night-sky-2.png"
         fields={[
           { label: "Full Name", placeholder: "Enter Your Full Name" },
@@ -112,7 +171,7 @@ export default function NumerologyPage() {
       />
 
       <NumerologyToolSection
-        title="Vehicle Number Analysis"
+        title="Lucky Vehicle Number Calculator"
         bgImage="/assets/night-sky-2.png"
         fields={[
           { label: "Vehicle Number", placeholder: "Enter Your Vehicle Number" },
@@ -128,7 +187,7 @@ export default function NumerologyPage() {
       />
 
       <NumerologyToolSection
-        title="Check Love Compatibility"
+        title="Check Love Compatibility Score"
         bgImage="/assets/night-sky-2.png"
         fields={[
           { label: "Your Name", placeholder: "Enter Your Name" },
@@ -149,8 +208,8 @@ export default function NumerologyPage() {
         <NumerologyCTA black_bg={false}/>
         <OurServicesSection />
       </div>
-      <Faq />
-      <Testimonials />
+      <Faq faqs={faqs} />
+      <Testimonials testimonials={testimonials}/>
     </>
   );
 }

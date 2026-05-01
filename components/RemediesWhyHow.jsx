@@ -9,17 +9,17 @@ export default function RemediesWhyHow() {
       <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-1 items-start gap-3 md:gap-[34px] px-[84px] md:grid-cols-[1fr_1px_1fr] max-[991px]:px-5 text-center md:text-start">
         <div>
           <Title
-            title={'Why Choose e-Pandit Ji Remedies'}
+            title={'Why Choose ई-Pandit ji'}
             Class={'text-white'}
           />
 
-          <ul className="mt-5 list-disc pl-[18px]">
+          <ul className="mt-5 list-disc pl-[18px] space-y-2.5">
             {[
-              "Based on accurate Kundli analysis",
-              "Simple and easy to follow",
-              "Effective and result-oriented",
-              "No harmful or complicated rituals",
-              "Trusted Vedic practices",
+              "Accurate Kundli Analysis for Better Guidance Provides precise horoscope reading for clear life direction",
+              "Experienced and Knowledgeable Astrologers Available Skilled experts ensure reliable and authentic astrological solutions",
+              "Personalized Remedies Based on Individual Kundli Tailored solutions for specific life problems and needs",
+              "Simple and Effective Vedic Solutions Offered Easy remedies that bring positive and lasting results",
+              "Trusted Platform for Astrology and Guidance Provides honest, reliable, and spiritually aligned consultations and support",
             ].map((t) => (
 
               <Description
@@ -36,15 +36,16 @@ export default function RemediesWhyHow() {
 
         <div>
            <Title
-            title={'How It Works'}
+            title={'How It Works?'}
             Class={'text-white'}
           />
-          <ul className="m-0 list-disc pl-[18px]">
+          <ul className="m-0 list-disc pl-[18px] space-y-2.5">
             {[
-              "Enter your birth details",
-              "We analyze your Kundli",
-              "Identify doshas and issues",
-              "Get personalized remedies instantly",
+              "Collects Birth Details for Kundli Creation Uses accurate date, time, and place of birth",
+              "Analyzes Planetary Positions in Horoscope Chart Studies planets to understand life patterns and influences",
+              "Identifies Doshas and Life Imbalances Clearly Detects problems affecting marriage, career, and health",
+              "Suggests Personalized Vedic Remedies and Solutions Provides mantras, puja, gemstones, and simple daily remedies",
+              "Guides Through Expert Astrologer Consultation Support Offers clear advice for better life decisions and growth"
             ].map((t) => (
              <Description
                 key={t}

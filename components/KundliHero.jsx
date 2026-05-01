@@ -50,9 +50,9 @@ export default function KundliHero({ top_bar, title, description, button_name, l
           </p>
         </div>
 
-        <div>
+        <div className="order-1 md:order-2 ">
           <MobileBannerBar />
-          <div className="flex items-center justify-center order-1 md:order-2 ">
+          <div className="flex items-center justify-center ">
             <div className="relative aspect-square w-full max-w-[620px] max-[991px]:mx-auto max-[991px]:max-w-[380px]">
               <Image
                 src={banner_image}

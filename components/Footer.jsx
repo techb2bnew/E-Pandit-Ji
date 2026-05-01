@@ -1,11 +1,12 @@
 import Link from "next/link";
 import { useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
+import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 const usefulLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about" },
   { label: "Services", href: "/services" },
-  { label: "Contact Us", href: "/contact" }
+  { label: "Contact Us", href: "/contact-us" }
 ];
 
 const serviceLinks = [
@@ -17,6 +18,33 @@ const serviceLinks = [
   { label: "Vastu", href: "#" }
 ];
 
+const socialLinks = [
+  {
+    name: "Facebook",
+    icon: FaFacebookF,
+    url: "https://facebook.com",
+  },
+  {
+    name: "Instagram",
+    icon: FaInstagram,
+    url: "https://instagram.com",
+  },
+  {
+    name: "Twitter",
+    icon: FaTwitter,
+    url: "https://twitter.com",
+  },
+  {
+    name: "LinkedIn",
+    icon: FaLinkedinIn,
+    url: "https://linkedin.com",
+  },
+  {
+    name: "YouTube",
+    icon: FaYoutube,
+    url: "https://youtube.com",
+  },
+];
 export const AccordionItem = ({
   title,
   children,
@@ -65,243 +93,229 @@ export default function Footer() {
     setOpenIndex(openIndex === index ? null : index);
   };
   return (
-     <div className="pt-12 bg-black">
-       <footer className="relative mb-[70px] md:mb-0 w-full overflow-hidden bg-black bg-[url('/assets/footer-bg-stars.png')] bg-center bg-cover bg-no-repeat px-6  pt-[70px] md:px-6 md:pb-9 md:pt-[70px] max-md:px-4 max-md:pb-7 max-md:pt-14">
-      <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.52)_35%,rgba(0,0,0,0.7)_100%)]" />
-      <div className="pointer-events-none absolute right-[-120px] top-[40px] h-[620px] w-[620px] bg-[url('/assets/footer/footer-planet.png')] bg-center bg-contain bg-no-repeat opacity-[0.42] max-[1100px]:right-[-110px] max-[1100px]:top-[90px] max-[1100px]:h-[460px] max-[1100px]:w-[460px] max-md:right-[-90px] max-md:top-[180px] max-md:h-[320px] max-md:w-[320px] max-md:opacity-[0.28]" />
+    <div className="pt-12 bg-black">
+      <footer className="relative mb-[70px] md:mb-0 w-full overflow-hidden bg-black bg-[url('/assets/footer-bg-stars.png')] bg-center bg-cover bg-no-repeat px-6  pt-[70px] md:px-6 md:pb-9 md:pt-[70px] max-md:px-4 max-md:pb-7 max-md:pt-14">
+        <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.52)_35%,rgba(0,0,0,0.7)_100%)]" />
+        <div className="pointer-events-none absolute right-[-120px] top-[40px] h-[620px] w-[620px] bg-[url('/assets/footer/footer-planet.png')] bg-center bg-contain bg-no-repeat opacity-[0.42] max-[1100px]:right-[-110px] max-[1100px]:top-[90px] max-[1100px]:h-[460px] max-[1100px]:w-[460px] max-md:right-[-90px] max-md:top-[180px] max-md:h-[320px] max-md:w-[320px] max-md:opacity-[0.28]" />
 
-      <div className="relative z-[2] inn_container">
-        <div className="hidden md:grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 items-start gap-5 md:gap-[34px]">
-          <div className="max-w-full md:max-w-[360px]">
-            <h2 className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px]">
-              ई-Pandit ji
-            </h2>
+        <div className="relative z-[2] inn_container">
+          <div className="hidden md:grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 items-start gap-5 md:gap-[34px]">
+            <div className="max-w-full md:max-w-[360px]">
+              <h2 className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px]">
+                ई-Pandit ji
+              </h2>
 
-            <p className="mt-6 text-[15px] font-normal leading-[1.75] text-white/90 md:text-[16px] md:leading-[1.9]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
-
-            <div className="mt-7 flex items-center gap-[18px]">
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary text-primary"
-                aria-label="LinkedIn"
-              >
-                <span aria-hidden="true">in</span>
-              </a>
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                aria-label="Facebook"
-              >
-                <span aria-hidden="true">f</span>
-              </a>
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                aria-label="Instagram"
-              >
-                <span aria-hidden="true">📸</span>
-              </a>
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                aria-label="YouTube"
-              >
-                <span aria-hidden="true">▶</span>
-              </a>
-            </div>
-          </div>
-
-          <div className="lg:max-w-[80%] mx-auto">
-            <h3 className="mt-[10px] text-[20px] font-bold leading-[1.2] text-primary md:text-[22px]">
-              UseFul Links
-            </h3>
-            <div className="mt-7 flex flex-col gap-[18px]">
-              {usefulLinks.map(item =>
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
-                >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          </div>
-
-          <div className="lg:max-w-[80%] mx-auto">
-            <h3 className="mt-[10px] text-[20px] font-bold leading-[1.2] text-primary md:text-[22px]">
-              Our Services
-            </h3>
-            <div className="mt-7 flex flex-col gap-[18px]">
-              {serviceLinks.map(item =>
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
-                >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          </div>
-
-          <div className="lg:max-w-[80%] mx-auto">
-            <h3 className="mt-[10px] text-[20px] font-bold leading-[1.2] text-primary md:text-[22px]">
-              Contact Us
-            </h3>
-
-            <div className="mt-[26px]">
-              <p className="mb-1 text-[16px] font-normal leading-[1.4] text-white/80 max-md:text-[15px]">
-                Number
+              <p className="mt-6 text-[15px] font-normal leading-[1.75] text-white/90 md:text-[16px] md:leading-[1.9]">
+                ई-Pandit ji is a trusted platform offering expert astrology and numerology services. With experienced astrologers and Pandit Ji, it provides accurate Kundli, horoscope, and personalized guidance. The platform helps users understand life, make better decisions, and find clarity through traditional Vedic knowledge.
               </p>
-              <a
-                href="tel:0987654321"
-                className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline break-words max-md:text-[15px]"
-              >
-                0987654321
-              </a>
+
+              <div className="flex gap-4 pt-10">
+                {socialLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-primary text-primary transition hover:bg-primary hover:text-black"
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
+              </div>
             </div>
 
-            <div className="mt-[26px]">
-              <p className="mb-1 text-[16px] font-normal leading-[1.4] text-white/80 max-md:text-[15px]">
-                Email
-              </p>
-              <a
-                href="mailto:info@e-panditji.com.au"
-                className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline break-words max-md:text-[15px]"
-              >
-                info@e-panditji.com.au
-              </a>
+            <div className="lg:max-w-[80%] mx-auto">
+              <h3 className="mt-[10px] text-[20px] font-bold leading-[1.2] text-primary md:text-[22px]">
+                UseFul Links
+              </h3>
+              <div className="mt-7 flex flex-col gap-[18px]">
+                {usefulLinks.map(item =>
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
             </div>
 
-            <div className="mt-[26px]">
+            <div className="lg:max-w-[80%] mx-auto">
+              <h3 className="mt-[10px] text-[20px] font-bold leading-[1.2] text-primary md:text-[22px]">
+                Our Services
+              </h3>
+              <div className="mt-7 flex flex-col gap-[18px]">
+                {serviceLinks.map(item =>
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            </div>
+
+            <div className="lg:max-w-[80%] mx-auto">
+              <h3 className="mt-[10px] text-[20px] font-bold leading-[1.2] text-primary md:text-[22px]">
+                Contact Us
+              </h3>
+
+              <div className="mt-[26px]">
+                <p className="mb-1 text-[16px] font-normal leading-[1.4] text-white/80 max-md:text-[15px]">
+                  Number
+                </p>
+                <a
+                  href="tel:+916009570095"
+                  className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline break-words max-md:text-[15px]"
+                >
+                  +91-60095-70095
+                </a>
+              </div>
+
+              <div className="mt-[26px]">
+                <p className="mb-1 text-[16px] font-normal leading-[1.4] text-white/80 max-md:text-[15px]">
+                  Email
+                </p>
+                <a
+                  href="mailto:hello@e-panditji.com"
+                  className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline break-words max-md:text-[15px]"
+                >
+                  hello@e-panditji.com
+                </a>
+              </div>
+
+              {/* <div className="mt-[26px]">
               <p className="mb-1 text-[16px] font-normal leading-[1.4] text-white/80 max-md:text-[15px]">
                 Address
               </p>
               <p className="m-0 text-[16px] font-normal leading-[1.4] text-white/70 break-words max-md:text-[15px]">
                 enter here company 123address
               </p>
+            </div> */}
             </div>
           </div>
-        </div>
-        <div className="block md:hidden space-y-5">
-          <div className="max-w-full md:max-w-[360px] text-center">
-            <h2 className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px]">
-              ई-Pandit ji
-            </h2>
+          <div className="block md:hidden space-y-5">
+            <div className="max-w-full md:max-w-[360px] text-center">
+              <h2 className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px]">
+                ई-Pandit ji
+              </h2>
 
-            <p className="mt-6 text-[15px] font-normal leading-[1.75] text-white/90 md:text-[16px] md:leading-[1.9]">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
-              ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-              tempor incididunt ut labore et dolore magna aliqua.
-            </p>
+              <p className="mt-6 text-[15px] font-normal leading-[1.75] text-white/90 md:text-[16px] md:leading-[1.9]">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem
+                ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+                tempor incididunt ut labore et dolore magna aliqua.
+              </p>
 
-            <div className="mt-7 flex items-center justify-center gap-[18px]">
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary text-primary"
-                aria-label="LinkedIn"
-              >
-                <span aria-hidden="true">in</span>
-              </a>
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                aria-label="Facebook"
-              >
-                <span aria-hidden="true">f</span>
-              </a>
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                aria-label="Instagram"
-              >
-                <span aria-hidden="true">📸</span>
-              </a>
-              <a
-                href="#"
-                className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                aria-label="YouTube"
-              >
-                <span aria-hidden="true">▶</span>
-              </a>
-            </div>
-          </div>
-          <AccordionItem
-            title="Useful Links"
-            index={0}
-            openIndex={openIndex}
-            toggle={toggleAccordion}
-          >
-            <div className="flex flex-col gap-4">
-              {usefulLinks.map(item =>
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-white/80"
+              <div className="mt-7 flex items-center justify-center gap-[18px]">
+                <a
+                  href="#"
+                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary text-primary"
+                  aria-label="LinkedIn"
                 >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Our Services"
-            index={1}
-            openIndex={openIndex}
-            toggle={toggleAccordion}
-          >
-            <div className="flex flex-col gap-4">
-              {serviceLinks.map(item =>
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  className="text-white/80"
+                  <span aria-hidden="true">in</span>
+                </a>
+                <a
+                  href="#"
+                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
+                  aria-label="Facebook"
                 >
-                  {item.label}
-                </Link>
-              )}
-            </div>
-          </AccordionItem>
-
-          <AccordionItem
-            title="Contact Us"
-            index={2}
-            openIndex={openIndex}
-            toggle={toggleAccordion}
-          >
-            <div className="space-y-4 text-white/80">
-              <div>
-                <p>Number</p>
-                <a href="tel:0987654321">0987654321</a>
-              </div>
-              <div>
-                <p>Email</p>
-                <a href="mailto:info@e-panditji.com.au">
-                  info@e-panditji.com.au
+                  <span aria-hidden="true">f</span>
+                </a>
+                <a
+                  href="#"
+                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
+                  aria-label="Instagram"
+                >
+                  <span aria-hidden="true">📸</span>
+                </a>
+                <a
+                  href="#"
+                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
+                  aria-label="YouTube"
+                >
+                  <span aria-hidden="true">▶</span>
                 </a>
               </div>
-              <div>
+            </div>
+            <AccordionItem
+              title="Useful Links"
+              index={0}
+              openIndex={openIndex}
+              toggle={toggleAccordion}
+            >
+              <div className="flex flex-col gap-4">
+                {usefulLinks.map(item =>
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-white/80"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            </AccordionItem>
+
+            <AccordionItem
+              title="Our Services"
+              index={1}
+              openIndex={openIndex}
+              toggle={toggleAccordion}
+            >
+              <div className="flex flex-col gap-4">
+                {serviceLinks.map(item =>
+                  <Link
+                    key={item.label}
+                    href={item.href}
+                    className="text-white/80"
+                  >
+                    {item.label}
+                  </Link>
+                )}
+              </div>
+            </AccordionItem>
+
+            <AccordionItem
+              title="Contact Us"
+              index={2}
+              openIndex={openIndex}
+              toggle={toggleAccordion}
+            >
+              <div className="space-y-4 text-white/80">
+                <div>
+                  <p>Number</p>
+                  <a href="tel:+916009570095">+91-60095-70095</a>
+                </div>
+                <div>
+                  <p>Email</p>
+                  <a href="mailto:hello@e-panditji.com">
+                    hello@e-panditji.com
+                  </a>
+                </div>
+                {/* <div>
                 <p>Address</p>
                 <p>enter here company 123address</p>
+              </div> */}
               </div>
-            </div>
-          </AccordionItem>
+            </AccordionItem>
+          </div>
+          <div className="mt-2 border-t border-white/10 pt-5 md:mt-[34px] md:pt-6 flex flex-col md:flex-row justify-between mb-4 md:mb-0">
+            <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
+              ©2026 All Rights Reserved | E-pandit ji | Privacy Policy
+            </p>
+            <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
+              Design By <a href="https://base2brand.com/">Base2brand</a>
+            </p>
+          </div>
         </div>
-        <div className="mt-2 border-t border-white/10 pt-5 md:mt-[34px] md:pt-6">
-          <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
-            ©2026 All Rights Reserved | E-pandit ji | Privacy Policy
-          </p>
-        </div>
-      </div>
-       </footer>
-     </div>
+      </footer>
+    </div>
   );
 }

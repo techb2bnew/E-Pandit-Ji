@@ -18,14 +18,14 @@ const ContactUsBanner = () => {
 
           <Title
             title={
-              "Contact with Us"
+              "Contact Us"
             }
             Class={"text-white"}
           />
 
           <Description
             description={
-              "Whether you’re looking to generate your Kundli, understand your life path, or need personalized astrology advice, feel free to reach out. We’re committed to providing quick and helpful responses to all your queries."
+              "Contact ई-Pandit ji for astrology guidance, kundli matching, and remedies. Reach us easily for personalized solutions, expert advice, and spiritual support for your life."
             }
             Class={"text-white max-w-6xl mx-auto"}
           />

@@ -4,36 +4,10 @@ import { useState, useRef, useEffect } from "react";
 import Title from "./Uiux/Title";
 import Description from "./Uiux/Description";
 // import Image from "next/image";.
+import { IoIosArrowDown } from "react-icons/io";
 
-const faqs = [
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-  {
-    question: "Lorem ipsum dolor sit amet, consectetur adipiscing elit.",
-    answer:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
-  },
-];
 
-export default function Faq() {
+export default function Faq({faqs}) {
   const [openIndex, setOpenIndex] = useState(0);
   const videoRef = useRef(null);
 
@@ -64,17 +38,13 @@ export default function Faq() {
           </p>
 
           <Title
-            title={'Common Question About kundli'}
+            title={'Quick answers to your mindful queries'}
             Class={'text-white'}
           />
 
-          <Description
-            description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'}
-            Class={'text-white'}
-          />
 
           <div className="mt-4 border-t border-transparent">
-            {faqs.map((faq, index) => {
+            {faqs?.map((faq, index) => {
               const isOpen = openIndex === index;
 
               return (
@@ -90,8 +60,8 @@ export default function Faq() {
                     <span className="text-[24px] 2xl:text-[26px] font-normal leading-[1.4] text-white max-[1200px]:text-[21px] max-md:text-[18px]">
                       {faq.question}
                     </span>
-                    <span className="mt-[2px] shrink-0 text-[22px] leading-none text-[#f5c518] max-md:text-[18px]">
-                      {isOpen ? "⌃" : "⌄"}
+                    <span className={`mt-[2px] transition-all duration-500 ${isOpen ? 'rotate-180' : 'rotate-0'}`}>
+                     <IoIosArrowDown className="text-primary text-2xl" />
                     </span>
                   </button>
 

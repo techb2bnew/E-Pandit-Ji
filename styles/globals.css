@@ -102,3 +102,24 @@ h6 {
     margin-inline: auto;
     padding-inline: 3%;
 }
+
+.link_hover {
+    transition: all 0.3s ease-in-out;
+}
+
+.link_hover:hover {
+    text-decoration: underline;
+    text-underline-offset: 8px;
+}
+
+@media screen and (max-width: 1536px) {
+    .inn_container {
+        padding-inline: 5%;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .inn_container {
+        padding-inline: 3%;
+    }
+}

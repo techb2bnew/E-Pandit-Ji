@@ -28,7 +28,7 @@ const services = [
   },
 ];
 
-export default function OurServicesSection() {
+export default function OurServicesSection({title,description}) {
   return (
     <section className="w-full  md:px-6 md:pb-14  2xl:pt-14">
       <div className="inn_container text-center">
@@ -37,12 +37,12 @@ export default function OurServicesSection() {
         </p>
 
         <Title
-          title={'Our Vedic Astrology Services'}
+          title={ title ? title : 'Our Vedic Astrology Services'}
         />
 
        <Description
-        description={`Understand your life better with our Vedic astrology services, offering deep insights into your personality, relationships, career, and future, helping you make confident decisions with clarity and trusted guidance.`}
-        Class={'text-white max-w-7xl mx-auto'}
+        description={description ? description : `Understand your life better with our Vedic astrology services, offering deep insights into your personality, relationships, career, and future, helping you make confident decisions with clarity and trusted guidance.`}
+        Class={'text-white max-w-6xl mx-auto'}
         />
 
         <div className="mt-8 md:mt-14  grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-[80%] md:max-w-7xl mx-auto">

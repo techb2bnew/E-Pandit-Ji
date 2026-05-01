@@ -17,7 +17,7 @@ export default function KundliMatchingSection() {
           />
           <div className="pt-2">
             <Description
-              description={'Fill in the details below to check compatibility and marriage success.'}
+              description={'Fill Out The Details To Match Your Kundli and make a perfect Selection'}
               Class={'text-white'}
             />
           </div>
@@ -297,17 +297,17 @@ export default function KundliMatchingSection() {
         <div className="max-w-6xl text-center md:text-left">
 
           <Title
-            title={'<span class="text-primary">Kundli Matching</span> – Find Your  Perfect Life Partner with e-Pandit Ji'}
+            title={'<span class="text-primary">Why Kundli Matching</span> – is Important Before Marriage'}
             Class={''}
           />
 
           <div className="pt-4 space-y-3">
             <Description
-              description={'At E-Pandit Ji, we understand that marriage is not just a union of two individuals, but a sacred bond of two souls and families. Our Kundli Matching service is designed to help you find the most compatible life partner based on the ancient science of Vedic astrology.'}
+              description={'Matching kundli before marriage is necessary because it helps analyze compatibility between two individuals based on planetary positions. It ensures emotional, mental, and physical harmony in married life. Kundli matching identifies possible challenges and suggests remedies in advance.'}
               Class={'text-white'}
             />
             <Description
-              description={'Kundli Milan, also known as Gun Milan, is a traditional method used to analyze the compatibility between a bride and groom. It is based on the comparison of their birth charts, considering planetary positions, stars (nakshatras), and other astrological factors. Our platform provides accurate and reliable kundli matching results to guide you in making the right decision.'}
+              description={'This traditional Vedic practice increases the chances of a stable, happy, and successful marriage by reducing misunderstandings and improving mutual understanding and trust.'}
               Class={'text-white'}
             />
           </div>

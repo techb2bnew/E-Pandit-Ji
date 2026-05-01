@@ -17,20 +17,20 @@ export default function NumerologyCTA({black_bg}) {
 
         </h2>
         <Title
-          title={'Start Your <span class="text-primary">Numerology</span> Today'}
+          title={'Check Your <span class="text-primary">Numerology</span> Report Today'}
           Class={'text-white'}
         />
 
         <Description
-          description={'Take the first step towards a successful and harmonious numerology life. Enter your details and let E-Pandit Ji guide you with accurate numerology insights.'}
-          variant={'secondary'}
+          description={'Numerology reports help to understand your life path, hidden strengths, challenges, and future opportunities for success and growth.'}
+          // variant={'secondary'}
           Class={'text-white'}
         />
 
-        <Description
+        {/* <Description
           description={' Find compatibility. Build trust. Begin your journey together.'}
           Class={'text-white mt-4'}
-        />
+        /> */}
 
         <div className="pt-8">
           <Button

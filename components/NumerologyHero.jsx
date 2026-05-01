@@ -11,24 +11,24 @@ export default function NumerologyHero() {
       <div className="relative z-2 inn_container text-center md:pt-22 md:pb-16">
         <MobileBannerBar />
         <p className="text-primary text-xl md:text-2xl 2xl:text-[26px] font-semibold mb-4 pt-12">
-          Trusted By 10k+ Users...
+          Trusted by 25k Users
         </p>
 
 
          <Title
-          title={"Unlock the Power of <span class='text-primary'> Numerology <span/> in Your Life"}
-          Class={''}
+          title={"Check Which Numbers <span class='text-primary'> Work <span/> in Favour of You"}
+          Class={''}  
         />
 
         <Description
-         description={'Discover your destiny through numbers. Get instant numerology reports powered by advanced API &amp; expert analysis.'}
+         description={'Numbers influence your life, shaping decisions, guiding choices, and affecting future success, happiness, relationships, and personal growth in meaningful ways. '}
          Class={'text-white max-w-5xl mx-auto'}
         />
 
         <div className="pt-8">
           
           <Button
-           button_name={'Calculate My Number'}
+           button_name={'Get Your Life Path Number'}
            variant={'primary'}
            Class={'text-black'}
           />

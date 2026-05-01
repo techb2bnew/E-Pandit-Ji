@@ -8,31 +8,37 @@ const plans = [
     price: "300",
     duration: "/week",
     features: [
-      "Lorem ipsum dolor sit amet",
-      "Lorem ipsum dolor sit amet",
-      "Lorem ipsum dolor sit amet"
-    ]
+      "Personalized weekly horoscope",
+      "Career, love & health guidance",
+      "Auspicious timings (Muhurta)",
+      "Quick remedies for challenges"
+    ],
+    description : 'Get quick insights to plan your week with confidence and clarity.'
   },
   {
     tag: "Monthly",
-    price: "1500",
+    price: "1100",
     duration: "/month",
     features: [
-      "Lorem ipsum dolor sit amet",
-      "Lorem ipsum dolor sit amet",
-      "Lorem ipsum dolor sit amet"
+      "Detailed monthly predictions",
+      "Kundli-based career & finance insights",
+      "Relationship and marriage guidance",
+      "Remedies based on planetary positions"
     ],
-    featured: true
+    featured: true,
+    description : 'Deep analysis to guide your month with better decisions and stability.'
   },
   {
     tag: "Yearly",
     price: "12000",
     duration: "/year",
     features: [
-      "Lorem ipsum dolor sit amet",
-      "Lorem ipsum dolor sit amet",
-      "Lorem ipsum dolor sit amet"
-    ]
+      "Full Kundli analysis & yearly report",
+      "Career, marriage & financial roadmap",
+      "Personalized remedies & dosha solutions",
+      "Priority consultation with astrologers",
+    ],
+    description : 'Complete life guidance with long-term predictions and expert support.'
   }
 ];
 
@@ -44,7 +50,7 @@ export default function Subscription() {
           Click To Choose
         </p>
 
-        <Title title={"Our Subscription"} Class={"text-white"} />
+        <Title title={"Our Flexible Subscription Plans"} Class={"text-white"} />
 
         <div className="mx-auto mt-3 md:mt-6 flex flex-wrap items-center justify-center gap-[26px] max-md:gap-[14px]">
           <Button
@@ -82,13 +88,10 @@ export default function Subscription() {
               </div>
 
               <p className="mt-3 text-[16px] font-normal leading-[1.65] text-white/90 max-md:text-[15px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
+                {plan.description}
               </p>
 
-              <div className="mt-[26px] flex flex-col gap-[14px]">
+              <div className="mt-[26px] flex flex-col gap-[14px] text-start">
                 {plan.features.map((feature, index) =>
                   <div
                     key={index}

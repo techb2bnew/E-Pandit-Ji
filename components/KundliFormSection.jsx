@@ -58,7 +58,7 @@ export default function KundliFormSection() {
         <div className="mx-auto md:max-w-[80%]">
           <div className="text-center">
             <Title
-              title={'Fill this Form for your kundli'}
+              title={'Fill Out The Details Below To Get Your Kundli'}
               Class={'text-white'}
             />
           </div>
@@ -177,7 +177,7 @@ export default function KundliFormSection() {
                 />
               </div>
 
-              <label className="col-span-2 col-start-2 flex cursor-pointer items-start gap-[10px] max-[991px]:col-span-2 max-[991px]:col-start-auto max-[576px]:col-span-1">
+              {/* <label className="col-span-2 col-start-2 flex cursor-pointer items-start gap-[10px] max-[991px]:col-span-2 max-[991px]:col-start-auto max-[576px]:col-span-1">
                 <input
                   type="checkbox"
                   className="mt-[5px] h-[14px] w-[14px] shrink-0 accent-primary"
@@ -187,7 +187,7 @@ export default function KundliFormSection() {
                   tempor incididunt ut labore et dolore magna aliqua. Quis ipsum
                   suspendisse ultrices gravida.
                 </span>
-              </label>
+              </label> */}
 
               {/* <button
                 type="button"

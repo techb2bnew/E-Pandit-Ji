@@ -25,13 +25,13 @@ const ContactFrom = () => {
             <div className='inn_container pt-10 md:pt-18'>
                 <div className="grid xl:grid-cols-[3fr_2fr] gap-6 md:max-w-[90%] mx-auto">
                     <div>
-                        <div className='text-center md:text-center'>
+                        <div className='text-center md:text-left'>
                             <Title
-                                title={'Get in Touch with e-Pandit Ji'}
+                                title={'Get in touch with us'}
                                 Class={'text-white'}
                             />
                             <Description
-                                description={'Have questions about your Kundli or need guidance? Our experts are here to help you with accurate astrology insights and support.'}
+                                description={'Fill the form with your details to contact us easily and receive personalized astrology guidance, remedies, and expert support.'}
                                 Class={'text-white mt-4'}
                             />
                         </div>

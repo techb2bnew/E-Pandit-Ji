@@ -4,37 +4,29 @@ import Description from "./Uiux/Description";
 import Button from "./Uiux/Button";
 
 
-const key_points = [
-  'Lagna (Ascendant): Your personality and life direction',
-  'Rashi (Moon Sign): Emotional nature and mindset',
-  'Nakshatra: Your strengths and destiny patterns',
-  'Planetary Positions: Influence of planets on your life',
-  'Doshas (if any): Identify challenges and imbalances',
-  'Dasha Periods: Timing of important life events'
-]
-export default function KundliAboutAnalysis() {
+
+
+export default function KundliAboutAnalysis({Ganeshsectiondata,whychoosedata}) {
   return (
     <div className="bg-black/40">
       <div className="inn_container py-14  bg-cover bg-center bg-no-repeat">
         <div className="text-center md:text-start">
           <Title
-            title={"Create Accurate Kundli <span class='text-white'> – Discover <br/> Your Life Path with e-Pandit Ji </span"}
+            title={"Accurate Kundli <span class='text-white'> –  Preparation <br/> by Expert Astrologers</span"}
             Class={'text-primary'}
           />
 
           <div className="pt-5 space-y-3">
             {
               [
-                'At e-Pandit Ji, we believe your birth chart is the key to understanding your true potential and life journey. Our platform is designed to generate accurate and detailed Janam Kundli using precise Vedic astrology calculations.',
-                'Your Kundli is created based on your date, time, and place of birth, helping you gain deep insights into your personality, career, relationships, and future opportunities.',
-                'Our advanced system ensures fast, reliable, and easy-to-understand reports, so you can make better life decisions with confidence.'
+                'Our qualified Pandit Ji and astrologers carefully analyze grah, nakshatra, stars, and Panchang to create a detailed and accurate Kundli. It includes comprehensive grah charts and precise predictions about your personality, career, relationships, health, and future. With deep insights into life events, opportunities, and challenges, our Kundli helps you understand your path better and make informed decisions with clarity, confidence, and trusted astrological guidance.',
               ].map((item, index) => (
                 <Description
                   key={index}
                   description={item}
                   Class={'text-white'}
                 />
-              ))
+              ))  
             }
           </div>
         </div>
@@ -54,18 +46,18 @@ export default function KundliAboutAnalysis() {
 
               <div className="text-center md:text-start">
                 <Title
-                  title={'What We Analyze in Your Kundli'}
+                  title={Ganeshsectiondata?.title}
                   Class={'text-white'}
                 />
                 <Description
-                  description={'Our Kundli creation process provides detailed insights into:'}
+                  description={Ganeshsectiondata?.description}
                   Class={'text-white'}
                 />
               </div>
 
               <div className="pt-2 ps-4 space-y-2">
                 {
-                  key_points.map((item, index) => (
+                  Ganeshsectiondata?.keys.map((item, index) => (
                     <Description
                       description={item}
                       Class={'text-white'}
@@ -81,22 +73,17 @@ export default function KundliAboutAnalysis() {
         <div className="pt-10">
           <div className="text-center md:text-start">
             <Title
-              title={'Why Choose e-Pandit Ji ?'}
+              title={whychoosedata?.title}
               Class={'text-white'}
             />
             <Description
-              description={'Get Accurate Kundli Instantly'}
-              Class={'text-white pt-2'}
-            />
-            <Description
-              description={'We combine traditional Vedic astrology with modern technology to deliver quick and precise Kundli reports.'}
-              Class={'text-white pt-2'}
-              variant={'secondary'}
+              description={whychoosedata?.description}
+              Class={'text-white pt-2 max-w-4xl'}
             />
           </div>
           <div className="pt-4 ps-4 space-y-2">
             {
-              key_points.map((item, index) => (
+              whychoosedata?.keys.map((item, index) => (
                 <Description
                   description={item}
                   Class={'text-white'}
@@ -110,20 +97,20 @@ export default function KundliAboutAnalysis() {
         <div className="mx-auto max-w-[820px] text-center pt-15">
 
           <Title
-            title={' Make Your <span class="text-primary">Kundli</span> Today'}
+            title={' Make Your <span class="text-primary">Kundli</span> to Predict Future Outcomes'}
             Class={'text-white'}
           />
 
           <Description
-            description={'Take the first step toward understanding your future. Enter your birth details and get your personalized Kundli report instantly.'}
+            description={'Make your Kundli with expert astrologers to receive accurate predictions about your life, career, relationships, and future. Our detailed analysis helps you understand opportunities and challenges, guiding you to make better, confident decisions with clarity and trust.'}
             variant={'secondary'}
             Class={'text-white'}
           />
-
+{/* 
           <Description
             description={'Find compatibility. Build trust. Begin your journey together.'}
             Class={'text-white pt-2'}
-          />
+          /> */}
 
           <Button
             button_name={'Get Started Now'}

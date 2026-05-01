@@ -31,7 +31,7 @@ const footerbardata = [
 ]
 const FooterMobileBar = () => {
   return (
-    <div className='pb-3 pt-3 bg-[#1A1A1A] border-t-2 border-white/50'>
+    <div className='pb-6 pt-3 bg-[#1A1A1A] border-t-2 border-white/50'>
       <div className='flex items-center justify-center gap-2'>
         <Link
           href={'/kundli'}
@@ -103,7 +103,7 @@ const FooterMobileBar = () => {
         <Link
           href={'/remedy'}
         >
-          <div className='min-w-14 flex flex-col justify-center items-center gap-1.5'>
+          <div className='min-w-14 flex flex-col  justify-center items-center gap-1.5'>
             <Image
               src={'/icons/homeremedy.svg'}
               alt=''

@@ -24,7 +24,7 @@ export default function Blog() {
           Guidance In Our Blog
         </h2>
         <p className="mb-8 text-[16px] text-[#b0b0b0]">
-          Find astrology tips and personalized guidance on all your questions
+          Read our spiritual blogs for guidance, clarity, inspiration, and deeper understanding of life.
         </p>
 
         <div className="grid grid-cols-[repeat(auto-fit,minmax(300px,1fr))] gap-8 max-md:grid-cols-1">

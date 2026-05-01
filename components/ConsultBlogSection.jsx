@@ -81,11 +81,11 @@ const consultItems = [
     image: "/assets/love.png",
   },
   {
-    title: "Marriage & Kundli",
+    title: "Kundli Matching",
     image: "/assets/marriage.png",
   },
   {
-    title: "Career",
+    title: "Career Guidance",
     image: "/assets/career.png",
   },
   {
@@ -93,11 +93,11 @@ const consultItems = [
     image: "/assets/women.png",
   },
   {
-    title: "Business",
+    title: "Business Growth",
     image: "/assets/business.png",
   },
   {
-    title: "Money",
+    title: "Money & Finance",
     image: "/assets/money.png",
   },
 ];
@@ -218,7 +218,7 @@ export default function ConsultBlogSection() {
                 />
 
                 <Description
-                  description={'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt.'}
+                  description={'Read our spiritual blogs for guidance, clarity, inspiration, and deeper understanding of life.'}
                   Class={'text-white'}
                 />
               </div>
