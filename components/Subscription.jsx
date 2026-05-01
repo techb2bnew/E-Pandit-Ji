@@ -52,7 +52,7 @@ export default function Subscription() {
 
         <Title title={"Our Flexible Subscription Plans"} Class={"text-white"} />
 
-        <div className="mx-auto mt-3 md:mt-6 flex flex-wrap items-center justify-center gap-[26px] max-md:gap-[14px]">
+        {/* <div className="mx-auto mt-3 md:mt-6 flex flex-wrap items-center justify-center gap-[26px] max-md:gap-[14px]">
           <Button
             button_name={"Kundli"}
             variant={"primary"}
@@ -63,7 +63,7 @@ export default function Subscription() {
             variant={"secondary"}
             Class={"text-primary"}
           />
-        </div>
+        </div> */}
 
         <div className="mt-10 md:mt-16 grid md:grid-cols-2 lg:grid-cols-3 gap-6 ">
           {plans.map(plan =>

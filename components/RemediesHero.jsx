@@ -2,6 +2,7 @@ import Image from "next/image";
 import Title from "./Uiux/Title";
 import Button from "./Uiux/Button";
 import MobileBannerBar from "./Uiux/MobileBannerBar";
+import Link from "next/link";
 
 export default function RemediesHero() {
   return (
@@ -22,11 +23,15 @@ export default function RemediesHero() {
             Vedic remedies by our astrologers help bring peace, prosperity, and solutions to life problems by balancing energies, removing obstacles, and improving overall well-being naturally. 
           </p>
 
+         <Link
+          href={'/remedy#Remedies_We_Offer'}
+          >
           <Button
             button_name={'Vedic Remedies we Offer'}
             Class={'text-black'}
             variant={'primary'}
           />
+          </Link>
 
           <p className="mt-3 text-[18px] text-white max-[991px]:text-[15px]">
             100% private | Fast delivery

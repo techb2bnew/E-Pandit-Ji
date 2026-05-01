@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "./Uiux/Button";
 import Description from "./Uiux/Description";
 import Title from "./Uiux/Title";
@@ -24,13 +25,16 @@ export default function RemediesCTA() {
             description={'Find compatibility. Build trust. Begin your journey together.'}
             Class={'text-white pt-2'}
           />
-
+         
+          <Link
+           href={'/remedy#Remedies_We_Offer'}
+           >
           <Button
             button_name={'Get Started Now'}
             variant={'primary'}
             Class={'text-black mt-8'}
           />
-
+          </Link>
           <p className="mt-4 text-[18px] leading-[1.4] text-white">
             100% private | Fast delivery
           </p>

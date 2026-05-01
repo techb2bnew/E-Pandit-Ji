@@ -125,11 +125,15 @@ export default function Hero() {
             </p>
 
             <div className="mt-6 lg:mt-12">
-              <Button
-                variant={'primary'}
-                button_name={"Get Customized Kundli"}
-                Class={"text-black"}
-              />
+              <Link
+               href={'/kundli#kundliFormSection'}
+               >
+               <Button
+                 variant={'primary'}
+                 button_name={"Get Customized Kundli"}
+                 Class={"text-black"}
+               />
+              </Link>
             </div>
           </div>
 

@@ -17,7 +17,7 @@ export default function NumerologyToolSection({
     >
       <div className="absolute inset-0 z-1 bg-black/50" />
 
-      <div className="relative z-2 mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-7 px-6 md:grid-cols-[minmax(0,1fr)_330px] md:gap-12">
+      <div id="numerology_card" className="relative z-2 mx-auto grid max-w-[1200px] grid-cols-1 items-start gap-7 px-6 md:grid-cols-[minmax(0,1fr)_330px] md:gap-12">
         <div className="max-w-full md:max-w-[690px] text-center md:text-start">
           <h2 className="text-3xl lg:text-4xl 2xl:text-5xl font-primary text-white pb-4 md:pb-10">
             {title}

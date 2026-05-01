@@ -16,7 +16,7 @@ const TOP_LINKS = [
   { label: "Rashifal 2026", href: "#" },
   { label: "Horoscope 2026", href: "#" },
   { label: "Today Horoscope", href: "#" },
-  { label: "Calendar 2026", href: "#" },
+  // { label: "Calendar 2026", href: "#" },
 ];
 
 const LEFT_LINKS = [
@@ -146,7 +146,7 @@ export default function KundliNavbar() {
             </div>
             <div className="hidden lg:flex items-center justify-end xl:justify-start gap-3 xl:gap-6 2xl:gap-10 ">
               {LEFT_LINKS.map((link) => {
-                const isActive = link.href === currentroute;
+                const isActive = currentroute.includes(link.href);
                 return (
                   <Link
                     key={link.label}
@@ -168,7 +168,7 @@ export default function KundliNavbar() {
 
             <div className="hidden lg:flex items-center justify-end gap-3 xl:gap-6 2xl:gap-10 max-[1280px]:gap-6">
               {RIGHT_LINKS.map((link) => {
-                const isActiver = link.href === currentroute;
+                const isActiver = currentroute.includes(link.href);
                 return (
                   <Link
                     key={link.label}

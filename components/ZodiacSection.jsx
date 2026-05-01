@@ -98,7 +98,7 @@ export default function ZodiacSection() {
           </div>
 
           <div className="flex items-center justify-center 2xl:justify-start h-full">
-            <div className="grid md:grid-cols-2 gap-6 2xl:pt-10">
+            <div className="grid md:grid-cols-2 gap-3 2xl:pt-10">
               <Button
                 variant={"primary"}
                 button_name={"Daily Horoscope"}

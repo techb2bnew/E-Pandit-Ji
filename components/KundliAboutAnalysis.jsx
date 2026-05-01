@@ -70,29 +70,48 @@ export default function KundliAboutAnalysis({Ganeshsectiondata,whychoosedata}) {
           </div>
         </div>
 
-        <div className="pt-10">
-          <div className="text-center md:text-start">
-            <Title
-              title={whychoosedata?.title}
-              Class={'text-white'}
-            />
-            <Description
-              description={whychoosedata?.description}
-              Class={'text-white pt-2 max-w-4xl'}
-            />
-          </div>
-          <div className="pt-4 ps-4 space-y-2">
-            {
-              whychoosedata?.keys.map((item, index) => (
-                <Description
-                  description={item}
+        
+        
+          <div className="pt-12 grid md:grid-cols-[3fr_2fr] gap-8">
+            <div className="flex items-center">
+            <div className="md:max-w-[90%] mx-auto">
+
+              <div className="text-center md:text-start">
+                <Title
+                  title={whychoosedata?.title}
                   Class={'text-white'}
-                  variant={'secondary'}
                 />
-              ))
-            }
+                <Description
+                  description={whychoosedata?.description}
+                  Class={'text-white'}
+                />
+              </div>
+
+              <div className="pt-2 ps-4 space-y-2">
+                {
+                  whychoosedata?.keys.map((item, index) => (
+                    <Description
+                      description={item}
+                      Class={'text-white'}
+                      variant={'secondary'}
+                    />
+                  ))
+                }
+              </div>
+            </div>
           </div>
+          <div>
+            <Image
+              src="/assets/aboutpandit1.png"
+              alt="Ganesh Kundli"
+              className="object-contain max-w-[80%] mx-auto"
+              width={1000}
+              height={500}
+            />
+          </div>
+          
         </div>
+   
 
         <div className="mx-auto max-w-[820px] text-center pt-15">
 

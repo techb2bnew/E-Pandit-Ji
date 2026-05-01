@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "./Uiux/Button";
 import Description from "./Uiux/Description";
 import Title from "./Uiux/Title";
@@ -33,11 +34,15 @@ export default function NumerologyCTA({black_bg}) {
         /> */}
 
         <div className="pt-8">
-          <Button
-            button_name={'Get Started Now'}
-            Class={'text-black'}
-            variant={'primary'}
-          />
+          <Link
+           href={'/numerology#numerology_card'}
+           >
+           <Button
+             button_name={'Get Started Now'}
+             Class={'text-black'}
+             variant={'primary'}
+           />
+          </Link>
         </div>
 
         <p className="mt-[10px] text-xl text-white">

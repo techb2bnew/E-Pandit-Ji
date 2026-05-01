@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 const usefulLinks = [
@@ -88,10 +88,22 @@ export const AccordionItem = ({
 
 export default function Footer() {
   const [openIndex, setOpenIndex] = useState(null);
-
+  const [showPrivacy, setShowPrivacy] = useState(false);
   const toggleAccordion = index => {
     setOpenIndex(openIndex === index ? null : index);
   };
+
+  useEffect(() => {
+    if (showPrivacy) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "auto";
+    }
+
+    return () => {
+      document.body.style.overflow = "auto";
+    };
+  }, [showPrivacy]);
   return (
     <div className="pt-12 bg-black">
       <footer className="relative mb-[70px] md:mb-0 w-full overflow-hidden bg-black bg-[url('/assets/footer-bg-stars.png')] bg-center bg-cover bg-no-repeat px-6  pt-[70px] md:px-6 md:pb-9 md:pt-[70px] max-md:px-4 max-md:pb-7 max-md:pt-14">
@@ -213,35 +225,21 @@ export default function Footer() {
                 tempor incididunt ut labore et dolore magna aliqua.
               </p>
 
-              <div className="mt-7 flex items-center justify-center gap-[18px]">
-                <a
-                  href="#"
-                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary text-primary"
-                  aria-label="LinkedIn"
-                >
-                  <span aria-hidden="true">in</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                  aria-label="Facebook"
-                >
-                  <span aria-hidden="true">f</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                  aria-label="Instagram"
-                >
-                  <span aria-hidden="true">📸</span>
-                </a>
-                <a
-                  href="#"
-                  className="text-white/70 transition-[color,transform] duration-200 hover:-translate-y-[1px] hover:text-primary"
-                  aria-label="YouTube"
-                >
-                  <span aria-hidden="true">▶</span>
-                </a>
+              <div className="flex justify-center gap-4 pt-10">
+                {socialLinks.map((item) => {
+                  const Icon = item.icon;
+                  return (
+                    <a
+                      key={item.name}
+                      href={item.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-primary text-primary transition hover:bg-primary hover:text-black"
+                    >
+                      <Icon size={18} />
+                    </a>
+                  );
+                })}
               </div>
             </div>
             <AccordionItem
@@ -308,14 +306,83 @@ export default function Footer() {
           </div>
           <div className="mt-2 border-t border-white/10 pt-5 md:mt-[34px] md:pt-6 flex flex-col md:flex-row justify-between mb-4 md:mb-0">
             <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
-              ©2026 All Rights Reserved | E-pandit ji | Privacy Policy
+              ©{new Date().getFullYear()} All Rights Reserved | E-pandit ji |{" "}
+              <button
+                onClick={() => setShowPrivacy(true)}
+                className="underline hover:text-primary"
+              >
+                Privacy Policy
+              </button>
             </p>
             <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
-              Design By <a href="https://base2brand.com/">Base2brand</a>
+              Design & Development By <a href="https://base2brand.com/">Base2brand</a>
             </p>
           </div>
         </div>
       </footer>
+      {showPrivacy && (
+        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/70 backdrop-blur-sm">
+
+          <div className="relative w-[90%] max-w-[800px] max-h-[85vh] overflow-y-auto rounded-[20px] bg-black border border-primary p-6 md:p-8 shadow-[0_0_40px_rgba(245,197,24,0.25)] animate-fadeIn">
+
+            {/* Close Button */}
+            <button
+              onClick={() => setShowPrivacy(false)}
+              className="absolute top-4 right-4 text-primary text-2xl hover:scale-110 transition"
+            >
+              ✕
+            </button>
+
+            {/* Title */}
+            <h2 className="text-[28px] md:text-[34px] font-extrabold text-primary mb-4">
+              Privacy Policy
+            </h2>
+
+            {/* Content */}
+            <div className="space-y-4 text-white/80 text-[15px] leading-[1.7]">
+
+              <p>
+                At E-Pandit Ji, we respect your privacy and are committed to protecting your personal information.
+                This Privacy Policy explains how we collect, use, and safeguard your data.
+              </p>
+
+              <h3 className="text-primary font-bold text-[18px]">1. Information We Collect</h3>
+              <p>
+                We may collect your name, date of birth, contact details, and other information required
+                for astrology and numerology services.
+              </p>
+
+              <h3 className="text-primary font-bold text-[18px]">2. How We Use Information</h3>
+              <p>
+                Your information is used to provide personalized astrology insights, improve services,
+                and communicate important updates.
+              </p>
+
+              <h3 className="text-primary font-bold text-[18px]">3. Data Protection</h3>
+              <p>
+                We ensure that your data is securely stored and never shared with third parties
+                without your consent.
+              </p>
+
+              <h3 className="text-primary font-bold text-[18px]">4. Cookies</h3>
+              <p>
+                Our website may use cookies to enhance user experience and analyze performance.
+              </p>
+
+              <h3 className="text-primary font-bold text-[18px]">5. User Rights</h3>
+              <p>
+                You have the right to access, update, or request deletion of your personal data.
+              </p>
+
+              <h3 className="text-primary font-bold text-[18px]">6. Contact Us</h3>
+              <p>
+                For any privacy-related concerns, you can contact us at hello@e-panditji.com.
+              </p>
+
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 }

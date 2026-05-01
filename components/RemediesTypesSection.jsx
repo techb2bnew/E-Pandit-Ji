@@ -781,7 +781,7 @@ export default function RemediesTypesSection() {
   const data = DATA[activeTab];
 
   return (
-    <section className="relative overflow-hidden bg-[url('/assets/remedies-types-bg.png')] bg-cover bg-center bg-no-repeat pb-2 lg:pb-14 xl:pb-18 2xl:pt-14">
+    <section id="Remedies_We_Offer" className="relative overflow-hidden bg-[url('/assets/remedies-types-bg.png')] bg-cover bg-center bg-no-repeat pb-2 lg:pb-14 xl:pb-18 2xl:pt-14">
       <div className="relative z-2 mx-auto max-w-[1540px] px-[70px] max-[991px]:px-5">
 
         <div className="text-center">

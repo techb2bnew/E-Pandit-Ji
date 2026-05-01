@@ -4,18 +4,78 @@ import Image from "next/image";
 import React, { useCallback, useEffect, useState } from "react";
 
 const ALL_ZODIAC = [
-  { name: "Aries", image: "/assets/aries.webp" },
-  { name: "Taurus", image: "/assets/taurus.webp" },
-  { name: "Gemini", image: "/assets/gimini.webp" },
-  { name: "Cancer", image: "/assets/cancer.webp" },
-  { name: "Aries", image: "/assets/aries.webp" },
-  { name: "Taurus", image: "/assets/taurus.webp" },
-  { name: "Gemini", image: "/assets/gimini.webp" },
-  { name: "Cancer", image: "/assets/cancer.webp" },
-    { name: "Aries", image: "/assets/aries.webp" },
-  { name: "Taurus", image: "/assets/taurus.webp" },
-  { name: "Gemini", image: "/assets/gimini.webp" },
-  { name: "Cancer", image: "/assets/cancer.webp" },
+  {
+    name: "Aries",
+    image: "/assets/aries.webp",
+    description:
+      "Aries is a fire sign known for confidence, leadership, and energy. They are bold and ambitious.",
+  },
+  {
+    name: "Taurus",
+    image: "/assets/taurus.webp",
+    description:
+      "Taurus is an earth sign that represents stability and patience. They value comfort and loyalty.",
+  },
+  {
+    name: "Gemini",
+    image: "/assets/gimini.webp",
+    description:
+      "Gemini is an air sign known for communication, intelligence, and adaptability.",
+  },
+  {
+    name: "Cancer",
+    image: "/assets/cancer.webp",
+    description:
+      "Cancer is a water sign associated with emotions, care, and intuition.",
+  },
+  {
+    name: "Leo",
+    image: "/assets/aries.webp",
+    description:
+      "Leo is a fire sign known for confidence, creativity, and strong leadership qualities.",
+  },
+  {
+    name: "Virgo",
+    image: "/assets/taurus.webp",
+    description:
+      "Virgo is an earth sign known for perfection, practicality, and attention to detail.",
+  },
+  {
+    name: "Libra",
+    image: "/assets/gimini.webp",
+    description:
+      "Libra is an air sign focused on balance, harmony, and relationships.",
+  },
+  {
+    name: "Scorpio",
+    image: "/assets/cancer.webp",
+    description:
+      "Scorpio is a water sign known for intensity, passion, and emotional depth.",
+  },
+  {
+    name: "Sagittarius",
+    image: "/assets/aries.webp",
+    description:
+      "Sagittarius is a fire sign known for adventure, optimism, and freedom.",
+  },
+  {
+    name: "Capricorn",
+    image: "/assets/taurus.webp",
+    description:
+      "Capricorn is an earth sign known for discipline, ambition, and responsibility.",
+  },
+  {
+    name: "Aquarius",
+    image: "/assets/gimini.webp",
+    description:
+      "Aquarius is an air sign known for innovation, independence, and unique thinking.",
+  },
+  {
+    name: "Pisces",
+    image: "/assets/cancer.webp",
+    description:
+      "Pisces is a water sign known for creativity, intuition, and compassion.",
+  },
 ];
 
 const TOTAL = ALL_ZODIAC.length;
@@ -32,7 +92,8 @@ const ARC = {
 
 export default function ZodiacSlider() {
   const [activeIdx, setActiveIdx] = useState(1);
-
+  const [selectedZodiac, setSelectedZodiac] = useState(null);
+  const [showModal, setShowModal] = useState(false);
   const prev = useCallback(() => {
     setActiveIdx((i) => mod(i - 1, TOTAL));
   }, []);
@@ -41,28 +102,28 @@ export default function ZodiacSlider() {
     setActiveIdx((i) => mod(i + 1, TOTAL));
   }, []);
 
-const [slots, setSlots] = useState([]);
-const [mounted, setMounted] = useState(false);
+  const [slots, setSlots] = useState([]);
+  const [mounted, setMounted] = useState(false);
 
-useEffect(() => {
-  setMounted(true);
+  useEffect(() => {
+    setMounted(true);
 
-  const updateSlots = () => {
-    if (window.innerWidth < 768) {
-      setSlots([0]);
-    } else if (window.innerWidth < 1200) {
-      setSlots([-1, 0, 1]);
-    } else {
-      setSlots([-2, -1, 0, 1, 2]);
-    }
-  };
+    const updateSlots = () => {
+      if (window.innerWidth < 768) {
+        setSlots([0]);
+      } else if (window.innerWidth < 1200) {
+        setSlots([-1, 0, 1]);
+      } else {
+        setSlots([-2, -1, 0, 1, 2]);
+      }
+    };
 
-  updateSlots();
-  window.addEventListener("resize", updateSlots);
+    updateSlots();
+    window.addEventListener("resize", updateSlots);
 
-  return () => window.removeEventListener("resize", updateSlots);
-}, []);
-if (!mounted) return null;
+    return () => window.removeEventListener("resize", updateSlots);
+  }, []);
+  if (!mounted) return null;
   return (
     <section className="zroot">
       <div className="slider-shell">
@@ -91,8 +152,8 @@ if (!mounted) return null;
                     pointerEvents: op === 0 ? "none" : "auto",
                   }}
                   onClick={() => {
-                    if (offset < 0) prev();
-                    if (offset > 0) next();
+                   setSelectedZodiac(card);
+                   setShowModal(true);
                   }}
                 >
                   <div className={`card ${isActive ? "card--activewqewe" : ""}`}>
@@ -118,7 +179,44 @@ if (!mounted) return null;
           →
         </button>
       </div>
+      {showModal && selectedZodiac && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/70 backdrop-blur-sm transition-opacity duration-300"
+          onClick={() => setShowModal(false)}
+        >
+          <div
+            onClick={(e) => e.stopPropagation()}
+            className="relative w-[90%] max-w-[360px] rounded-[18px] border border-primary bg-[#050609] p-7 text-center shadow-[0_0_35px_rgba(245,197,24,0.25)] transition-all duration-300 scale-100 animate-[scaleIn_0.3s_ease]"
+          >
+            {/* Close Button */}
+            <button
+              onClick={() => setShowModal(false)}
+              className="absolute right-3 top-2 text-[20px] text-primary cursor-pointer"
+            >
+              ✕
+            </button>
 
+            {/* Image */}
+            <Image
+              src={selectedZodiac.image}
+              alt={selectedZodiac.name}
+              width={120}
+              height={120}
+              className="mx-auto"
+            />
+
+            {/* Title */}
+            <h2 className="mt-3 text-[24px] font-semibold text-primary">
+              {selectedZodiac.name}
+            </h2>
+
+            {/* Description */}
+            <p className="mt-2 text-[14px] leading-[1.6] text-white">
+              {selectedZodiac.description}
+            </p>
+          </div>
+        </div>
+      )}
       <style jsx>{`
         .zroot {
           --cw: 300px;

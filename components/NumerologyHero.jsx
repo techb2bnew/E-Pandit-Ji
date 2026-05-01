@@ -1,3 +1,4 @@
+import Link from "next/link";
 import Button from "./Uiux/Button";
 import Description from "./Uiux/Description";
 import MobileBannerBar from "./Uiux/MobileBannerBar";
@@ -26,13 +27,15 @@ export default function NumerologyHero() {
         />
 
         <div className="pt-8">
-          
+          <Link
+           href={'/numerology#numerology_card'}
+           >
           <Button
            button_name={'Get Your Life Path Number'}
            variant={'primary'}
            Class={'text-black'}
           />
-
+          </Link>
         <p className="text-[20px] text-white max-[991px]:text-[16px] pt-3">
           100% private | Fast delivery
         </p>
