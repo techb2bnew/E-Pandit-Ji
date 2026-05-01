@@ -65,7 +65,7 @@ export default function KundliFormSection() {
 
 
           <form className="w-full pt-10" onSubmit={(e) => e.preventDefault()}>
-            <div className="grid grid-cols-4 gap-x-[24px] gap-4 md:gap-y-[26px] max-[991px]:grid-cols-2 max-[576px]:grid-cols-1">
+            <div className="grid grid-cols-3 gap-x-[24px] gap-4 md:gap-y-[26px] max-[991px]:grid-cols-2 max-[576px]:grid-cols-1">
               <div className="flex flex-col">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
                   Full Name
@@ -77,7 +77,7 @@ export default function KundliFormSection() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
                   Date of Birth
                 </label>
@@ -86,9 +86,9 @@ export default function KundliFormSection() {
                   placeholder="01/04/2026"
                   className="md:min-h-[60px] w-full rounded-[6px] bg-[#f1f1f1] px-[20px] py-3 md:py-[16px] text-[16px] text-[#1a1a1a] outline-none ring-1 ring-white/10 placeholder:text-[#9b9b9b]"
                 />
-              </div>
+              </div> */}
 
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
                   Time of Birth
                 </label>
@@ -97,9 +97,9 @@ export default function KundliFormSection() {
                   placeholder="12:00 AM"
                   className="md:min-h-[60px] w-full rounded-[6px] bg-[#f1f1f1] px-[20px] py-3 md:py-[16px] text-[16px] text-[#1a1a1a] outline-none ring-1 ring-white/10 placeholder:text-[#9b9b9b]"
                 />
-              </div>
+              </div> */}
 
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
                   Place of Birth
                 </label>
@@ -108,9 +108,9 @@ export default function KundliFormSection() {
                   placeholder="Enter Your Place of Birth"
                   className="md:min-h-[60px] w-full rounded-[6px] bg-[#f1f1f1] px-[20px] py-3 md:py-[16px] text-[16px] text-[#1a1a1a] outline-none ring-1 ring-white/10 placeholder:text-[#9b9b9b]"
                 />
-              </div>
+              </div> */}
 
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
                   Gender
                 </label>
@@ -125,7 +125,7 @@ export default function KundliFormSection() {
                   <option>Female</option>
                   <option>Other</option>
                 </select>
-              </div>
+              </div> */}
 
               <div className="flex flex-col">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
@@ -149,7 +149,7 @@ export default function KundliFormSection() {
                 />
               </div>
 
-              <div className="flex flex-col">
+              {/* <div className="flex flex-col">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
                   Select Service
                 </label>
@@ -165,9 +165,9 @@ export default function KundliFormSection() {
                   <option>Marriage Kundli</option>
                   <option>Career Kundli</option>
                 </select>
-              </div>
+              </div> */}
 
-              <div className="col-span-2 col-start-2 flex flex-col max-[991px]:col-span-2 max-[991px]:col-start-auto max-[576px]:col-span-1">
+              {/* <div className="col-span-2 col-start-2 flex flex-col max-[991px]:col-span-2 max-[991px]:col-start-auto max-[576px]:col-span-1">
                 <label className="mb-[8px] text-base md:text-[18px] font-medium leading-[1.2] text-white">
                   Message / Special Question
                 </label>
@@ -175,7 +175,7 @@ export default function KundliFormSection() {
                   rows={5}
                   className="min-h-[115px] w-full resize-none rounded-[6px] bg-[#f1f1f1] px-[20px] py-3 md:py-[16px] text-[16px] text-[#1a1a1a] outline-none ring-1 ring-white/10 placeholder:text-[#9b9b9b]"
                 />
-              </div>
+              </div> */}
 
               {/* <label className="col-span-2 col-start-2 flex cursor-pointer items-start gap-[10px] max-[991px]:col-span-2 max-[991px]:col-start-auto max-[576px]:col-span-1">
                 <input

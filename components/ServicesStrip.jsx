@@ -12,13 +12,13 @@ const services = [
     isComingSoon: false
   },
   {
-    title: "Numerology Calculation",
+    title: "Numerology",
     icon: "/icons/numerology.svg",
     href: "/numerology",
     isComingSoon: false
   },
   {
-    title: "Couple Match Making",
+    title: "Couple Making",
     icon: "/icons/wedding.svg",
     href: "/match-making",
     isComingSoon: true
