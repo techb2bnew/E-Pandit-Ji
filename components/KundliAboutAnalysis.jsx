@@ -55,7 +55,7 @@ export default function KundliAboutAnalysis({Ganeshsectiondata,whychoosedata}) {
                 />
               </div>
 
-              <div className="pt-2 ps-4 space-y-2">
+              <div className="pt-2  space-y-2">
                 {
                   Ganeshsectiondata?.keys.map((item, index) => (
                     <Description
@@ -87,7 +87,7 @@ export default function KundliAboutAnalysis({Ganeshsectiondata,whychoosedata}) {
                 />
               </div>
 
-              <div className="pt-2 ps-4 space-y-2">
+              <div className="pt-2  space-y-2">
                 {
                   whychoosedata?.keys.map((item, index) => (
                     <Description

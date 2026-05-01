@@ -34,11 +34,11 @@ const socialLinks = [
     icon: FaTwitter,
     url: "https://twitter.com",
   },
-  {
-    name: "LinkedIn",
-    icon: FaLinkedinIn,
-    url: "https://linkedin.com",
-  },
+  // {
+  //   name: "LinkedIn",
+  //   icon: FaLinkedinIn,
+  //   url: "https://linkedin.com",
+  // },
   {
     name: "YouTube",
     icon: FaYoutube,
@@ -130,7 +130,7 @@ export default function Footer() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-primary text-primary transition hover:bg-primary hover:text-black"
+                      className="flex h-10 w-10 items-center justify-center rounded-full border border-primary text-primary hover:scale-110 transition hover:bg-primary hover:text-black"
                     >
                       <Icon size={18} />
                     </a>
@@ -234,7 +234,7 @@ export default function Footer() {
                       href={item.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="flex h-10 w-10 items-center justify-center rounded-full border border-primary text-primary transition hover:bg-primary hover:text-black"
+                      className="flex h-10 w-10 items-center hover:scale-105 justify-center rounded-full border border-primary text-primary transition hover:bg-primary hover:text-black"
                     >
                       <Icon size={18} />
                     </a>

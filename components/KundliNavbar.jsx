@@ -2,16 +2,15 @@
 
 import Link from "next/link";
 import { User } from "lucide-react";
-import { useRouter } from "next/router";
 import Marquee from "react-fast-marquee";
 import { SlMenu } from "react-icons/sl";
 import { RiCloseLargeLine } from "react-icons/ri";
 import { FaUser } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
-
+import { usePathname } from "next/navigation";
 const TOP_LINKS = [
-  { label: "Rashifal", href: "#" },
+  { label: "Rashifal", href: "/#Zodiac" },
   { label: "Kundli", href: "#" },
   { label: "Rashifal 2026", href: "#" },
   { label: "Horoscope 2026", href: "#" },
@@ -53,11 +52,11 @@ const socialLinks = [
     icon: FaTwitter,
     url: "https://twitter.com",
   },
-  {
-    name: "LinkedIn",
-    icon: FaLinkedinIn,
-    url: "https://linkedin.com",
-  },
+  // {
+  //   name: "LinkedIn",
+  //   icon: FaLinkedinIn,
+  //   url: "https://linkedin.com",
+  // },
   {
     name: "YouTube",
     icon: FaYoutube,
@@ -68,17 +67,16 @@ const socialLinks = [
 
 
 export default function KundliNavbar() {
-  const router = useRouter();
-  const [currentroute, setCurrentroute] = useState("");
+  // const [currentroute, setCurrentroute] = useState("");
   const [openNavbar, setopenNavbar] = useState(false);
 
-  useEffect(() => {
-    if (router?.asPath) {
-      setCurrentroute(router.asPath);
-    } else if (typeof window !== "undefined") {
-      setCurrentroute(window.location.pathname);
-    }
-  }, [router?.asPath]);
+  // useEffect(() => {
+  //   if (router?.asPath) {
+  //     setCurrentroute(router.asPath);
+  //   } else if (typeof window !== "undefined") {
+  //     setCurrentroute(window.location.pathname);
+  //   }
+  // }, [router?.asPath]);
 
   useEffect(() => {
     if (openNavbar) {
@@ -94,6 +92,11 @@ export default function KundliNavbar() {
       document.documentElement.style.overflow = "";
     };
   }, [openNavbar]);
+  const currentroute = usePathname();
+  const isActiveRoute = (href) => {
+  if (href === "/") return currentroute === "/";
+  return currentroute.startsWith(href);
+};
   return (
     <header className="absolute left-0 top-0 z-50 w-full pt-2">
       <div className="w-full min-h-7 pt-[16px] ">
@@ -146,7 +149,7 @@ export default function KundliNavbar() {
             </div>
             <div className="hidden lg:flex items-center justify-end xl:justify-start gap-3 xl:gap-6 2xl:gap-10 ">
               {LEFT_LINKS.map((link) => {
-                const isActive = currentroute.includes(link.href);
+                 const isActive = isActiveRoute(link.href);
                 return (
                   <Link
                     key={link.label}
@@ -168,7 +171,7 @@ export default function KundliNavbar() {
 
             <div className="hidden lg:flex items-center justify-end gap-3 xl:gap-6 2xl:gap-10 max-[1280px]:gap-6">
               {RIGHT_LINKS.map((link) => {
-                const isActiver = currentroute.includes(link.href);
+                 const isActiver = isActiveRoute(link.href);
                 return (
                   <Link
                     key={link.label}

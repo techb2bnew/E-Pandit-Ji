@@ -151,7 +151,7 @@ export default function Hero() {
                 alt="kundli"
                 width={510}
                 height={650}
-                className="drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)] max-w-[300px] md:max-w-[400px] 2xl:max-w-[510px]"
+                className="drop-shadow-[0_30px_60px_rgba(0,0,0,0.6)] max-w-[200px] md:max-w-[400px] 2xl:max-w-[510px]"
               />
             </div>
           </div>

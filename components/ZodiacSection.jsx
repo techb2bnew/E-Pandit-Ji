@@ -80,7 +80,7 @@ export default function ZodiacSection() {
 
       <div className="relative z-2 inn_container">
         {/* Top content */}
-        <div className="grid 2xl:grid-cols-2 items-start gap-7 ">
+        <div className="grid 2xl:grid-cols-2 items-start gap-7 " id="Zodiac">
           <div className="text-center md:text-start">
             <p className="mb-3 text-2xl 2xl:text-[26px] font-medium leading-[1.2] text-primary max-md:text-[16px]">
               Horoscope Predictions

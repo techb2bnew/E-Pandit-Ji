@@ -6,7 +6,7 @@ export default function RemediesWhyHow() {
     <section className="relative overflow-hidden pb-6 pt-[34px]">
       {/* <div className="absolute inset-0 z-1 bg-black/70" /> */}
 
-      <div className="relative z-2 mx-auto grid max-w-[1540px] grid-cols-1 items-start gap-3 md:gap-[34px] px-[84px] md:grid-cols-[1fr_1px_1fr] max-[991px]:px-5 text-center md:text-start">
+      <div className="relative z-2 mx-auto grid max-w-[1580px] grid-cols-1 items-start gap-3 md:gap-[34px] px-[84px] md:grid-cols-[1fr_1px_1fr] max-[991px]:px-5 text-center md:text-start">
         <div>
           <Title
             title={'Why Choose ई-Pandit ji'}
