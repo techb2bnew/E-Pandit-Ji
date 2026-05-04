@@ -11,6 +11,7 @@ import Subscription from "@/components/Subscription";
 import Faq from "@/components/Faq";
 import Testimonials from "@/components/Testimonials";
 import Footer from "@/components/Footer";
+import PanditCardSlider from "@/components/PanditCardSlider";
 const faqs = [
   {
     question: "What is the difference between astrology and numerology?",
@@ -85,8 +86,9 @@ export default function Home() {
       <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
         <OurServicesSection  />
       </div>
-      {/* <Consultation />
-      <Subscription />  */}
+      {/* <Consultation /> */}
+      {/* <Subscription />  */}
+      <PanditCardSlider />
       <Faq
         faqs={faqs}
       />
