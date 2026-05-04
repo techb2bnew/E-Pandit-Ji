@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, useRef } from "react";
 
 const ALL_ZODIAC = [
   {
@@ -29,52 +29,52 @@ const ALL_ZODIAC = [
       "Cancer is a water sign associated with emotions, care, and intuition."
   },
   {
-    name: "Leo",
+    name: "Aries",
     image: "/assets/aries.webp",
     description:
-      "Leo is a fire sign known for confidence, creativity, and strong leadership qualities."
+      "Aries is a bold and energetic fire sign known for leadership, confidence, and a strong drive to take action."
   },
   {
-    name: "Virgo",
-    image: "/assets/taurus.webp",
-    description:
-      "Virgo is an earth sign known for perfection, practicality, and attention to detail."
-  },
-  {
-    name: "Libra",
-    image: "/assets/gimini.webp",
-    description:
-      "Libra is an air sign focused on balance, harmony, and relationships."
-  },
-  {
-    name: "Scorpio",
+    name: "Cancer",
     image: "/assets/cancer.webp",
     description:
-      "Scorpio is a water sign known for intensity, passion, and emotional depth."
+      "Cancer is a water sign associated with emotions, care, and intuition."
   },
   {
-    name: "Sagittarius",
+    name: "Gemini",
+    image: "/assets/gimini.webp",
+    description:
+      "Gemini is an air sign known for communication, intelligence, and adaptability."
+  },
+  {
+    name: "Cancer",
+    image: "/assets/cancer.webp",
+    description:
+      "Cancer is a sensitive and nurturing water sign known for emotional depth, intuition, and strong family values."
+  },
+  {
+    name: "Aries",
     image: "/assets/aries.webp",
     description:
-      "Sagittarius is a fire sign known for adventure, optimism, and freedom."
+      "Aries is a bold and energetic fire sign known for leadership, confidence, and a strong drive to take action."
   },
   {
-    name: "Capricorn",
+    name: "Taurus",
     image: "/assets/taurus.webp",
     description:
-      "Capricorn is an earth sign known for discipline, ambition, and responsibility."
+      "Taurus is an earth sign that represents stability and patience. They value comfort and loyalty."
   },
   {
-    name: "Aquarius",
+    name: "Gemini",
     image: "/assets/gimini.webp",
     description:
-      "Aquarius is an air sign known for innovation, independence, and unique thinking."
+      "Gemini is an air sign known for communication, intelligence, and adaptability."
   },
   {
-    name: "Pisces",
+    name: "Cancer",
     image: "/assets/cancer.webp",
     description:
-      "Pisces is a water sign known for creativity, intuition, and compassion."
+      "Cancer is a sensitive and nurturing water sign known for emotional depth, intuition, and strong family values."
   }
 ];
 const horoscopeTabs = [
@@ -127,11 +127,69 @@ const ARC = {
   "3": { rotZ: 10, ty: 48, op: 0 }
 };
 
+
+
+const eyeIcon = ((
+  <svg width={30} height={30} viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <g clipPath="url(#clip0_15_200)"> <rect width={30} height={30} fill="none" /> <circle cx={12} cy={13} r={2} stroke="currentColor" strokeLinejoin="round" />
+      <path d="M12 7.5C7.69517 7.5 4.47617 11.0833 3.39473 12.4653C3.14595 12.7832 3.14595 13.2168 3.39473 13.5347C4.47617 14.9167 7.69517 18.5 12 18.5C16.3048 18.5 19.5238 14.9167 20.6053 13.5347C20.8541 13.2168 20.8541 12.7832 20.6053 12.4653C19.5238 11.0833 16.3048 7.5 12 7.5Z" stroke="currentColor" strokeLinecap="round" strokeLinejoin="round" />
+    </g><defs><clipPath id="clip0_15_200"><rect width={30} height={30} fill="currentColor" /></clipPath>
+    </defs>
+  </svg>
+))
+
+const closeEyeIcon = ((
+
+  <svg
+    width="22"
+    height="22"
+    viewBox="0 0 24 24"
+    fill="none"
+    xmlns="http://www.w3.org/2000/svg"
+  >
+    <g id="style=linear">
+      <g id="eye-close">
+        <path
+          id="vector"
+          d="M15.6487 5.39489C14.4859 4.95254 13.2582 4.72021 12 4.72021C8.46997 4.72021 5.17997 6.54885 2.88997 9.71381C1.98997 10.9534 1.98997 13.037 2.88997 14.2766C3.34474 14.9051 3.83895 15.481 4.36664 16.0002M19.3248 7.69653C19.9692 8.28964 20.5676 8.96425 21.11 9.71381C22.01 10.9534 22.01 13.037 21.11 14.2766C18.82 17.4416 15.53 19.2702 12 19.2702C10.6143 19.2702 9.26561 18.9884 7.99988 18.4547"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          id="vector_2"
+          d="M15 12C15 13.6592 13.6592 15 12 15M14.0996 9.85541C13.5589 9.32599 12.8181 9 12 9C10.3408 9 9 10.3408 9 12C9 12.7293 9.25906 13.3971 9.69035 13.9166"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+          strokeLinejoin="round"
+        />
+        <path
+          id="vector_3"
+          d="M2 21.0002L22 2.7002"
+          stroke="currentColor"
+          strokeWidth="1.5"
+          strokeLinecap="round"
+        />
+      </g>
+    </g>
+  </svg>
+))
+
 export default function ZodiacSlider() {
-  const [activeIdx, setActiveIdx] = useState(1);
-  const [selectedZodiac, setSelectedZodiac] = useState(null);
-  const [showModal, setShowModal] = useState(false);
+  const [showDetails, setShowDetails] = useState(false);
+  const [activeIdx, setActiveIdx] = useState(0);
+  const [selectedCardIdx, setSelectedCardIdx] = useState(0);
+  const [selectedZodiac, setSelectedZodiac] = useState(ALL_ZODIAC[0]);
   const [activeTab, setActiveTab] = useState(0);
+
+  // Drag/Swipe states
+  const [dragStartX, setDragStartX] = useState(0);
+  const [isDragging, setIsDragging] = useState(false);
+  const sliderRef = useRef(null);
+  const dragThreshold = 50; // Minimum distance to trigger slide
+
   const prev = useCallback(() => {
     setActiveIdx(i => mod(i - 1, TOTAL));
   }, []);
@@ -161,7 +219,49 @@ export default function ZodiacSlider() {
 
     return () => window.removeEventListener("resize", updateSlots);
   }, []);
+
+  // Handle drag start (mouse or touch)
+  const handleDragStart = (e) => {
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX;
+    setDragStartX(clientX);
+    setIsDragging(true);
+  };
+
+  // Handle drag end (mouse or touch)
+  const handleDragEnd = (e) => {
+    if (!isDragging) return;
+
+    let dragEndX;
+    if (e.changedTouches) {
+      dragEndX = e.changedTouches[0].clientX;
+    } else {
+      dragEndX = e.clientX;
+    }
+
+    const dragDistance = dragEndX - dragStartX;
+
+    if (Math.abs(dragDistance) > dragThreshold) {
+      if (dragDistance > 0) {
+        // Swipe right - go to previous
+        prev();
+      } else {
+        // Swipe left - go to next
+        next();
+      }
+    }
+
+    setIsDragging(false);
+    setDragStartX(0);
+  };
+
+  // Handle drag move (prevent default to avoid text selection)
+  const handleDragMove = (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+  };
+
   if (!mounted) return null;
+
   return (
     <div>
       <section className="zroot">
@@ -170,12 +270,23 @@ export default function ZodiacSlider() {
             ←
           </button>
 
-          <div className="vp">
+          <div
+            className="vp"
+            ref={sliderRef}
+            onMouseDown={handleDragStart}
+            onMouseUp={handleDragEnd}
+            onMouseLeave={handleDragEnd}
+            onMouseMove={handleDragMove}
+            onTouchStart={handleDragStart}
+            onTouchEnd={handleDragEnd}
+            onTouchMove={handleDragMove}
+            style={{ cursor: isDragging ? 'grabbing' : 'grab' }}
+          >
             <div className="pstage">
               {slots.map(offset => {
                 const cardIdx = mod(activeIdx + offset, TOTAL);
                 const card = ALL_ZODIAC[cardIdx];
-                const isActive = offset === 0;
+                const isActive = cardIdx === selectedCardIdx;
                 const { rotZ = 0, ty = 0, op = 1 } = ARC[String(offset)] || {};
 
                 const tx = `calc(var(--unit) * ${offset + 1})`;
@@ -188,29 +299,45 @@ export default function ZodiacSlider() {
                       transform: `translateX(${tx}) translateY(${ty}px) rotate(${rotZ}deg)`,
                       opacity: op,
                       zIndex: isActive ? 10 : 5 - Math.abs(offset),
-                      pointerEvents: op === 0 ? "none" : "auto"
+                      pointerEvents: op === 0 ? "none" : "auto",
+                      transition: isDragging ? 'none' : 'transform 0.6s cubic-bezier(0.34, 1.18, 0.64, 1), opacity 0.45s ease'
                     }}
                     onClick={() => {
-                      setSelectedZodiac(card);
-                      setShowModal(true);
+                      if (!isDragging) {
+                        if (selectedCardIdx === cardIdx) {
+                          setShowDetails(prev => !prev);
+                        } else {
+                          setShowDetails(false);
+                          setTimeout(() => {
+                            setSelectedCardIdx(cardIdx);
+                            setSelectedZodiac(card);
+                            setActiveTab(0);
+                            setShowDetails(true);
+                          }, 100);
+                        }
+                      }
                     }}
                   >
                     <div
                       className={`card ${isActive ? "card--activewqewe" : ""}`}
                     >
-                      <div className="img-box">
+                      <div className="img-box relative">
                         <Image
                           src={card.image}
                           alt={card.name}
                           fill
                           sizes="(max-width: 767px) 150px, (max-width: 1199px) 210px, 300px"
-                          className="zimg"
+                          className={`zimg transition-all duration-300 ${isActive ? "rounded-4xl shadow-[0_0_30px_rgba(245,197,24,0.5)]" : ""
+                            }`}
                           priority={isActive}
                         />
 
-                        <p className="text-xl  border-2 border-full italic w-7 h-7 flex items-center justify-center rounded-full text-primary absolute top-6 left-6">
-                          i
-                        </p>
+                        <div className="group">
+                         <p className="text-xl  text-primary bg-transparent w-7 h-7 flex items-center justify-center rounded-full absolute bottom-8 right-12 cursor-pointer">
+                            {isActive ? eyeIcon : closeEyeIcon}
+                          </p>
+
+                        </div>
                       </div>
                     </div>
                   </div>
@@ -255,6 +382,8 @@ export default function ZodiacSlider() {
 
           .vp {
             width: var(--vp-w);
+            user-select: none;
+            -webkit-user-select: none;
           }
 
           .pstage {
@@ -269,14 +398,22 @@ export default function ZodiacSlider() {
             width: var(--cw);
             cursor: pointer;
             will-change: transform, opacity;
-            transition: transform 0.6s cubic-bezier(0.34, 1.18, 0.64, 1),
-              opacity 0.45s ease;
           }
 
-          .card--active {
-            border-color: #f5c518;
-            box-shadow: 0 0 22px rgba(245, 197, 24, 0.75),
-              0 0 65px rgba(245, 197, 24, 0.35);
+          .card {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 20px;
+            border: 2px solid transparent;
+            transition: all 0.5s cubic-bezier(0.34, 1.18, 0.64, 1);
+          }
+
+          .card--activewqewe {
+            border:0;
+            box-shadow:none;
+            transform: scale(1);
+            border-radius:40px;
           }
 
           .img-box {
@@ -318,6 +455,7 @@ export default function ZodiacSlider() {
             cursor: pointer;
             box-shadow: 0 0 22px rgba(245, 197, 24, 0.25);
             transition: all 0.25s ease;
+            z-index: 20;
           }
 
           .nav-btn:hover {
@@ -337,7 +475,6 @@ export default function ZodiacSlider() {
             }
           }
 
-          /* Tablet: 3 cards */
           @media (max-width: 1199px) {
             .zroot {
               --visible-cards: 3;
@@ -357,7 +494,6 @@ export default function ZodiacSlider() {
             }
           }
 
-          /* Mobile: 2 cards */
           @media (max-width: 767px) {
             .zroot {
               --visible-cards: 2;
@@ -398,7 +534,7 @@ export default function ZodiacSlider() {
             }
             .cslot {
               width: 100%;
-              transform: translate(3px, 3px) !important;
+              transform: translate(0px,0px) !important;
             }
           }
 
@@ -408,7 +544,7 @@ export default function ZodiacSlider() {
               --ch: 175px;
               --gap: 14px;
             }
-
+            
             .slider-shell {
               gap: 8px;
             }
@@ -427,15 +563,8 @@ export default function ZodiacSlider() {
       </section>
 
       <div>
-        <div
-          className=" flex items-center justify-center bg-transparent px-4 backdrop-blur-sm"
-          onClick={() => setShowModal(false)}
-        >
-          <div
-            onClick={e => e.stopPropagation()}
-            className="relative w-full rounded-[28px] border border-[#ffd400]/40 bg-[#050505] shadow-[0_0_45px_rgba(255,212,0,0.25)]"
-          >
-
+        <div className={`flex justify-center bg-transparent px-0 transition-all duration-500 ease-in-out`}>
+          <div className={`relative w-full rounded-[28px] border border-[#ffd400]/40 bg-[#050505] transition-all duration-400 ease-out ${showDetails ? "opacity-100 translate-y-0 shadow-[0_0_45px_rgba(255,212,0,0.25)]" : "opacity-90 -translate-y-3"}`}>
             <div className="relative overflow-hidden rounded-t-[28px] border-b border-[#ffd400]/25 px-6 py-7">
               <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,#3d3200_0%,#080808_48%,#000_100%)]" />
               <div className="absolute inset-0 opacity-30 bg-[url('/images/zodiac-bg.jpg')] bg-cover bg-center" />
@@ -445,22 +574,28 @@ export default function ZodiacSlider() {
                   Daily Horoscope
                 </div>
 
-                <div className="flex items-center justify-between gap-4">
+                <div className="flex items-center justify-between gap-4 flex-wrap">
                   <div className="flex gap-4 items-center">
                     <div className="flex h-[78px] w-[78px] items-center justify-center rounded-2xl border border-[#ffd400]/60 bg-black/60 text-[42px] text-[#ffd400] shadow-[0_0_25px_rgba(255,212,0,0.25)]">
-                      ♈
+                      <Image
+                        src={selectedZodiac.image}
+                        alt={selectedZodiac.name}
+                        width={78}
+                        height={78}
+                        className="object-contain"
+                      />
                     </div>
 
                     <div>
                       <h2 className="text-[32px] font-bold leading-none text-white">
-                        Aries
+                        {selectedZodiac.name}
                       </h2>
                       <p className="mt-2 text-[14px] font-medium text-[#ffd400]">
-                        19-3-2024
+                        {new Date().toLocaleDateString('en-IN')}
                       </p>
                     </div>
                   </div>
-                  <div className="flex flex-wrap justify-end gap-2">
+                  <div className="flex flex-wrap justify-center md:justify-end gap-2">
                     {horoscopeTabs.map((tab, index) => (
                       <button
                         key={index}
@@ -482,21 +617,21 @@ export default function ZodiacSlider() {
               <div className="rounded-[18px] border border-[#ffd400]/30 bg-[#101010] p-4 text-center">
                 <p className="text-[15px] text-white/60">Luck</p>
                 <h3 className="mt-1 text-[24px] font-bold text-[#ffd400]">
-                  6/10
+                  {horoscopeTabs[5].rating}
                 </h3>
               </div>
 
               <div className="rounded-[18px] border border-[#ffd400]/30 bg-[#101010] p-4 text-center">
                 <p className="text-[15px] text-white/60">Health</p>
                 <h3 className="mt-1 text-[24px] font-bold text-[#ffd400]">
-                  8/10
+                  {horoscopeTabs[2].rating}
                 </h3>
               </div>
 
               <div className="rounded-[18px] border border-[#ffd400]/30 bg-[#101010] p-4 text-center">
                 <p className="text-[15px] text-white/60">Career</p>
                 <h3 className="mt-1 text-[24px] font-bold text-[#ffd400]">
-                  6/10
+                  {horoscopeTabs[1].rating}
                 </h3>
               </div>
             </div>
@@ -504,21 +639,17 @@ export default function ZodiacSlider() {
             <div className="space-y-4 px-5 pb-6 pt-5 gap-x-6 gap-y-4">
               <div className="">
                 <div className="rounded-[20px] border border-[#ffd400]/25 bg-[#0f0f0f] p-5">
-
                   <div className="mb-2 flex items-center justify-between">
                     <h3 className="text-[20px] font-semibold text-[#ffd400]">
                       {horoscopeTabs[activeTab].title}
                     </h3>
-
                     <span className="rounded-full bg-[#ffd400] px-3 py-1 text-[12px] font-bold text-black">
                       {horoscopeTabs[activeTab].rating}
                     </span>
                   </div>
-
                   <p className="text-[15px] leading-8 text-white/80">
                     {horoscopeTabs[activeTab].text}
                   </p>
-
                 </div>
               </div>
             </div>
