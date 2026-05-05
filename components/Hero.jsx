@@ -130,7 +130,7 @@ export default function Hero() {
                >
                <Button
                  variant={'primary'}
-                 button_name={"Get Your Kundli"}
+                 button_name={"Get Your Kundli @ 5100/- only"}
                  Class={"text-black"}
                />
               </Link>
