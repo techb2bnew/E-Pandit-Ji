@@ -121,7 +121,7 @@ export default function Hero() {
             <Title title="Get Clear Answers To Your Endless Thoughts" isH1 />
 
             <p className="mt-4 xl:mt-6 text-white text-xl md:text-[22px] xl:text-3xl 2xl:text-4xl font-secondary">
-              Personalized Kundli, accurate matchmaking, and daily horoscope insights.
+              Kundli book (60-80pages) + Numerology Report + 30 Day Access to consultation forum. 
             </p>
 
             <div className="mt-6 lg:mt-12">
