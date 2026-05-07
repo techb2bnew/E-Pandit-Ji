@@ -78,13 +78,14 @@ const services = [
   {
     title: "Match Making",
     image: "/assets/match-making.png",
-    href: "/match-making",
-
+    href: "#",
+    isComingSoon: true,
   },
   {
     title: "Remedy",
     image: "/assets/remedy.png",
-    href: "/remedy",
+    href: "#",
+    isComingSoon: true,
   },
 ];
 export default function Hero() {
@@ -169,8 +170,16 @@ export default function Hero() {
             <Link
               key={service.title}
               href={service.href}
-              className="group flex flex-col items-center"
+            onClick={(e) => {
+              if (service.isComingSoon) e.preventDefault();
+            }}
+            className="group relative flex flex-col items-center"
             >
+              {service.isComingSoon && (
+                <span className="absolute -top-2 left-1/2 -translate-x-1/2 text-[9px] px-1.5 py-[2px] rounded bg-red-500 text-white animate-pulse whitespace-nowrap no-underline z-10">
+                  Coming Soon
+                </span>
+              )}
               <div className="flex aspect-square w-full  max-w-[85%]  items-center justify-center rounded-[18px] bg-[#efe0b3] p-2 md:p-[18px] transition-[transform,box-shadow] duration-200 group-hover:-translate-y-1 group-hover:shadow-[0_12px_28px_rgba(245,197,24,0.12)]  max-md:rounded-[16px]">
                 <Image
                   src={service.image}

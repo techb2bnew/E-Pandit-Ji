@@ -85,8 +85,12 @@ const FooterMobileBar = () => {
         </Link>
         <Link
           href={'#'}
+          onClick={(e) => e.preventDefault()}
         >
-          <div className='min-w-14 flex flex-col justify-center items-center gap-1.5'>
+          <div className='min-w-14 relative flex flex-col justify-center items-center gap-1.5'>
+            <span className='absolute -top-5 left-1/2 -translate-x-1/2 text-[8px] px-1.5 py-[1px] rounded bg-red-500 text-white whitespace-nowrap'>
+              Coming Soon
+            </span>
             <Image
               src={'/icons/bubble-chat 1.svg'}
               alt=''
@@ -101,7 +105,8 @@ const FooterMobileBar = () => {
           </div>
         </Link>
         <Link
-          href={'/remedy'}
+          href={'#'}
+          onClick={(e) => e.preventDefault()}
         >
           <div className='min-w-14 relative flex flex-col justify-center items-center gap-1.5'>
             <span className='absolute -top-5 left-1/2 -translate-x-1/2 text-[8px] px-1.5 py-[1px] rounded bg-red-500 text-white whitespace-nowrap'>

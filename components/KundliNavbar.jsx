@@ -262,8 +262,8 @@ const TOP_LINKS = [
 const LEFT_LINKS = [
   { label: "Home", href: "/", isComingSoon: false },
   { label: "About Us", href: "/about-us", isComingSoon: false },
-  { label: "Remedy", href: "/remedy", isComingSoon: true },
-  { label: "Match Making", href: "/match-making", isComingSoon: true }
+  { label: "Remedy", href: "#", isComingSoon: true },
+  { label: "Match Making", href: "#", isComingSoon: true }
 ];
 
 const RIGHT_LINKS = [
@@ -272,7 +272,15 @@ const RIGHT_LINKS = [
   { label: "Contact Us", href: "/contact-us", isComingSoon: false }
 ];
 
-const MOBILE_LINKS = LEFT_LINKS.concat(RIGHT_LINKS);
+const MOBILE_LINKS = [
+  LEFT_LINKS[0], // Home
+  RIGHT_LINKS[1], // Kundli
+  RIGHT_LINKS[0], // Numerology
+  LEFT_LINKS[3], // Match Making
+  LEFT_LINKS[2], // Remedy
+  LEFT_LINKS[1], // About Us
+  RIGHT_LINKS[2], // Contact Us
+];
 
 const socialLinks = [
   { name: "Facebook", icon: FaFacebookF, url: "https://facebook.com" },
@@ -452,21 +460,21 @@ export default function KundliNavbar() {
                   const isActive = link.href === currentroute;
                   return (
                     <div key={link.label} className="relative">
-                      {link.isComingSoon &&
-                        <span className="absolute -top-12 left-22 text-[10px] px-2 py-[2px] rounded bg-red-500 text-white animate-pulse whitespace-nowrap">
-                          Coming Soon
-                        </span>}
-
                       <Link
                         href={link.isComingSoon ? "#" : link.href}
                         onClick={e => {
                           if (link.isComingSoon) e.preventDefault();
+                    setopenNavbar(false);
                         }}
-                        className={`relative hover:text-primary transition-all duration-500 hover:!underline !underline-offset-8 whitespace-nowrap text-[17px] font-bold ${isActive
+                  className={`relative inline-flex items-center gap-2 hover:text-primary transition-all duration-500 hover:!underline !underline-offset-8 whitespace-nowrap text-[17px] font-bold ${isActive
                           ? "text-primary !underline"
                           : "text-white"}`}
                       >
                         {link.label}
+                  {link.isComingSoon &&
+                    <span className="text-[10px] px-2 py-[2px] rounded bg-red-500 text-white animate-pulse whitespace-nowrap no-underline">
+                      Coming Soon
+                    </span>}
                       </Link>
                     </div>
                   );
