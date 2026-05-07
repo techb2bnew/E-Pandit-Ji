@@ -31,7 +31,7 @@ export default function RemediesIntro() {
               <div className="pt-5 space-y-4">
                 {
                   [
-                    'At e-Pandit Ji, we provide trusted and effective remedies based on Vedic astrology principles. These remedies are designed to reduce the negative effects of planetary positions and enhance positive influences in your life.',
+                    'At e-Pandit Jee, we provide trusted and effective remedies based on Vedic astrology principles. These remedies are designed to reduce the negative effects of planetary positions and enhance positive influences in your life.',
                     'Whether you are facing issues in career, marriage, health, or finances, our remedies help restore balance and guide you toward success and peace.'
                   ].map((item, index) => (
                     <Description

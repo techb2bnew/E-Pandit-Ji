@@ -789,12 +789,12 @@ export default function RemediesTypesSection() {
         </div>
 
         {/* Tabs */}
-        <div className="mb-7 pt-8 flex flex-wrap justify-center gap-[10px]">
+        <div className="mb-7 pt-8 grid grid-cols-2 gap-2 md:flex md:flex-wrap md:justify-center md:gap-[10px]">
           {Object.keys(DATA).map((tab) => (
             <button
               key={tab}
               onClick={() => handleTab(tab)}
-              className={`py-3 w-[45%] md:w-[30%] rounded-[12px] border border-primary text-xs md:text-[16px] font-bold ${activeTab === tab
+              className={`w-full rounded-[12px] border border-primary px-2 py-2 text-[11px] font-bold leading-snug text-center break-words whitespace-normal md:w-[30%] md:px-4 md:py-3 md:text-[16px] ${activeTab === tab
                 ? "bg-primary text-black"
                 : "text-white"
                 }`}

@@ -26,21 +26,21 @@ export const AboutUsBanner = () => {
               </p>
 
               <Title
-                title={`About Us – <span style="color:#ffd700">ई-Pandit ji</span>`}
+                title={`About Us – <span style="color:#ffd700">ई-Pandit jee</span>`}
                 isH1
                 Class="text-white"
               />
 
               <div className="mt-5 md:mt-7 space-y-4">
                 <Description
-                  description="ई-Pandit ji is dedicated to bringing authentic Vedic astrology to everyone in a simple, practical, and meaningful way. Our vision is to guide individuals toward clarity, peace, and long-term success by using ancient astrological wisdom in a modern and easy-to-understand form."
-                  Class="text-white/80"
+                  description="ई-Pandit jee is dedicated to bringing authentic Vedic astrology to everyone in a simple, practical, and meaningful way. Our vision is to guide individuals toward clarity, peace, and long-term success by using ancient astrological wisdom in a modern and easy-to-understand form."
+                  Class="text-white/80 text-sm md:text-base xl:text-lg 2xl:text-[18px] font-primary font-normal"
                   variant="secondary"
                 />
                 <Description
                   description="We aim to help people make better life decisions through accurate predictions and trusted spiritual guidance that truly improves their life journey."
                   variant="secondary"
-                  Class="text-white/80"
+                  Class="text-white/80 text-sm md:text-base xl:text-lg 2xl:text-[18px] font-primary font-normal"
                 />
               </div>
             </div>
@@ -51,7 +51,7 @@ export const AboutUsBanner = () => {
 
                 <Image
                   src="/assets/about_us_banner22.png"
-                  alt="E-Pandit Ji Astrologer"
+                  alt="E-Pandit Jee Astrologer"
                   width={1000}
                   height={720}
                   className=""
@@ -71,7 +71,7 @@ const aboutcontent = [
   {
     title: "Who We Are",
     description:
-      "We are a team of experienced astrologers, Vedic scholars, and spiritual consultants who are passionate about helping people find solutions to life challenges. ई-Pandit ji combines traditional Vedic knowledge with a modern approach to deliver clear and reliable guidance. Our experts carefully study each kundli and provide deep insights related to marriage, career, health, relationships, and financial stability. We believe in honest consultation that brings real value and trust to every individual.",
+      "We are a team of experienced astrologers, Vedic scholars, and spiritual consultants who are passionate about helping people find solutions to life challenges. ई-Pandit jee combines traditional Vedic knowledge with a modern approach to deliver clear and reliable guidance. Our experts carefully study each kundli and provide deep insights related to marriage, career, health, relationships, and financial stability. We believe in honest consultation that brings real value and trust to every individual.",
     // keypoint: [
     //   "Kundli Generation: Detailed and accurate birth charts",
     //   "Numerology Analysis: Discover the power of numbers in your life",
@@ -87,7 +87,7 @@ const aboutcontent = [
   {
     title: "What We Offer",
     description:
-      "At ई-Pandit ji, we offer a wide range of astrology and spiritual services including kundli matching, numerology reports, gemstone suggestions, mantra chanting guidance, yantra solutions, and Vedic remedies.",
+      "At ई-Pandit jee, we offer a wide range of astrology and spiritual services including kundli matching, numerology reports, gemstone suggestions, mantra chanting guidance, yantra solutions, and Vedic remedies.",
     // keypoint: [
     //   "Traditional Vedic knowledge",
     //   "Modern technology & automation",
@@ -118,7 +118,7 @@ const aboutcontent = [
   {
     title: "Our Commitment",
     description:
-      "At ई-Pandit ji, we are fully committed to honesty, accuracy, and spiritual authenticity in every consultation. We value trust and ensure that every client receives genuine and meaningful guidance without confusion or false promises. Our mission is to empower individuals with knowledge, positivity, and direction so they can overcome challenges and live a peaceful, successful, and fulfilling life. We continuously strive to improve our services and provide the best possible astrological support for long-term well-being.",
+      "At ई-Pandit jee, we are fully committed to honesty, accuracy, and spiritual authenticity in every consultation. We value trust and ensure that every client receives genuine and meaningful guidance without confusion or false promises. Our mission is to empower individuals with knowledge, positivity, and direction so they can overcome challenges and live a peaceful, successful, and fulfilling life. We continuously strive to improve our services and provide the best possible astrological support for long-term well-being.",
     // keypoint: [
     //   "Understand their strengths and weaknesses",
     //   "Make better life decisions",

@@ -16,7 +16,7 @@ export default function RemediesCTA() {
           />
 
           <Description
-            description={'Discover your true path. Understand your destiny. Start your journey with e-Pandit Ji today.'}
+            description={'Discover your true path. Understand your destiny. Start your journey with e-Pandit Jee today.'}
             variant={'secondary'}
             Class={'text-white'}
           />

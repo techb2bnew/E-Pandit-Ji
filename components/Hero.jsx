@@ -115,12 +115,12 @@ export default function Hero() {
           {/* LEFT */}
           <div className="text-center lg:text-start order-2 md:order-1">
             <p className="text-primary text-xl md:text-2xl 2xl:text-[26px] font-semibold mb-4">
-              Welcome to ई-Pandit ji
+              Welcome to ई-Pandit jee
             </p>
 
             <Title title="Get Clear Answers To Your Endless Thoughts" isH1 />
 
-            <p className="mt-4 xl:mt-6 text-white text-xl md:text-[22px] xl:text-3xl 2xl:text-4xl font-secondary">
+            <p className="mt-4 xl:mt-6 text-white text-base md:text-lg xl:text-xl 2xl:text-2xl font-primary font-normal">
               Kundli book (60-80pages) + Numerology Report + 30 Day Access to consultation forum. 
             </p>
 

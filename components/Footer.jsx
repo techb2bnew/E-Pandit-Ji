@@ -1,21 +1,22 @@
 import Link from "next/link";
 import { useEffect, useState } from "react";
+import { useRouter } from "next/router";
 import { IoIosArrowDown } from "react-icons/io";
 import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "react-icons/fa";
 const usefulLinks = [
   { label: "Home", href: "/" },
-  { label: "About Us", href: "/about" },
-  { label: "Services", href: "/services" },
+  { label: "About Us", href: "/about-us" },
+  { label: "Services", href: "#" },
   { label: "Contact Us", href: "/contact-us" }
 ];
 
 const serviceLinks = [
-  { label: "kundli", href: "/kundli" },
-  { label: "Numerology", href: "/numerology" },
-  { label: "Match making", href: "/match-making" },
-  { label: "Panchang", href: "#" },
-  { label: "Remedy", href: "/remedy" },
-  { label: "Vastu", href: "#" }
+  { label: "kundli", href: "/kundli", isComingSoon: false },
+  { label: "Numerology", href: "/numerology", isComingSoon: false },
+  { label: "Match making", href: "#", isComingSoon: true },
+  { label: "Panchang", href: "#", isComingSoon: true },
+  { label: "Remedy", href: "#", isComingSoon: true },
+  { label: "Vastu", href: "#", isComingSoon: true }
 ];
 
 const socialLinks = [
@@ -87,10 +88,31 @@ export const AccordionItem = ({
 };
 
 export default function Footer() {
+  const router = useRouter();
   const [openIndex, setOpenIndex] = useState(null);
   const [showPrivacy, setShowPrivacy] = useState(false);
   const toggleAccordion = index => {
     setOpenIndex(openIndex === index ? null : index);
+  };
+  const handleLogoClick = () => {
+    if (typeof window === "undefined") return;
+
+    const scrollTop = () => {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    };
+
+    if (router.pathname === "/") {
+      scrollTop();
+      return;
+    }
+
+    const onDone = () => {
+      scrollTop();
+      router.events.off("routeChangeComplete", onDone);
+    };
+
+    router.events.on("routeChangeComplete", onDone);
+    router.push("/", undefined, { scroll: false });
   };
 
   useEffect(() => {
@@ -110,15 +132,20 @@ export default function Footer() {
         <div className="pointer-events-none absolute inset-0 bg-[linear-gradient(180deg,rgba(0,0,0,0.38)_0%,rgba(0,0,0,0.52)_35%,rgba(0,0,0,0.7)_100%)]" />
         <div className="pointer-events-none absolute right-[-120px] top-[40px] h-[620px] w-[620px] bg-[url('/assets/footer/footer-planet.png')] bg-center bg-contain bg-no-repeat opacity-[0.42] max-[1100px]:right-[-110px] max-[1100px]:top-[90px] max-[1100px]:h-[460px] max-[1100px]:w-[460px] max-md:right-[-90px] max-md:top-[180px] max-md:h-[320px] max-md:w-[320px] max-md:opacity-[0.28]" />
 
-        <div className="relative z-[2] inn_container">
+        <div className="relative z-2 inn_container">
           <div className="hidden md:grid grid-cols-1  md:grid-cols-2 lg:grid-cols-4 items-start gap-5 md:gap-[34px]">
             <div className="max-w-full md:max-w-[360px]">
-              <h2 className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px]">
-                ई-Pandit ji
-              </h2>
+              <button
+                type="button"
+                onClick={handleLogoClick}
+                className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px] bg-transparent border-0 p-0 cursor-pointer"
+                aria-label="Go to home"
+              >
+                ई-Pandit jee
+              </button>
 
               <p className="mt-6 text-[15px] font-normal leading-[1.75] text-white/90 md:text-[16px] md:leading-[1.9]">
-                ई-Pandit ji is a trusted platform offering expert astrology and numerology services. With experienced astrologers and Pandit Ji, it provides accurate Kundli, horoscope, and personalized guidance. The platform helps users understand life, make better decisions, and find clarity through traditional Vedic knowledge.
+                ई-Pandit jee is a trusted platform offering expert astrology and numerology services. With experienced astrologers and Pandit Jee, it provides accurate Kundli, horoscope, and personalized guidance. The platform helps users understand life, make better decisions, and find clarity through traditional Vedic knowledge.
               </p>
 
               <div className="flex gap-4 pt-10">
@@ -165,9 +192,14 @@ export default function Footer() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
+                    className="inline-flex w-fit items-center gap-2 text-[18px] hover:underline underline-offset-8 font-normal leading-[1.4] text-white/80 transition-colors duration-200 hover:text-primary max-md:text-[15px]"
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {item.isComingSoon && (
+                      <span className="text-[10px] px-2 py-[2px] rounded bg-red-500 text-white animate-pulse whitespace-nowrap no-underline">
+                        Coming Soon
+                      </span>
+                    )}
                   </Link>
                 )}
               </div>
@@ -184,7 +216,7 @@ export default function Footer() {
                 </p>
                 <a
                   href="tel:+916009570095"
-                  className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline break-words max-md:text-[15px]"
+                  className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline wrap-break-word max-md:text-[15px]"
                 >
                   +91-60095-70095
                 </a>
@@ -196,7 +228,7 @@ export default function Footer() {
                 </p>
                 <a
                   href="mailto:hello@e-panditji.com"
-                  className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline break-words max-md:text-[15px]"
+                  className="text-[16px] font-normal leading-[1.4] text-white/70 no-underline wrap-break-word max-md:text-[15px]"
                 >
                   hello@e-panditji.com
                 </a>
@@ -214,9 +246,14 @@ export default function Footer() {
           </div>
           <div className="block md:hidden space-y-5">
             <div className="max-w-full md:max-w-[360px] text-center">
-              <h2 className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px]">
-                ई-Pandit ji
-              </h2>
+              <button
+                type="button"
+                onClick={handleLogoClick}
+                className="m-0 text-[30px] font-extrabold leading-[1.1] tracking-[-0.02em] text-primary md:text-[36px] bg-transparent border-0 p-0 cursor-pointer"
+                aria-label="Go to home"
+              >
+                ई-Pandit jee
+              </button>
 
               <p className="mt-6 text-[15px] font-normal leading-[1.75] text-white/90 md:text-[16px] md:leading-[1.9]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
@@ -272,9 +309,14 @@ export default function Footer() {
                   <Link
                     key={item.label}
                     href={item.href}
-                    className="text-white/80"
+                    className="inline-flex w-fit items-center gap-2 text-white/80"
                   >
-                    {item.label}
+                    <span>{item.label}</span>
+                    {item.isComingSoon && (
+                      <span className="text-[10px] px-2 py-[2px] rounded bg-red-500 text-white animate-pulse whitespace-nowrap no-underline">
+                        Coming Soon
+                      </span>
+                    )}
                   </Link>
                 )}
               </div>
@@ -305,8 +347,8 @@ export default function Footer() {
             </AccordionItem>
           </div>
           <div className="mt-2 border-t border-white/10 pt-5 md:mt-[34px] md:pt-6 flex flex-col md:flex-row justify-between mb-4 md:mb-0">
-            <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
-              ©{new Date().getFullYear()} All Rights Reserved | E-pandit ji |{" "}
+            <p className="m-0 text-[16px] font-normal leading-normal text-white/70 max-md:text-[15px] text-center md:text-start">
+              ©{new Date().getFullYear()} All Rights Reserved | E-pandit jee |{" "}
               <button
                 onClick={() => setShowPrivacy(true)}
                 className="underline hover:text-primary"
@@ -314,14 +356,14 @@ export default function Footer() {
                 Privacy Policy
               </button>
             </p>
-            <p className="m-0 text-[16px] font-normal leading-[1.5] text-white/70 max-md:text-[15px] text-center md:text-start">
+            <p className="m-0 text-[16px] font-normal leading-normal text-white/70 max-md:text-[15px] text-center md:text-start">
               Design & Development By <a href="https://base2brand.com/">Base2brand</a>
             </p>
           </div>
         </div>
       </footer>
       {showPrivacy && (
-        <div className="fixed inset-0 z-[999] flex items-center justify-center bg-black/70 backdrop-blur-sm">
+        <div className="fixed inset-0 z-999 flex items-center justify-center bg-black/70 backdrop-blur-sm">
 
           <div className="relative w-[90%] max-w-[800px] max-h-[85vh] overflow-y-auto rounded-[20px] bg-black border border-primary p-6 md:p-8 shadow-[0_0_40px_rgba(245,197,24,0.25)] animate-fadeIn">
 
@@ -342,7 +384,7 @@ export default function Footer() {
             <div className="space-y-4 text-white/80 text-[15px] leading-[1.7]">
 
               <p>
-                At E-Pandit Ji, we respect your privacy and are committed to protecting your personal information.
+                At E-Pandit Jee, we respect your privacy and are committed to protecting your personal information.
                 This Privacy Policy explains how we collect, use, and safeguard your data.
               </p>
 

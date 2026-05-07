@@ -58,7 +58,7 @@ const whychoosedata = {
   title : 'Why Choose Us for Kundli Matching',
   description : 'We provide accurate, personalized Kundli insights with expert guidance, ensuring clarity, trust, and meaningful life decisions.',
   keys : [
-  'Experienced Pandit Ji & Astrologers',
+  'Experienced Pandit Jee & Astrologers',
   'Accurate Vedic Calculations',
   'Detailed & Personalized Kundli Reports',
   'Quick & Hassle-Free Process',
@@ -97,7 +97,7 @@ export default function KundliPage() {
   return (
     <>
         <KundliHero
-         top_bar={'Welcome to ई-Pandit ji'}
+         top_bar={'Welcome to ई-Pandit jee'}
          title={'Get Your Accurate and Personalized Kundli'}
          description={'Receive a detailed Kundli through expert analysis, offering insights into your personality, career, relationships, and future.'} 
          button_name={'Get Started Now'}

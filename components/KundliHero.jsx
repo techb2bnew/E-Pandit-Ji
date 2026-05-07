@@ -29,7 +29,7 @@ export default function KundliHero({ top_bar, title, description, button_name, l
             isH1
           />
 
-          <p className="mt-4 xl:mt-6 text-white text-xl md:text-[22px] xl:text-3xl  font-secondary">
+          <p className="mt-4 xl:mt-6 text-white text-base md:text-lg xl:text-xl 2xl:text-2xl font-primary font-normal">
             {description}
           </p>
 

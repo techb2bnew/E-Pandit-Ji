@@ -19,7 +19,7 @@ export default function RemediesHero() {
             Class={'text-white'}
           />
 
-          <p className="mb-6 max-w-[620px] text-[24px] leading-[1.45] text-white/95 max-[991px]:text-[18px]">
+          <p className="mb-6 max-w-[620px] text-base md:text-lg xl:text-xl 2xl:text-2xl leading-[1.45] text-white/95 font-primary font-normal">
             Vedic remedies by our astrologers help bring peace, prosperity, and solutions to life problems by balancing energies, removing obstacles, and improving overall well-being naturally. 
           </p>
 

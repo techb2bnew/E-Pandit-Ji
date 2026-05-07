@@ -74,7 +74,7 @@ const page = () => {
        <div className="bg-[url(/assets/glaxybg.webp)] bg-cover">
        <OurServicesSection 
         title={'Connect With Us'}
-        description={'Connect with ई-Pandit ji to receive personalized astrology guidance, accurate kundli analysis, and effective Vedic remedies. Get expert support for marriage, career, and life decisions with complete privacy, quick response, and trusted spiritual solutions.'}
+        description={'Connect with ई-Pandit jee to receive personalized astrology guidance, accurate kundli analysis, and effective Vedic remedies. Get expert support for marriage, career, and life decisions with complete privacy, quick response, and trusted spiritual solutions.'}
        />
        </div>
        <Faq faqs={faqs}/>

@@ -2,6 +2,7 @@ import Image from "next/image";
 import Title from "./Uiux/Title";
 import Description from "./Uiux/Description";
 import Button from "./Uiux/Button";
+import Link from "next/link";
 
 export default function AboutSection() {
   return (
@@ -50,17 +51,19 @@ export default function AboutSection() {
 
             <Description
               description={
-                "For 3+ years, ePandit Ji has guided lives through Grah and Nakshatra with accurate insights, helping you make confident decisions with clarity and trust."
+                "For 3+ years, ePandit Jee has guided lives through Grah and Nakshatra with accurate insights, helping you make confident decisions with clarity and trust."
               }
               Class={"text-white"}
             />
 
             <div className="mt-8">
-              <Button
-                variant={"secondary"}
-                button_name={"Explore Your Future"}
-                Class={"text-primary"}
-              />
+              <Link href="/about-us">
+                <Button
+                  variant={"secondary"}
+                  button_name={"Know more about us"}
+                  Class={"text-primary"}
+                />
+              </Link>
             </div>
           </div>
         </div>

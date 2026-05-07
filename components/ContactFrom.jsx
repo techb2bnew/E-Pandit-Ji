@@ -151,7 +151,7 @@ const ContactFrom = () => {
                             Class={'text-white'}
                         />
                         <p className="mx-auto mb-[10px] max-w-[760px] text-[16px] leading-[1.55] text-white/95">
-                            Discover your true path. Understand your destiny. Start your journey with e-Pandit Ji today.
+                            Discover your true path. Understand your destiny. Start your journey with e-Pandit Jee today.
                         </p>
 
                         <Description

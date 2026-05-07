@@ -6,7 +6,7 @@ export default function KundliWhyChoose() {
       <div className="relative z-2 mx-auto max-w-[1540px] px-[60px] max-[991px]:px-5">
         <div className="mb-[100px] max-w-[760px] max-[991px]:mb-[70px] max-[576px]:mb-[55px]">
           <h2 className="mb-7 text-[34px] font-extrabold leading-[1.1] text-white max-[991px]:text-[28px] max-[576px]:text-[24px]">
-            Why Choose e-Pandit Ji ?
+            Why Choose e-Pandit Jee ?
           </h2>
 
           <h3 className="mb-3 text-[24px] font-medium leading-tight text-white max-[991px]:text-[21px] max-[576px]:text-[19px]">

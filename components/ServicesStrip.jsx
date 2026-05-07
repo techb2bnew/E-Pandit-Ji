@@ -33,7 +33,8 @@ const services = [
 
 export default function ServicesStrip() {
   return (
-    <section className="relative z-5 mt-[-34px] w-full bg-black px-6 max-md:mt-0 max-md:px-4 max-md:pt-5 inn_container">
+    <section className="relative z-5 mt-[-34px] w-full bg-black px-6 max-md:mt-0 max-md:px-4 max-md:pt-5 ">
+      <div className="inn_container">
       <div className="mx-auto grid grid-cols-4 gap-[18px] rounded-[28px] bg-[#efe0b3] p-[26px] shadow-[0_10px_30px_rgba(0,0,0,0.16)] max-[1200px]:grid-cols-2 max-md:grid-cols-1 max-md:gap-[14px] max-md:rounded-[20px] max-md:p-4">
         
         {services.map((service) => (
@@ -79,6 +80,7 @@ export default function ServicesStrip() {
           </div>
         ))}
 
+      </div>
       </div>
     </section>
   );

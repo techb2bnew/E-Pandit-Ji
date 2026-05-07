@@ -58,6 +58,11 @@ const stats = [
 ];
 
 export default function ZodiacSection() {
+  const handleDailyHoroscopeClick = () => {
+    if (typeof window === "undefined") return;
+    const el = document.getElementById("daily-horoscope-tabs");
+    el?.scrollIntoView({ behavior: "smooth", block: "start" });
+  };
   return (
     <section className="relative min-h-[1000px] w-full overflow-hidden bg-black pt-8 xl:pt-14 2xl:pt-18 pb-12 xl:pb-14 2xl:pb-18">
       {/* Background video */}
@@ -103,6 +108,7 @@ export default function ZodiacSection() {
                 variant={"primary"}
                 button_name={"Daily Horoscope"}
                 Class={"text-black"}
+                onClick={handleDailyHoroscopeClick}
               />
               {/* <Button
                 variant={"primary"}

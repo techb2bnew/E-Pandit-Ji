@@ -22,13 +22,16 @@ const ContactUsBanner = () => {
             }
             Class={"text-white"}
           />
+            <p className="mt-4 xl:mt-6 text-white text-base md:text-lg xl:text-xl 2xl:text-2xl font-primary font-normal">
+            Contact ई-Pandit jee for astrology guidance, kundli matching, and remedies. Reach us easily for personalized solutions, expert advice, and spiritual support for your life.
 
-          <Description
+            </p>
+          {/* <Description
             description={
               "Contact ई-Pandit ji for astrology guidance, kundli matching, and remedies. Reach us easily for personalized solutions, expert advice, and spiritual support for your life."
             }
-            Class={"text-white max-w-6xl mx-auto"}
-          />
+            Class={"text-white max-w-6xl mx-auto text-base md:text-lg xl:text-xl 2xl:text-2xl font-primary font-normal"}
+          /> */}
 
           {/* <div className="pt-8">
             <Button

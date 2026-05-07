@@ -20,7 +20,7 @@ export default function KundliAboutAnalysis({ Ganeshsectiondata, whychoosedata }
           <div className="pt-5 space-y-3">
             {
               [
-                'Our qualified Pandit Ji and astrologers carefully analyze grah, nakshatra, stars, and Panchang to create a detailed and accurate Kundli. It includes comprehensive grah charts and precise predictions about your personality, career, relationships, health, and future. With deep insights into life events, opportunities, and challenges, our Kundli helps you understand your path better and make informed decisions with clarity, confidence, and trusted astrological guidance.',
+                'Our qualified Pandit Jee and astrologers carefully analyze grah, nakshatra, stars, and Panchang to create a detailed and accurate Kundli. It includes comprehensive grah charts and precise predictions about your personality, career, relationships, health, and future. With deep insights into life events, opportunities, and challenges, our Kundli helps you understand your path better and make informed decisions with clarity, confidence, and trusted astrological guidance.',
               ].map((item, index) => (
                 <Description
                   key={index}

@@ -249,6 +249,7 @@ import { FaUser } from "react-icons/fa";
 import { useEffect, useState } from "react";
 import { FaFacebookF, FaInstagram, FaTwitter, FaYoutube } from "react-icons/fa";
 import { usePathname } from "next/navigation";
+import LoginPopup from "./LoginPopup";
 
 const TOP_LINKS = [
   { label: "Rashifal", href: "/#Zodiac" },
@@ -282,10 +283,15 @@ const socialLinks = [
 
 export default function KundliNavbar() {
   const [openNavbar, setopenNavbar] = useState(false);
+  const [isLoginOpen, setIsLoginOpen] = useState(false);
+  const isLoggedIn = false;
+
+  const handleOpenLogin = () => setIsLoginOpen(true);
+  const handleClose = () => setIsLoginOpen(false);
 
   useEffect(
     () => {
-      if (openNavbar) {
+      if (openNavbar || isLoginOpen) {
         document.body.style.overflow = "hidden";
         document.documentElement.style.overflow = "hidden";
       } else {
@@ -298,7 +304,7 @@ export default function KundliNavbar() {
         document.documentElement.style.overflow = "";
       };
     },
-    [openNavbar]
+    [openNavbar, isLoginOpen]
   );
 
   const currentroute = usePathname();
@@ -396,7 +402,7 @@ export default function KundliNavbar() {
                 href="/"
                 className="whitespace-nowrap text-[33px] font-bold leading-none text-primary"
               >
-                ई-Pandit ji
+                ई-Pandit jee
               </Link>
             </div>
 
@@ -429,6 +435,7 @@ export default function KundliNavbar() {
 
               <button
                 type="button"
+                onClick={handleOpenLogin}
                 className="inline-flex h-10 cursor-pointer items-center justify-center gap-2 whitespace-nowrap rounded-[16px] border-[1.5px] border-primary bg-transparent px-[18px] pl-4 text-[14px] font-medium leading-none text-primary"
               >
                 <User size={15} strokeWidth={2.2} />
@@ -479,11 +486,24 @@ export default function KundliNavbar() {
               </div>
             </div>
             <div className="block lg:hidden flex justify-end">
-              <FaUser className="text-primary text-2xl" />
+              {isLoggedIn ? (
+                <FaUser className="text-primary text-2xl" />
+              ) : (
+                <button
+                  type="button"
+                  onClick={handleOpenLogin}
+                  className="inline-flex h-9 items-center justify-center gap-2 whitespace-nowrap rounded-[12px] border border-primary bg-transparent px-3 text-[13px] font-medium leading-none text-primary"
+                >
+                  <User size={14} strokeWidth={2.1} />
+                  <span>Login</span>
+                </button>
+              )}
             </div>
           </div>
         </nav>
       </div>
+
+      <LoginPopup isOpen={isLoginOpen} onClose={handleClose} />
     </header>
   );
 }

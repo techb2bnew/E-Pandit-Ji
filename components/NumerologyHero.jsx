@@ -9,7 +9,6 @@ import Title from "./Uiux/Title";
 export default function NumerologyHero() {
   return (
     <section className="relative min-h-[620px] overflow-hidden pb-[120px] pt-[190px] max-[991px]:min-h-0 max-[991px]:pb-1 max-[991px]:pt-[140px]">
-
       <video
         autoPlay
         loop
@@ -35,13 +34,20 @@ export default function NumerologyHero() {
             "Check Which Numbers <span class='text-primary'> Work </span> in Favour of You"
           }
         />
-
-        <Description
+        <p className="mt-4 xl:mt-6 text-white text-base md:text-lg xl:text-xl 2xl:text-2xl font-primary font-normal">
+          Numbers influence your life, shaping decisions, guiding choices, and
+          affecting future success, happiness, relationships, and personal
+          growth in meaningful ways.
+        </p>
+        {/* <Description
           description={
             "Numbers influence your life, shaping decisions, guiding choices, and affecting future success, happiness, relationships, and personal growth in meaningful ways."
           }
-          Class={"text-white max-w-5xl mx-auto"}
-        />
+          // variant={'secondary'}
+          Class={
+            "text-white max-w-5xl mx-auto text-base md:text-lg xl:text-xl 2xl:text-2xl font-primary font-normal"
+          }
+        /> */}
 
         <div className="pt-8">
           <Link href={"/numerology#numerology_card"}>

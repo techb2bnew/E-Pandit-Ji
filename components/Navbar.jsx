@@ -86,7 +86,7 @@ export default function Navbar() {
           <div className="flex min-w-[280px] items-center justify-center px-5">
             <Link href="/" className="no-underline">
               <span className="whitespace-nowrap text-[28px] font-bold tracking-[0.03em] text-PRIMARY font-[Cinzel,serif]">
-                ई-Pandit ji
+                ई-Pandit jee
               </span>
             </Link>
           </div>
@@ -121,7 +121,7 @@ export default function Navbar() {
             className="flex items-center no-underline"
           >
             <span className="whitespace-nowrap text-[22px] font-bold tracking-[0.02em] text-primary font-[Cinzel,serif]">
-              ई-Pandit ji
+              ई-Pandit jee
             </span>
           </Link>
 
