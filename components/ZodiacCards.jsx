@@ -202,11 +202,11 @@ export default function ZodiacSlider() {
               <div className="absolute inset-0 opacity-30 bg-[url('/images/zodiac-bg.jpg')] bg-cover bg-center" />
 
               <div className="relative z-10">
-                <div className="flex justify-between w-100 items-center">
+                <div className="flex justify-between w-[100%] items-center">
                 <div className="mb-5 inline-flex rounded-full border border-[#ffd400]/40 px-4 py-1 text-[13px] font-semibold text-[#ffd400]">
                   Daily Horoscope
                 </div>
-                <p className="mt-0 text-[14px] font-medium text-[#ffd400]">
+                <p className="mt-0 mb-5 text-[14px] font-medium text-[#ffd400] ">
                         {new Date().toLocaleDateString('en-IN')}
                       </p>
 
