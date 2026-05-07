@@ -9,14 +9,14 @@ const ALL_ZODIAC = [
     image: "/assets/aries.png",
     activeImage: "/assets/aries_black.png",
     description:
-      "Aries is a fire sign known for confidence, leadership, and energy. They are bold and ambitious."
+      "Aries is a fire sign known for confidence, leadership, and energy."
   },
   {
     name: "Taurus",
     image: "/assets/tauraus.png",
     activeImage: "/assets/tauraus_black.png",
     description:
-      "Taurus is an earth sign that represents stability and patience. They value comfort and loyalty."
+      "Taurus is an earth sign that represents stability, comfort, and loyalty."
   },
   {
     name: "Gemini",
@@ -33,52 +33,60 @@ const ALL_ZODIAC = [
       "Cancer is a water sign associated with emotions, care, and intuition."
   },
   {
-    name: "Aries",
-    image: "/assets/aries.webp",
+    name: "Leo",
+    image: "/assets/leo.png",
+    activeImage: "/assets/leo_black.png",
     description:
-      "Aries is a bold and energetic fire sign known for leadership, confidence, and a strong drive to take action."
+      "Leo is a fire sign known for confidence, creativity, and leadership."
   },
   {
-    name: "Cancer",
-    image: "/assets/cancer.webp",
+    name: "Virgo",
+    image: "/assets/virgo.png",
+    activeImage: "/assets/virgo_black.png",
     description:
-      "Cancer is a water sign associated with emotions, care, and intuition."
+      "Virgo is an earth sign known for precision, practicality, and discipline."
   },
   {
-    name: "Gemini",
-    image: "/assets/gimini.webp",
+    name: "Libra",
+    image: "/assets/libra.png",
+    activeImage: "/assets/libra_black.png",
     description:
-      "Gemini is an air sign known for communication, intelligence, and adaptability."
+      "Libra is an air sign that values balance, harmony, and relationships."
   },
   {
-    name: "Cancer",
-    image: "/assets/cancer.webp",
+    name: "Scorpio",
+    image: "/assets/scorpio.png",
+    activeImage: "/assets/Scorpio_black.png",
     description:
-      "Cancer is a sensitive and nurturing water sign known for emotional depth, intuition, and strong family values."
+      "Scorpio is a water sign known for intensity, passion, and transformation."
   },
   {
-    name: "Aries",
-    image: "/assets/aries.webp",
+    name: "Sagittarius",
+    image: "/assets/sagittarius.png",
+    activeImage: "/assets/Sagittarius_black.png",
     description:
-      "Aries is a bold and energetic fire sign known for leadership, confidence, and a strong drive to take action."
+      "Sagittarius is a fire sign known for adventure, optimism, and freedom."
   },
   {
-    name: "Taurus",
-    image: "/assets/taurus.webp",
+    name: "Capricorn",
+    image: "/assets/capricorn.png",
+    activeImage: "/assets/Capicorn_black.png",
     description:
-      "Taurus is an earth sign that represents stability and patience. They value comfort and loyalty."
+      "Capricorn is an earth sign known for ambition, discipline, and responsibility."
   },
   {
-    name: "Gemini",
-    image: "/assets/gimini.webp",
+    name: "Aquarius",
+    image: "/assets/aquarius.png",
+    activeImage: "/assets/Aquarius_black.png",
     description:
-      "Gemini is an air sign known for communication, intelligence, and adaptability."
+      "Aquarius is an air sign known for innovation, independence, and vision."
   },
   {
-    name: "Cancer",
-    image: "/assets/cancer.webp",
+    name: "Pisces",
+    image: "/assets/pisces.png",
+    activeImage: "/assets/Pisces_black.png",
     description:
-      "Cancer is a sensitive and nurturing water sign known for emotional depth, intuition, and strong family values."
+      "Pisces is a water sign known for empathy, imagination, and spirituality."
   }
 ];
 const horoscopeTabs = [
@@ -146,7 +154,7 @@ export default function ZodiacSlider() {
       <section className="w-full pb-6">
         <div className="w-full overflow-hidden pb-2 md:overflow-visible">
           <div className="overflow-x-auto [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden md:overflow-visible">
-            <div className="inline-flex min-w-max flex-nowrap items-center gap-1.5 rounded-2xl border border-[#ffd400]/15 bg-black/35 p-1.5 md:min-w-full md:gap-3 md:p-2">
+            <div className="inline-flex min-w-max flex-nowrap items-center gap-1.5 rounded-2xl border border-[#ffd400]/15 bg-black/35 p-1.5 md:grid md:min-w-0 md:w-full md:grid-cols-6 lg:grid-cols-12 md:gap-2 md:p-2">
             {zodiacTabs.map((card, index) => {
               const isActive = selectedCardIdx === index;
               return (
@@ -158,7 +166,7 @@ export default function ZodiacSlider() {
                     setSelectedZodiac(card);
                     setActiveTab(0);
                   }}
-                  className={`group relative inline-flex shrink-0 items-center gap-2 rounded-xl border px-2.5 py-2 text-[12px] md:px-4 md:py-2 md:text-base hover:-translate-y-px ${
+                  className={`group relative inline-flex shrink-0 flex-col items-center justify-center gap-1 rounded-lg border px-3.5 py-2 text-[11px] md:w-full md:px-5 md:py-2.5 md:text-[13px] hover:-translate-y-px ${
                     isActive
                       ? "border-[#ffd400] bg-[#ffd400] text-black shadow-[inset_0_-2px_0_rgba(245,197,24,0.8)]"
                       : "border-transparent bg-transparent text-white/70 hover:border-[#ffd400]/35 hover:text-[#ffd400]"
@@ -167,11 +175,11 @@ export default function ZodiacSlider() {
                   <Image
                     src={isActive ? card.activeImage ?? card.image : card.image}
                     alt={card.name}
-                    width={32}
-                    height={32}
-                    className={`h-7 w-7 object-contain transition-transform duration-300 md:h-[26px] md:w-[26px] ${isActive ? "scale-105" : "group-hover:scale-105"}`}
+                    width={40}
+                    height={40}
+                    className={`h-9 w-9 object-contain transition-transform duration-300 md:h-[36px] md:w-[36px] ${isActive ? "scale-105" : "group-hover:scale-105"}`}
                   />
-                  <span className="whitespace-nowrap font-medium tracking-[0.01em]">
+                  <span className="whitespace-nowrap font-medium leading-none tracking-[0.01em]">
                     {card.name}
                   </span>
                 </button>
@@ -194,10 +202,16 @@ export default function ZodiacSlider() {
               <div className="absolute inset-0 opacity-30 bg-[url('/images/zodiac-bg.jpg')] bg-cover bg-center" />
 
               <div className="relative z-10">
+                <div className="flex justify-between w-100 items-center">
                 <div className="mb-5 inline-flex rounded-full border border-[#ffd400]/40 px-4 py-1 text-[13px] font-semibold text-[#ffd400]">
                   Daily Horoscope
                 </div>
+                <p className="mt-0 text-[14px] font-medium text-[#ffd400]">
+                        {new Date().toLocaleDateString('en-IN')}
+                      </p>
 
+                  </div>
+               
                 <div className="flex items-center justify-between gap-4 flex-wrap">
                   <div className="flex gap-4 items-center">
                     <div className="flex h-[78px] w-[78px] items-center justify-center rounded-2xl border border-[#ffd400]/60 bg-black/60 text-[42px] text-[#ffd400] shadow-[0_0_25px_rgba(255,212,0,0.25)]">
@@ -214,9 +228,7 @@ export default function ZodiacSlider() {
                       <h2 className="text-[32px] font-bold leading-none text-white">
                         {selectedZodiac.name}
                       </h2>
-                      <p className="mt-2 text-[14px] font-medium text-[#ffd400]">
-                        {new Date().toLocaleDateString('en-IN')}
-                      </p>
+                     
                     </div>
                   </div>
                   <div className="flex flex-nowrap overflow-x-auto [scrollbar-width:none] [&::-webkit-scrollbar]:hidden gap-2 justify-start md:justify-end md:overflow-visible">

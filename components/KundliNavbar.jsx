@@ -442,14 +442,18 @@ export default function KundliNavbar() {
                 <span>Login</span>
               </button>
             </div>
-            <div className={`block 2xl:hidden border-t-2 border-primary fixed w-full transition-all duration-700 top-15.5 h-screen bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] ${openNavbar ? 'left-0' : '-left-[300%]'}`}>
+            <div
+              className={`block 2xl:hidden border-t-2 border-primary fixed inset-x-0 top-15.5 h-[calc(100dvh-3.875rem)] overflow-y-auto overflow-x-hidden bg-[linear-gradient(180deg,rgba(11,11,11,0.96)_0%,rgba(12,12,12,0.9)_100%)] transition-transform duration-500 ${
+                openNavbar ? "translate-x-0" : "-translate-x-full"
+              }`}
+            >
               <div className="flex flex-col gap-y-6 pt-8 px-8 ">
                 {MOBILE_LINKS.map((link) => {
                   const isActive = link.href === currentroute;
                   return (
                     <div key={link.label} className="relative">
                       {link.isComingSoon &&
-                        <span className="absolute -top-4 left-0 text-[10px] px-2 py-[2px] rounded bg-red-500 text-white animate-pulse whitespace-nowrap">
+                        <span className="absolute -top-12 left-22 text-[10px] px-2 py-[2px] rounded bg-red-500 text-white animate-pulse whitespace-nowrap">
                           Coming Soon
                         </span>}
 
