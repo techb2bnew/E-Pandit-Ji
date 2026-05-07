@@ -145,8 +145,8 @@ export default function Hero() {
           {/* RIGHT */}
           <div className="relative flex justify-center items-center order-1 md:order-2">
             {/* Zodiac Circle */}
-            <div className="absolute w-full h-full md:left-[20%]
-            bg-[url('/assets/zodiac-circle.png')] bg-contain bg-no-repeat
+            <div className="absolute inset-0 md:left-[20%]
+            bg-[url('/assets/zodiac-circle.png')] bg-center md:bg-left bg-contain bg-no-repeat
             opacity-20" />
 
             {/* Book */}
