@@ -56,17 +56,17 @@ export default function KundliAboutAnalysis({ Ganeshsectiondata, whychoosedata }
                 />
               </div>
 
-              <div className="pt-2  space-y-2">
-                {
-                  Ganeshsectiondata?.keys.map((item, index) => (
+              <ul className="pt-2 space-y-2 list-disc list-outside text-start pl-6 md:pl-5">
+                {Ganeshsectiondata?.keys.map((item, index) => (
+                  <li key={`analyze-${index}`} className="text-white">
                     <Description
                       description={item}
-                      Class={'text-white'}
-                      variant={'secondary'}
+                      Class={"text-white inline"}
+                      variant={"secondary"}
                     />
-                  ))
-                }
-              </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
         </div>
@@ -88,17 +88,17 @@ export default function KundliAboutAnalysis({ Ganeshsectiondata, whychoosedata }
                 />
               </div>
 
-              <div className="pt-2  space-y-2">
-                {
-                  whychoosedata?.keys.map((item, index) => (
+              <ul className="pt-2 space-y-2 list-disc list-outside text-start pl-6 md:pl-5">
+                {whychoosedata?.keys.map((item, index) => (
+                  <li key={`choose-${index}`} className="text-white">
                     <Description
                       description={item}
-                      Class={'text-white'}
-                      variant={'secondary'}
+                      Class={"text-white inline"}
+                      variant={"secondary"}
                     />
-                  ))
-                }
-              </div>
+                  </li>
+                ))}
+              </ul>
             </div>
           </div>
           <div>

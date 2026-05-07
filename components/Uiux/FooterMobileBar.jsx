@@ -32,7 +32,7 @@ const footerbardata = [
 const FooterMobileBar = () => {
   return (
     <div className='pb-6 pt-3 bg-[#1A1A1A] border-t-2 border-white/50'>
-      <div className='flex items-center justify-center gap-2'>
+      <div className='flex items-center justify-center gap-3'>
         <Link
           href={'/kundli'}
         >
@@ -87,8 +87,8 @@ const FooterMobileBar = () => {
           href={'#'}
           onClick={(e) => e.preventDefault()}
         >
-          <div className='min-w-14 relative flex flex-col justify-center items-center gap-1.5'>
-            <span className='absolute -top-5 left-1/2 -translate-x-1/2 text-[8px] px-1.5 py-[1px] rounded bg-red-500 text-white whitespace-nowrap'>
+          <div className='min-w-[62px] relative flex flex-col justify-center items-center gap-1.5'>
+            <span className='absolute -top-6 left-[58%] -translate-x-1/2 text-[7px] px-1.5 py-[1px] rounded bg-red-500 text-white whitespace-nowrap'>
               Coming Soon
             </span>
             <Image
@@ -108,8 +108,8 @@ const FooterMobileBar = () => {
           href={'#'}
           onClick={(e) => e.preventDefault()}
         >
-          <div className='min-w-14 relative flex flex-col justify-center items-center gap-1.5'>
-            <span className='absolute -top-5 left-1/2 -translate-x-1/2 text-[8px] px-1.5 py-[1px] rounded bg-red-500 text-white whitespace-nowrap'>
+          <div className='min-w-[62px] relative flex flex-col justify-center items-center gap-1.5'>
+            <span className='absolute -top-6 left-[42%] -translate-x-1/2 text-[7px] px-1.5 py-[1px] rounded bg-red-500 text-white whitespace-nowrap'>
               Coming Soon
             </span>
             <Image
