@@ -6,25 +6,29 @@ import React, { useEffect, useMemo, useState } from "react";
 const ALL_ZODIAC = [
   {
     name: "Aries",
-    image: "/assets/aries.webp",
+    image: "/assets/aries.png",
+    activeImage: "/assets/aries_black.png",
     description:
       "Aries is a fire sign known for confidence, leadership, and energy. They are bold and ambitious."
   },
   {
     name: "Taurus",
-    image: "/assets/taurus.webp",
+    image: "/assets/tauraus.png",
+    activeImage: "/assets/tauraus_black.png",
     description:
       "Taurus is an earth sign that represents stability and patience. They value comfort and loyalty."
   },
   {
     name: "Gemini",
-    image: "/assets/gimini.webp",
+    image: "/assets/gemini.png",
+    activeImage: "/assets/gemini_black.png",
     description:
       "Gemini is an air sign known for communication, intelligence, and adaptability."
   },
   {
     name: "Cancer",
-    image: "/assets/cancer.webp",
+    image: "/assets/cancer.png",
+    activeImage: "/assets/cancer_black.png",
     description:
       "Cancer is a water sign associated with emotions, care, and intuition."
   },
@@ -138,10 +142,11 @@ export default function ZodiacSlider() {
   }, [selectedCardIdx]);
 
   return (
-    <div id="daily-horoscope-tabs" className="mt-10 scroll-mt-24">
+    <div id="daily-horoscope-tabs" className="mt-10 scroll-mt-24 max-md:overflow-x-hidden">
       <section className="w-full pb-6">
-        <div className="overflow-x-auto pb-2 [scrollbar-width:none] [&::-webkit-scrollbar]:hidden">
-          <div className="inline-flex min-w-full flex-nowrap items-center gap-1.5 rounded-2xl border border-[#ffd400]/15 bg-black/35 p-1.5 md:gap-3 md:p-2">
+        <div className="w-full overflow-hidden pb-2 md:overflow-visible">
+          <div className="overflow-x-auto [scrollbar-width:none] [-webkit-overflow-scrolling:touch] [&::-webkit-scrollbar]:hidden md:overflow-visible">
+            <div className="inline-flex min-w-max flex-nowrap items-center gap-1.5 rounded-2xl border border-[#ffd400]/15 bg-black/35 p-1.5 md:min-w-full md:gap-3 md:p-2">
             {zodiacTabs.map((card, index) => {
               const isActive = selectedCardIdx === index;
               return (
@@ -155,16 +160,16 @@ export default function ZodiacSlider() {
                   }}
                   className={`group relative inline-flex shrink-0 items-center gap-2 rounded-xl border px-2.5 py-2 text-[12px] md:px-4 md:py-2 md:text-base hover:-translate-y-px ${
                     isActive
-                      ? "border-[#ffd400] bg-transparent text-[#ffd400] shadow-[inset_0_-2px_0_rgba(245,197,24,0.8)]"
+                      ? "border-[#ffd400] bg-[#ffd400] text-black shadow-[inset_0_-2px_0_rgba(245,197,24,0.8)]"
                       : "border-transparent bg-transparent text-white/70 hover:border-[#ffd400]/35 hover:text-[#ffd400]"
                   }`}
                 >
                   <Image
-                    src={card.image}
+                    src={isActive ? card.activeImage ?? card.image : card.image}
                     alt={card.name}
-                    width={22}
-                    height={22}
-                    className={`object-contain transition-transform duration-300 ${isActive ? "scale-105" : "group-hover:scale-105"}`}
+                    width={32}
+                    height={32}
+                    className={`h-7 w-7 object-contain transition-transform duration-300 md:h-[26px] md:w-[26px] ${isActive ? "scale-105" : "group-hover:scale-105"}`}
                   />
                   <span className="whitespace-nowrap font-medium tracking-[0.01em]">
                     {card.name}
@@ -172,6 +177,7 @@ export default function ZodiacSlider() {
                 </button>
               );
             })}
+            </div>
           </div>
         </div>
       </section>

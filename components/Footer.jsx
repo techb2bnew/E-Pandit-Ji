@@ -6,7 +6,7 @@ import { FaFacebookF, FaInstagram, FaTwitter, FaLinkedinIn, FaYoutube } from "re
 const usefulLinks = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/about-us" },
-  { label: "Services", href: "#" },
+  // { label: "Services", href: "#" },
   { label: "Contact Us", href: "/contact-us" }
 ];
 
